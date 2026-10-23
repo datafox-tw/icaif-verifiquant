@@ -1,0 +1,80 @@
+{"id": "mq-01", "label": "C", "votes": {"C": 3, "R": 1, "A": 1}, "n_raters": 5}
+{"id": "mq-02", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-03", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-04", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-05", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-06", "label": "C", "votes": {"C": 3, "A": 2}, "n_raters": 5}
+{"id": "mq-07", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-08", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-09", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-10", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-11", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-12", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-13", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-14", "label": "C", "votes": {"C": 5}, "n_raters": 5}
+{"id": "mq-15", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-16", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-17", "label": "R", "votes": {"R": 4, "A": 1}, "n_raters": 5}
+{"id": "mq-18", "label": "A", "votes": {"C": 2, "A": 3}, "n_raters": 5}
+{"id": "mq-19", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-20", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-21", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-22", "label": "A", "votes": {"C": 2, "A": 3}, "n_raters": 5}
+{"id": "mq-23", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-24", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-25", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-26", "label": "A", "votes": {"O": 1, "A": 4}, "n_raters": 5}
+{"id": "mq-27", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-28", "label": "C", "votes": {"C": 5}, "n_raters": 5}
+{"id": "mq-29", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-30", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-31", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-32", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-33", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-34", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-35", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-36", "label": "C", "votes": {"C": 5}, "n_raters": 5}
+{"id": "mq-37", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-38", "label": "A", "votes": {"A": 4, "C": 1}, "n_raters": 5}
+{"id": "mq-39", "label": "C", "votes": {"C": 4, "R": 1}, "n_raters": 5}
+{"id": "mq-40", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-41", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-42", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-43", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-44", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-45", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-46", "label": "A", "votes": {"C": 1, "A": 4}, "n_raters": 5}
+{"id": "mq-47", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-48", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-49", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-50", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-51", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-52", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-53", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-54", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-55", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-56", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-57", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-58", "label": "C", "votes": {"C": 3, "A": 1}, "n_raters": 4}
+{"id": "mq-59", "label": "A", "votes": {"C": 2, "A": 3}, "n_raters": 5}
+{"id": "mq-60", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-61", "label": "A", "votes": {"C": 2, "A": 3}, "n_raters": 5}
+{"id": "mq-62", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-63", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-64", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-65", "label": "C", "votes": {"C": 3, "A": 2}, "n_raters": 5}
+{"id": "mq-66", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-67", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-68", "label": "R", "votes": {"R": 5}, "n_raters": 5}
+{"id": "mq-69", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-70", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-71", "label": "C", "votes": {"C": 4, "O": 1}, "n_raters": 5}
+{"id": "mq-72", "label": "A", "votes": {"A": 4, "C": 1}, "n_raters": 5}
+{"id": "mq-73", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-74", "label": "A", "votes": {"A": 3, "C": 1, "O": 1}, "n_raters": 5}
+{"id": "mq-75", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-76", "label": "O", "votes": {"O": 5}, "n_raters": 5}
+{"id": "mq-77", "label": "A", "votes": {"C": 2, "A": 3}, "n_raters": 5}
+{"id": "mq-78", "label": "A", "votes": {"A": 5}, "n_raters": 5}
+{"id": "mq-79", "label": "O", "votes": {"O": 4, "A": 1}, "n_raters": 5}
+{"id": "mq-80", "label": "C", "votes": {"C": 4, "A": 1}, "n_raters": 5}

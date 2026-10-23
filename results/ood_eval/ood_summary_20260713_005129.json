@@ -1,0 +1,57 @@
+{
+  "ran_at": "20260713_005129",
+  "elapsed_seconds": 4051.7,
+  "config": {
+    "lib_db": "results/paper_v1/fic/cards.db",
+    "questions": "results/paper_v2_250/questions_250.jsonl",
+    "split_rule": "family (function_id) present in library cards.db",
+    "limit_ood": 199,
+    "limit_id": 51,
+    "seed": 0,
+    "top_k": 3,
+    "model": "gemini-2.5-flash",
+    "k_rounds": 1,
+    "total_ood_available": 199,
+    "total_id_available": 51
+  },
+  "VQ": {
+    "OOD": {
+      "abstain": 177,
+      "correct": 14,
+      "silent_wrong": 8,
+      "n": 199,
+      "abstain_rate": 0.8894472361809045,
+      "silent_wrong_rate": 0.04020100502512563,
+      "force_fit_correct_rate": 0.07035175879396985
+    },
+    "ID": {
+      "abstain": 10,
+      "correct": 34,
+      "silent_wrong": 7,
+      "n": 51,
+      "accuracy": 0.6666666666666666,
+      "silent_wrong_rate": 0.13725490196078433,
+      "abstain_rate": 0.19607843137254902
+    }
+  },
+  "CoT_baseline": {
+    "OOD": {
+      "abstain": 120,
+      "correct": 71,
+      "silent_wrong": 8,
+      "n": 199,
+      "abstain_rate": 0.6030150753768844,
+      "silent_wrong_rate": 0.04020100502512563,
+      "correct_rate": 0.35678391959798994
+    },
+    "ID": {
+      "abstain": 25,
+      "correct": 23,
+      "silent_wrong": 3,
+      "n": 51,
+      "accuracy": 0.45098039215686275,
+      "silent_wrong_rate": 0.058823529411764705,
+      "abstain_rate": 0.49019607843137253
+    }
+  }
+}

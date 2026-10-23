@@ -1,0 +1,19 @@
+{
+  "total_cases": 250,
+  "correct_count": 194,
+  "accuracy": 0.776,
+  "improved_count": 0,
+  "improved_rate": 0.0,
+  "broken_count": 0,
+  "broken_rate": 0.0,
+  "run_config": {
+    "cot_model": "gemini-2.5-flash",
+    "oracle_model": "gemini-2.5-flash",
+    "max_turns": 1,
+    "mode": "single_shot",
+    "oracle_mode": "plain",
+    "oracle_entry_policy": "blind_review_every_turn",
+    "cot_prompt_template": "You are a financial CoT solver with self-improvement hints.\nSolve using the current question/context and return a tentative answer.\nIf information is missing/ambiguous, set needs_more_info=true and list missing items.\nIMPORTANT: `answer` must be a numeric string only (for example: \"10185.19\"), or empty string if you cannot provide one.\n\nQuestion:\n{question}\n\nContext:\n{context}\n\nReturn JSON only.",
+    "oracle_prompt_template": null
+  }
+}

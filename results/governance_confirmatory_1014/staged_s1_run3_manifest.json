@@ -1,0 +1,67 @@
+{
+  "protocol": "staged_rpal_governance_v1",
+  "experiment": "camera-ready E7",
+  "variant": "s1",
+  "created_at": "2026-10-14T18:16:34",
+  "git_commit": "c19bd6413c54e26bdf427a9ab0cffd6629532a35",
+  "model": "gemini-2.5-flash",
+  "http_timeout_s": 120,
+  "top_k": 4,
+  "shard": "",
+  "dataset": {
+    "path": "results/governance_confirmatory/trap_set.jsonl",
+    "sha256": "934d2482342abda9930f85688e22a812354418580d8f567c2f6166a8d475926d"
+  },
+  "card_db": {
+    "path": "results/paper_v2_250/fic/cards.db",
+    "sha256": "97e3f963b2809e23751d155af3c652e4ca7e8165eb1d0ea1cd05da3658438922"
+  },
+  "function_library": {
+    "path": "FinanceReasoning/data/functions/functions-article-all.json",
+    "sha256": "1c1d11ef6173208da0014b6bbb71cc8e2aa2683da9ba1ada4bf9e593fb4c7293",
+    "size": 3133
+  },
+  "retrieval_query": "question + newline + context",
+  "taxonomy_text_sha256": "9c0972cb75127d57c778d805b0ec364e34c4c7ceabeb6a887dae33ddba2950da",
+  "stage_frame": "\nThe decision is made in five separate stages, in this order:\n(1) scope: M and N; (2) inputs: F; (3) boundaries: E; (4) ambiguity: I_HARD and I_SOFT; (5) program.\nAny earlier stages have passed. This is stage {k}, {name}. {task}\nLater stages handle the other categories, so do not judge them here.\n",
+  "stages": {
+    "scope": {
+      "k": "1",
+      "name": "scope",
+      "task": "Decide only whether the retrieved candidates support the requested calculation. If at least one does, choose the most applicable candidate. Return M if the user's intent or requested metric is unclear, or N if the requested calculation is unsupported or the references are only superficially related.",
+      "schema": "{\n  \"diagnostic\": \"PASS|M|N\",\n  \"chosen_candidate\": <candidate number, or 0 for M/N>,\n  \"reason\": \"concise evidence-grounded explanation\",\n  \"clarification_question\": \"one actionable question for M, or empty string\"\n}"
+    },
+    "inputs": {
+      "k": "2",
+      "name": "inputs",
+      "task": "Decide only whether every input the calculation needs is present. Use the chosen reference function's parameters as the list of inputs; a parameter with a default value is not missing. Bind each input to its value in the question or context. Return F if a required numeric/input field is absent or redacted.",
+      "schema": "{\n  \"diagnostic\": \"PASS|F\",\n  \"inputs\": [{\"name\": \"parameter name\", \"status\": \"provided|missing\", \"value\": \"value as stated, or empty string\"}],\n  \"missing_fields\": [\"exact missing field\"],\n  \"reason\": \"concise evidence-grounded explanation\",\n  \"clarification_question\": \"one actionable question for F, or empty string\"\n}"
+    },
+    "bounds": {
+      "k": "3",
+      "name": "boundaries",
+      "task": "Decide only whether a provided value violates a financial, mathematical, or domain boundary. Return E if one does.",
+      "schema": "{\n  \"diagnostic\": \"PASS|E\",\n  \"invalid_fields\": [\"invalid field or violated rule\"],\n  \"reason\": \"concise evidence-grounded explanation\",\n  \"clarification_question\": \"one actionable question for E, or empty string\"\n}"
+    },
+    "ambiguity": {
+      "k": "4",
+      "name": "ambiguity",
+      "task": "Decide only whether an interpretation question remains. Return I_HARD if an unresolved unit, direction, timing, basis, or convention can change the answer, I_SOFT if the calculation can proceed but an interpretation assumption must be disclosed as a warning, or PASS if neither.",
+      "schema": "{\n  \"diagnostic\": \"PASS|I_HARD|I_SOFT\",\n  \"ambiguity_targets\": [\"ambiguity target\"],\n  \"reason\": \"concise evidence-grounded explanation\",\n  \"clarification_question\": \"one actionable question for I_HARD, or empty string\",\n  \"warning\": \"explicit assumption/warning for I_SOFT, or empty string\"\n}"
+    },
+    "program": {
+      "k": "5",
+      "name": "program",
+      "task": "Write a self-contained Python solve() function that computes the answer from the bound inputs. Only `math` may be imported. If an I_SOFT assumption is listed below, follow it.",
+      "schema": "{\n  \"code\": \"self-contained Python code as a JSON string\"\n}"
+    }
+  },
+  "forbidden_prompt_inputs": [
+    "ground_truth",
+    "python_solution",
+    "operator",
+    "expected_diagnostic"
+  ],
+  "finished_at": "2026-10-14T18:54:58",
+  "elapsed_s": 2302.8
+}

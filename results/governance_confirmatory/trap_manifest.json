@@ -1,0 +1,80 @@
+{
+  "protocol": "governance_confirmatory_v2",
+  "created_at": "2026-07-29T20:35:11",
+  "per_operator": 20,
+  "max_ops_per_base": 2,
+  "total_traps": 80,
+  "needs_review": 0,
+  "sources": {
+    "questions": {
+      "path": "results/paper_v2_250/questions_250.jsonl",
+      "sha256": "6ef6c9ae8bf9c3c97d9d40681c9ef5f76e23e12c9c29a5c37e397fd7847caa3c"
+    },
+    "canonical": {
+      "path": "results/paper_v2_250/results/vq_flash/output.jsonl",
+      "sha256": "6119f14b09c803e4f9195a94b2309712280ba742fc2ec03a66b581ae2af82800"
+    },
+    "cards_db": {
+      "path": "results/paper_v2_250/fic/cards.db",
+      "sha256": "97e3f963b2809e23751d155af3c652e4ca7e8165eb1d0ea1cd05da3658438922"
+    }
+  },
+  "operators": {
+    "E": {
+      "family_counts": {
+        "magnitude": 4,
+        "negativity": 8,
+        "nonpositive_zero": 4,
+        "rate_out_of_unit": 4
+      },
+      "target": 20,
+      "produced": 20,
+      "candidates": 676
+    },
+    "I": {
+      "family_counts": {
+        "hard": 6,
+        "soft": 14
+      },
+      "target": 20,
+      "produced": 20,
+      "candidates": 104
+    },
+    "F": {
+      "family_counts": {
+        "balance": 5,
+        "count": 5,
+        "denominator": 2,
+        "other": 5,
+        "price": 3
+      },
+      "target": 20,
+      "produced": 20,
+      "candidates": 496
+    },
+    "N": {
+      "family_counts": {
+        "exotic": 14,
+        "near_miss": 6
+      },
+      "target": 20,
+      "produced": 20,
+      "candidates": 243
+    }
+  },
+  "distinct_base_questions": 52,
+  "base_cluster_sizes": {
+    "max_ops_on_one_base": 2
+  },
+  "i_hard_supply": {
+    "cases_with_hard_rule": 40,
+    "groundable": 6,
+    "phrase_absent": 17,
+    "no_pattern": 19
+  },
+  "known_constraints": [
+    "I_HARD is capped by phrase-deletion supply: only 6 of 40 hard-ambiguity cases carry a deletable disambiguator phrase; the rest are context-implied or method/basis choices needing hand/Tier-2 construction (deferred to the ACL-phase hard set). Report I_HARD and I_SOFT FNAR separately; do not generalize the small hard stratum.",
+    "F field-kind coverage is data-limited to kinds present in selected FICs; 'rate'/'time' removals were scarce in this pool."
+  ],
+  "trap_set_sha256": "934d2482342abda9930f85688e22a812354418580d8f567c2f6166a8d475926d"
+}

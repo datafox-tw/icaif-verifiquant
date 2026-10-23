@@ -1,0 +1,25 @@
+{
+  "n_annotators": 5,
+  "annotators": {
+    "A1": 82,
+    "A2": 82,
+    "A3": 81,
+    "A4": 82,
+    "A5": 82
+  },
+  "n_items": 82,
+  "majority_resolved": 82,
+  "disagreement_pool": 0,
+  "majority_rate": 1.0,
+  "fleiss_kappa": 0.838,
+  "kappa_computed_on": {
+    "n_items": 81,
+    "raters_per_item": 5
+  },
+  "majority_label_distribution": {
+    "C": 10,
+    "A": 36,
+    "R": 20,
+    "O": 16
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "protocol": "governance_matched_rpal_v1",
+  "run_name": "smoke3_prompted_clean250",
+  "mode": "prompted",
+  "n": 3,
+  "complete": true,
+  "raw_outcomes": {
+    "numeric": 3
+  },
+  "elapsed_s": 33.7,
+  "note": "Not a scored result; use scripts/analyze_governance_eval.py"
+}

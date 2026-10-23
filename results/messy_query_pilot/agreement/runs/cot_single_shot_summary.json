@@ -1,0 +1,20 @@
+{
+  "total_cases": 80,
+  "correct_count": 0,
+  "accuracy": 0.0,
+  "improved_count": 0,
+  "improved_rate": 0.0,
+  "broken_count": 0,
+  "broken_rate": 0.0,
+  "run_config": {
+    "cot_model": "gemini-2.5-flash",
+    "oracle_model": "gemini-2.5-flash",
+    "max_turns": 1,
+    "mode": "single_shot",
+    "oracle_mode": "plain",
+    "oracle_entry_policy": "blind_review_every_turn",
+    "cot_prompt_template": "You are a financial CoT solver with self-improvement hints.\nSolve using the current question/context and return a tentative answer.\nIf information is missing/ambiguous, set needs_more_info=true and list missing items.\nIMPORTANT: `answer` must be a numeric string only (for example: \"10185.19\"), or empty string if you cannot provide one.\n\nQuestion:\n{question}\n\nContext:\n{context}\n\nReturn JSON only.",
+    "oracle_prompt_template": null
+  },
+  "trim_note": "Recounted after mq-81/mq-82 (two off-design items outside the stratified v3 authoring set) were removed; see scripts/trim_messy_set_to_80.py. Raw 82-item run log retained under _pre_trim_82q/."
+}

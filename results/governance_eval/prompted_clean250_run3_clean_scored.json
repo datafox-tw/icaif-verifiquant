@@ -1,0 +1,12 @@
+{
+  "n": 250,
+  "correct": 228,
+  "silent_wrong": 2,
+  "abstain": 20,
+  "accuracy": 0.912,
+  "swr": 0.008,
+  "coverage": 0.92,
+  "selective_accuracy": 0.991304347826087,
+  "run": "results/governance_eval/prompted_clean250_run3.jsonl",
+  "scored_rows": 250
+}

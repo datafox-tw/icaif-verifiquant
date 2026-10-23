@@ -1,0 +1,300 @@
+{
+  "f_trap_check": [
+    {
+      "trap_id": "F-test-1023",
+      "removed_field": "tax_liability",
+      "removed_value": 12000.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1028",
+      "removed_field": "beginning_fixed_assets",
+      "removed_value": 1200000.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1036",
+      "removed_field": "current_assets",
+      "removed_value": 800000.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1086",
+      "removed_field": "par_value",
+      "removed_value": 1000.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1092",
+      "removed_field": "monetary_assets",
+      "removed_value": 1200000.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1035",
+      "removed_field": "start_units",
+      "removed_value": 15000,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1263",
+      "removed_field": "quantity",
+      "removed_value": 100,
+      "contract_required": false,
+      "contract_mentions_default": true,
+      "function_default": "100",
+      "fails_rule": true
+    },
+    {
+      "trap_id": "F-test-1271",
+      "removed_field": "number_of_units",
+      "removed_value": 15000,
+      "contract_required": false,
+      "contract_mentions_default": false,
+      "function_default": "0",
+      "fails_rule": true
+    },
+    {
+      "trap_id": "F-test-1559",
+      "removed_field": "quantity",
+      "removed_value": 100,
+      "contract_required": false,
+      "contract_mentions_default": true,
+      "function_default": "100",
+      "fails_rule": true
+    },
+    {
+      "trap_id": "F-test-1591",
+      "removed_field": "unit_quantity",
+      "removed_value": 10000,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1122",
+      "removed_field": "shares_outstanding",
+      "removed_value": 10000000,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1561",
+      "removed_field": "base_tax_rate",
+      "removed_value": 40.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1020",
+      "removed_field": "premium_paid",
+      "removed_value": 8.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1022",
+      "removed_field": "itemized_deductions",
+      "removed_value": 28000.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1039",
+      "removed_field": "total_premium",
+      "removed_value": 1200.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1043",
+      "removed_field": "back_end_limit",
+      "removed_value": 40.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1082",
+      "removed_field": "current_real_gdp",
+      "removed_value": 1.25,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1064",
+      "removed_field": "ask_price",
+      "removed_value": 49.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1067",
+      "removed_field": "original_price",
+      "removed_value": 200.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    },
+    {
+      "trap_id": "F-test-1080",
+      "removed_field": "price_current",
+      "removed_value": 165.0,
+      "contract_required": true,
+      "contract_mentions_default": false,
+      "function_default": null,
+      "fails_rule": false
+    }
+  ],
+  "failing_rule": [
+    "F-test-1263",
+    "F-test-1271",
+    "F-test-1559"
+  ],
+  "legitimate_default": [
+    "F-test-1263",
+    "F-test-1559"
+  ],
+  "variants": {
+    "all_80": {
+      "n": 80,
+      "fnar": {
+        "vq_top4": 0.1042,
+        "rpal_plain": 0.4875,
+        "rpal_plus": 0.275,
+        "staged": 0.1583,
+        "staged_spec": 0.0875
+      },
+      "f_operator_fnar": {
+        "vq_top4": 0.1,
+        "rpal_plain": 0.1,
+        "rpal_plus": 0.0,
+        "staged": 0.0,
+        "staged_spec": 0.0
+      },
+      "gap_rpal_plus_minus_vq": {
+        "point": 0.1708,
+        "ci95": [
+          0.0684,
+          0.2698
+        ],
+        "n": 80,
+        "clusters": 52
+      },
+      "gap_staged_spec_minus_vq": {
+        "point": -0.0167,
+        "ci95": [
+          -0.0833,
+          0.0476
+        ],
+        "n": 80,
+        "clusters": 52
+      }
+    },
+    "without_legitimate_default": {
+      "n": 78,
+      "fnar": {
+        "vq_top4": 0.0812,
+        "rpal_plain": 0.4872,
+        "rpal_plus": 0.2821,
+        "staged": 0.1624,
+        "staged_spec": 0.0897
+      },
+      "f_operator_fnar": {
+        "vq_top4": 0.0,
+        "rpal_plain": 0.0556,
+        "rpal_plus": 0.0,
+        "staged": 0.0,
+        "staged_spec": 0.0
+      },
+      "gap_rpal_plus_minus_vq": {
+        "point": 0.2009,
+        "ci95": [
+          0.1096,
+          0.2917
+        ],
+        "n": 78,
+        "clusters": 50
+      },
+      "gap_staged_spec_minus_vq": {
+        "point": 0.0085,
+        "ci95": [
+          -0.047,
+          0.0676
+        ],
+        "n": 78,
+        "clusters": 50
+      }
+    },
+    "without_all_failing_rule": {
+      "n": 77,
+      "fnar": {
+        "vq_top4": 0.0823,
+        "rpal_plain": 0.4805,
+        "rpal_plus": 0.2857,
+        "staged": 0.1645,
+        "staged_spec": 0.0909
+      },
+      "f_operator_fnar": {
+        "vq_top4": 0.0,
+        "rpal_plain": 0.0,
+        "rpal_plus": 0.0,
+        "staged": 0.0,
+        "staged_spec": 0.0
+      },
+      "gap_rpal_plus_minus_vq": {
+        "point": 0.2035,
+        "ci95": [
+          0.1111,
+          0.2954
+        ],
+        "n": 77,
+        "clusters": 49
+      },
+      "gap_staged_spec_minus_vq": {
+        "point": 0.0087,
+        "ci95": [
+          -0.0482,
+          0.0694
+        ],
+        "n": 77,
+        "clusters": 49
+      }
+    }
+  }
+}

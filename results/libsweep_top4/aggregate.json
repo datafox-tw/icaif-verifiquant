@@ -1,0 +1,64 @@
+{
+  "points": [
+    {
+      "frac": 10,
+      "n_id": 25,
+      "n_ood": 225,
+      "complete": true,
+      "id_acc": 0.84,
+      "id_abstain": 0.08,
+      "id_sw": 0.08,
+      "ood_abstain": 0.9111111111111111,
+      "ood_sw": 0.022222222222222223,
+      "selectivity_gap": 0.8311111111111111
+    },
+    {
+      "frac": 25,
+      "n_id": 62,
+      "n_ood": 188,
+      "complete": true,
+      "id_acc": 0.8709677419354839,
+      "id_abstain": 0.08064516129032258,
+      "id_sw": 0.04838709677419355,
+      "ood_abstain": 0.8617021276595744,
+      "ood_sw": 0.03723404255319149,
+      "selectivity_gap": 0.7810569663692518
+    },
+    {
+      "frac": 50,
+      "n_id": 125,
+      "n_ood": 125,
+      "complete": true,
+      "id_acc": 0.84,
+      "id_abstain": 0.112,
+      "id_sw": 0.048,
+      "ood_abstain": 0.808,
+      "ood_sw": 0.024,
+      "selectivity_gap": 0.6960000000000001
+    },
+    {
+      "frac": 75,
+      "n_id": 188,
+      "n_ood": 62,
+      "complete": true,
+      "id_acc": 0.8351063829787234,
+      "id_abstain": 0.1276595744680851,
+      "id_sw": 0.03723404255319149,
+      "ood_abstain": 0.7903225806451613,
+      "ood_sw": 0.04838709677419355,
+      "selectivity_gap": 0.6626630061770762
+    },
+    {
+      "frac": 100,
+      "n_id": 250,
+      "n_ood": 0,
+      "complete": true,
+      "id_acc": 0.832,
+      "id_abstain": 0.132,
+      "id_sw": 0.036,
+      "ood_abstain": null,
+      "ood_sw": null,
+      "selectivity_gap": null
+    }
+  ]
+}

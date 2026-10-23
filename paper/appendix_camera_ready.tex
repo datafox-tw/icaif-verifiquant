@@ -1,0 +1,322 @@
+%% Appendix of the extended (arXiv) version of main_camera_ready_9p.tex.
+%% Included only when \arxivtrue is set in the main file. Every number below is
+%% re-derived by scripts/analyze_cameraready_e10_e7.py, analyze_cameraready_e6_e12.py,
+%% and analyze_cameraready_topk_reruns.py (no model calls); the code guide is
+%% docs/2026-10-15_cameraready_experiments_guide.md.
+
+%% Long texttt names and inline math cannot hyphenate; let the appendix stretch spaces instead.
+\sloppy
+\section{Staged controls}\label{app:staged}
+\paragraph{Construction.}
+Both controls start from R-PAL$^{+}$ and change one thing at a time (Table~\ref{tab:app-staged-build}). Staged R-PAL$^{+}$ (Staged) keeps the inputs of R-PAL$^{+}$, that is, the same top-4 retrieval, the same reference rendering, and the same taxonomy text, verbatim. It splits the single call of R-PAL$^{+}$ into the five VerifiQuant stages, one model call each. Every stage receives the taxonomy, a fixed frame that names the five stages and the current one, the question, the context, and a JSON answer format, and the first stage that does not pass ends the case. The program stage writes \texttt{solve()}, which runs in the sandbox of R-PAL$^{+}$. Every check is a model judgment. Spec-prompted R-PAL$^{+}$ (Staged+Spec) keeps the same stages and adds, as text only, the contract content that the matching VerifiQuant gate uses. Neither control executes a contract. The prompts are printed in full in Appendix~\ref{app:prompts}.
+
+\begin{table*}[t]
+\caption{What each stage of the two staged controls receives.}
+\label{tab:app-staged-build}
+\small
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{0.14\textwidth}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.36\textwidth}@{}}
+\toprule
+Stage & Decides & Staged receives & Staged+Spec also receives \\
+\midrule
+1 Scope & M or N, and picks a candidate & the top-4 reference functions (title, summary, code) & each candidate's selection hints, applicable and non-applicable conditions, and scope boundaries \\
+2 Inputs & F, and binds each input & the chosen reference function & the contract's input schema (name, type, required, unit, description) \\
+3 Boundaries & E & the chosen function and the bound inputs & the contract's declared boundary checks (rule, description, expression), to be judged, not run \\
+4 Ambiguity & I\textsubscript{HARD} or I\textsubscript{SOFT} & the chosen function and the bound inputs & the contract's declared semantic hints (trigger, options, level, default assumption) \\
+5 Program & writes \texttt{solve()} & the chosen function, the bound inputs, and any I\textsubscript{SOFT} assumption & nothing further \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{Results.}
+Table~\ref{tab:app-staged} places both controls between R-PAL$^{+}$ and VerifiQuant on Gemini 2.5 Flash, and each row differs from the one above in a single respect. Trap columns, and the clean columns of Staged and Staged+Spec, are means of three runs. Sel is accuracy among the clean questions a system answers. All four are precise when they answer and differ in how often they answer.
+
+\begin{table*}[t]
+\caption{Staged controls on the 80 traps and the 250 clean questions.}
+\label{tab:app-staged}
+\small
+\begin{tabular}{@{}llrrrrrrrrrr@{}}
+\toprule
+& & \multicolumn{7}{c}{Traps (80)} & \multicolumn{3}{c}{Clean (250)} \\
+\cmidrule(lr){3-9}\cmidrule(l){10-12}
+System & Differs from the row above by & FNAR & F & E & I & N & Diag & Act & Cov & Acc & Sel \\
+\midrule
+R-PAL$^{+}$ & --- & 27.5\% & 0\% & 30.0\% & 80.0\% & 0\% & 65.4\% & 55.8\% & 92.9\% & 92.0\% & 99.0\% \\
+Staged & five separate stage calls & 15.8\% & 0\% & 20.0\% & 43.3\% & 0\% & 73.8\% & 69.6\% & \stagedOneCov{} & \stagedOneAcc{} & 99.4\% \\
+Staged+Spec & contract content as text & 8.8\% & 0\% & 0\% & 35.0\% & 0\% & 82.1\% & 80.0\% & \stagedTwoCov{} & \stagedTwoAcc{} & 98.4\% \\
+VerifiQuant & checks executed as code & 10.4\% & 10.0\% & 8.3\% & 21.7\% & 1.7\% & 76.7\% & 75.4\% & 84.0\% & 81.2\% & 96.7\% \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Step by step, with 95\% intervals from the base-question-clustered bootstrap of \S\ref{sec:v2res}, staging lowers trap FNAR by 11.7 points $[5.5, 18.6]$, declared contract content by a further 7.1 points $[1.7, 13.1]$, and execution changes it by $-1.7$ points $[-8.3, 4.8]$. On the clean questions Staged covers \stagedOneCov{} and Staged+Spec \stagedTwoCov{} (means of three runs), against $84.0\%$ for VerifiQuant. VerifiQuant answers more clean questions than Staged+Spec in every run (exact McNemar $p<.01$ for coverage and $p<.03$ for accuracy in each run). Staged+Spec leaves about 23 more questions unanswered than VerifiQuant, and a mean of 16.3 per run are programs the model wrote that fail to run, so most of the coverage gap comes from executing model-written code rather than from gate decisions.
+
+\paragraph{Price of the reduction.}
+Read against R-PAL$^{+}$, each point of trap FNAR removed costs Staged $2.2$ points of clean accuracy, Staged+Spec $1.0$ point, and VerifiQuant $0.6$ point. These are the slopes from R-PAL$^{+}$ to each system on a plane of clean accuracy against trap FNAR, so they do not depend on the size of either set. In questions, Staged answers a mean of $63.3$ fewer clean questions correctly for $9.3$ fewer trap acceptances, Staged+Spec $46.0$ for $15.0$, and VerifiQuant $27$ for $13.7$, that is, $6.8$, $3.1$, and $2.0$ correct clean answers per trap acceptance avoided. This second form scales with the ratio of the two set sizes (250 to 80), which is why the body keeps the two axes separate. On these point estimates VerifiQuant pays the least per point removed. Its clean figure comes from one run, and the others are means of three runs.
+
+Three disclosures apply. First, each stage uses one prompt wording, and after a five-trap smoke test we changed one phrase, ``exactly one candidate'', which the model had read literally and answered N whenever several candidates fit. Second, a program that fails to run counts as no number, as in R-PAL$^{+}$. This happened on three Staged and two Staged+Spec trap cases, all of type I, and counting them as acceptances would raise trap FNAR to 17.1\% and 9.6\%. Third, the controls were run after the main experiments, on the same backbone, retrieval, and scoring.
+
+\section{Scripted user}\label{app:scripted}
+The 26 traps that remove a required input (20 F) or a hard convention (6 I\textsubscript{HARD}) are the ones on which asking the user is the correct response. The first turn is the existing output: the three depth-4 VerifiQuant runs and the three R-PAL$^{+}$ runs. When a system withholds a number, a scripted user replies once and the system runs again with the reply appended to the context. The user involves no model and never sees the gold answer. For an F trap it restates the exact span the trap replaced with a placeholder, with its unit, as in ``The tax liability is \$12,000.''. For an I\textsubscript{HARD} trap it fills one fixed template per ambiguity family, such as ``It is a call option.'' or ``Use the FIFO method.''. The strict user replies only when the first turn named the removed field or convention, matching field names with underscores and spaces treated alike and conventions as whole words. The lenient user replies to every abstention. Table~\ref{tab:app-scripted} gives the counts per run, three runs per system.
+
+\begin{table}[t]
+\caption{Scripted user on the 26 incomplete traps.}
+\label{tab:app-scripted}
+\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+& VerifiQuant & R-PAL$^{+}$ \\
+\midrule
+Number at turn 1 & 3 / 3 / 4 & 3 / 3 / 3 \\
+Withheld and named the item & 22 / 21 / 20 & 18 / 19 / 20 \\
+Correct after reply, strict & 20 / 19 / 18 & 18 / 17 / 19 \\
+Correct after reply, lenient & 20 / 19 / 18 & 22 / 20 / 21 \\
+Wrong number after reply & 0 & 0 \\
+\addlinespace
+Strict, F only (of 20) & 16 / 16 / 16 & 16 / 15 / 17 \\
+Strict, I\textsubscript{HARD} only (of 6) & 4 / 3 / 2 & 2 / 2 / 2 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Strict recovery is $73.1\%$ for VerifiQuant and $69.2\%$ for R-PAL$^{+}$, a difference of $+3.8$ points with a 95\% interval of $[-16.7, 24.4]$ over 26 clustered traps. VerifiQuant asks the right question more often only on the six I\textsubscript{HARD} traps, too few to support a claim. The lenient user lifts R-PAL$^{+}$ to $80.8\%$ because it names fields in prose, such as ``back-end ratio'' for \texttt{back\_end\_limit}, which the literal match misses. VerifiQuant's two F traps answered at turn 1 are the declared-default case of \S\ref{sec:v2rq2}, and its unrecovered cases either picked a contract that asks for a different field, raised a new convention question after the reply, or stopped at F after the convention was supplied. The reply template is fixed and a single sentence, so these figures bound what a cooperative but terse user recovers rather than what a real user would.
+
+\section{A second backbone}\label{app:pro}
+Table~\ref{tab:app-pro} repeats the trap comparison of \S\ref{sec:v2rq2} with Gemini 2.5 Pro for every model call, three runs per system, next to the Flash figures of Table~\ref{tab:v2main}.
+
+\begin{table}[t]
+\caption{Trap results with Gemini 2.5 Pro.}
+\label{tab:app-pro}
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+& \multicolumn{2}{c}{R-PAL$^{+}$} & \multicolumn{2}{c}{VerifiQuant} \\
+\cmidrule(lr){2-3}\cmidrule(l){4-5}
+& Flash & Pro & Flash & Pro \\
+\midrule
+FNAR (mean) & 27.5\% & 22.1\% & 10.4\% & 10.4\% \\
+E & 30.0\% & 20.0\% & 8.3\% & 13.3\% \\
+I & 80.0\% & 68.3\% & 21.7\% & 13.3\% \\
+F / N & 0 / 0\% & 0 / 0\% & 10.0 / 1.7\% & 10.0 / 5.0\% \\
+Diag / Act & 65.4 / 55.8\% & 66.7 / 42.5\% & 76.7 / 75.4\% & 75.0 / 73.8\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The gap is 11.7 points on Pro, with a 95\% interval of $[1.7, 21.5]$, against 17.1 points on Flash. Per run, Pro gives R-PAL$^{+}$ 25.0, 21.25, and 20.0\% and VerifiQuant 12.5, 8.75, and 10.0\%. Pro improves R-PAL$^{+}$ on E and I and leaves VerifiQuant unchanged, and the remaining gap lies almost entirely in I. Pro belongs to the same model family as Flash, and we ran only the traps on it, so it places no point on the safety--utility plane.
+
+\section{Run-level results and retrieval depth}\label{app:reruns}
+The paired tests of \S\ref{sec:v2res} use per-question binary outcomes from one audited R-PAL run on all clean questions and the canonical VerifiQuant $K{=}3$ run on the same case IDs, not averages over repeats.
+The submitted version reported one VerifiQuant trap run, made at retrieval depth 3 because the runner's default was 3, while the protocol and R-PAL$^{+}$ used 4. The same default affected the out-of-library split, the gate ablation, and the library sweep. All four were rerun at depth 4 with the same questions, libraries, and scoring, and the body reports the reruns. No conclusion changes. Table~\ref{tab:app-trapruns} lists trap FNAR run by run, with depth the number of retrieved candidates, and Table~\ref{tab:app-depth} compares the other three evaluations at both depths.
+
+\begin{table}[t]
+\caption{Trap FNAR by run.}
+\label{tab:app-trapruns}
+\small
+\begin{tabular}{@{}llr@{}}
+\toprule
+System & Depth & FNAR per run \\
+\midrule
+VerifiQuant (submitted) & 3 & 11.25\% \\
+VerifiQuant (rerun) & 3 & 7.5\% \\
+VerifiQuant (reported) & 4 & 12.5 / 10.0 / 8.75\% \\
+R-PAL$^{+}$ (reported) & 4 & 26.25 / 30.0 / 26.25\% \\
+R-PAL$^{+}$ (drift check) & 4 & 26.25\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Across five VerifiQuant runs and four R-PAL$^{+}$ runs the ranges do not overlap, and the later R-PAL$^{+}$ run falls inside its earlier range, so the backbone did not drift between July and October. Two identical VerifiQuant runs disagree on the diagnosis of 10 of the 80 traps because selection, binding, and ambiguity checks are model calls. A single run should therefore not be compared with a mean.
+
+\begin{table}[t]
+\caption{Depth 3 against depth 4.}
+\label{tab:app-depth}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Quantity & Depth 3 & Depth 4 \\
+\midrule
+OOD abstain / correct / SWR & 88.9 / 7.0 / 4.0\% & 88.9 / 7.0 / 4.0\% \\
+OOD selective accuracy / ID abstain & 63.6 / 19.6\% & 63.6 / 19.6\% \\
+Gate ablation, compute only & 87.6\% / 6.4\% / 15 & 90.0\% / 5.6\% / 11 \\
+Gate ablation, + F/E & 86.8\% / 4.4\% / 22 & 87.2\% / 5.6\% / 18 \\
+Gate ablation, + I & 79.6\% / 4.4\% / 40 & 82.4\% / 4.8\% / 32 \\
+Gate ablation, full funnel & 79.2\% / 4.0\% / 42 & 82.0\% / 4.4\% / 34 \\
+Sweep, ID accuracy range & 81.6--84.0\% & 83.2--87.1\% \\
+Sweep, OOD abstain (10\%$\to$75\%) & 91.6$\to$80.6\% & 91.1$\to$79.0\% \\
+Sweep, OOD SWR (10\%$\to$75\%) & 1.3$\to$4.8\% & 2.2$\to$4.8\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The out-of-library aggregates are identical, although 10 of the 250 verdicts changed in offsetting directions. Gate-ablation rows read accuracy, SWR, and abstentions. The latency figures of \S\ref{sec:v2res} come from the earlier sequential depth-3 ladder, because the depth-4 rerun executed its rungs concurrently. They are wall-clock means that include provider-side variance and retries, and we do not report token accounting.
+
+\paragraph{F-trap construction check.}
+The F operator removes an input the contract requires. Checking every F trap against that rule, through the contract's \texttt{required} flag and any default in the contract or its reference function, finds 3 of the 20 that fail it. Two (F-test-1263 and F-test-1559) remove a share count that the contract marks optional with a default of 100 shares, one option contract, which the public reference function also declares. Answering with the default is correct, so these two traps are mislabeled. VerifiQuant answers both correctly in every run and is scored as accepting them. The third (F-test-1271) removes a unit count that the contract marks optional with a placeholder default of 0, although the question cannot be answered without it. Its label is right and the contract is underspecified, and VerifiQuant requests the field in every run.
+All three come from one generator step. It drew F candidates from every argument of the reference function's signature, including arguments with defaults, instead of from the inputs the contract marks required. The two mislabeled traps therefore penalize exactly the behavior a declared default licenses: VerifiQuant applies the default and is scored as accepting, while the systems that decline both, R-PAL$^{+}$ and the two staged controls, are scored as correct. R-PAL answers F-test-1263 correctly as well. Across the 250 cards, 34 of the 38 optional or defaulted inputs take their default from the reference function's signature, 4 state no default, and none takes a value that appears only in the source question. Six have a placeholder default (0, None, or False). Three are genuine optional values (the \texttt{refundable} and \texttt{annualize} switches and a zero dividend), and three, the unit count of the third case, a purchase price, and an exchange rate, may be required whenever the formula's branch uses them. A future trap set should draw F candidates only from inputs the contract marks required and that no default covers, and the contract builder should mark such branch-dependent inputs as conditionally required. We keep the released 80 traps for comparability with the submitted version and report the sensitivity below. Table~\ref{tab:app-fsens} rescores every system without the failing traps, with the scorer and bootstrap of \S\ref{sec:v2res}.
+
+\begin{table}[t]
+\caption{Trap FNAR without the F traps that fail the construction check.}
+\label{tab:app-fsens}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Trap set & VQ & R-PAL$^{+}$ & Gap [95\% CI] & S+S$-$VQ \\
+\midrule
+All 80 traps (80) & 10.4\% & 27.5\% & $17.1$ $[6.8, 27.0]$ & $-1.7$ \\
+Without the 2 mislabeled (78) & 8.1\% & 28.2\% & $20.1$ $[11.0, 29.2]$ & $+0.9$ \\
+Without all 3 failing (77) & 8.2\% & 28.6\% & $20.3$ $[11.1, 29.5]$ & $+0.9$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Columns give the 3-run mean FNAR, the R-PAL$^{+}$ minus VerifiQuant gap in points, and the Staged+Spec minus VerifiQuant difference in points. Without the mislabeled traps VerifiQuant's F rate is $0\%$, the gap widens, and Staged+Spec remains level with VerifiQuant.
+
+\paragraph{Why depth 4.} On the 250 clean questions, where each question's gold contract is in the library by construction, the gold card is retrieved at rank 1 in the median case and appears in the top 4 for $94.8\%$ of questions. Widening to 8 adds $2.4$ points, and widening to 16 adds $4.0$. A larger $k$ or a stronger retriever therefore has under five points of headroom on in-library queries, which is why we hold $k{=}4$ fixed rather than tuning it.
+
+\section{Human-labeled set: construction, labels, and scoring}\label{app:human}
+This appendix gives the full protocol behind \S\ref{sec:v2ext} and \S\ref{sec:v2rq4}.
+
+\paragraph{Construction and annotation.}
+The F/E/I/N traps are contract-derived, so a skeptic can ask whether their labels merely re-encode our own checks (\S\ref{sec:v2design}). We therefore need queries whose correct handling is decided by people who see neither our contracts nor our systems.
+To test the governance boundary against labels defined \emph{independently} of our contracts, we build a second evaluation whose ground truth comes from human domain experts with no access to any system, contract, or gold answer. GPT-5.2 authored the 80 naturalistic queries from FinanceReasoning topics with no access to our contracts, the M/N/F/E/I/C taxonomy, gold answers, or any system output. An audit before labeling found that all 18 queries of the missing-input stratum had left the context empty, so the stratum could be recognized at a glance and no single input was actually missing. We revised these 18 offline with an OpenAI Codex agent, seeded by the GPT-5.2 versions, because a further call to the external author was not yet cleared for data egress. Each revision keeps its source topic and persona, gives two to five labeled figures, omits exactly one indispensable numeric input, avoids any word that marks the omission, and adds no convention ambiguity. An automatic check confirmed these properties for all 18, a person read every revision, and the other 62 queries are unchanged. The revision ran inside our repository, so unlike the 62 it is not blind to our contracts. The provenance file records the 18 as \texttt{gpt-5.2\_seed\_then\_codex\_curated\_v3}. Both authors differ from the solver stack (Gemini 2.5 Flash, used by every evaluated system), so a question's messiness is uncorrelated with what any solver finds easy. Every label was collected after the revision.
+The source questions come from FinanceReasoning items outside the 250 of \S\ref{sec:v2design}. Rewriting the 250 themselves would guarantee a contract for every item and turn the test into one of paraphrase robustness inside the library. Drawing elsewhere keeps the labels independent of our contracts, at the cost that the set is \emph{library-agnostic}: it mixes in-library and out-of-library questions in a proportion we do not set.
+Items are drawn from four latent conditions, well-posed (27), missing a required input (18), ambiguous in a material convention (18), and judgment or out-of-scope (17). An unstratified first draft was skewed toward answerable queries and left too few non-answer items to estimate an acceptance rate, which is why we stratify by user intent. The condition is a sampling stratification, never a label, and is hidden from annotators, so the panel's label distribution need not match it. Five finance-trained annotators, blind to the source question, the generating condition, and every system output, independently assign one of four actions with a one-sentence rationale. Majority labels are frozen before any system is scored, all 80 items reach a first-pass majority so no adjudication was needed, and we report Fleiss' $\kappa$ as reliability. Full curation checks, instructions, and worked examples ship with the released audit trail.
+
+\paragraph{Label definitions.}
+Annotators assign one of four labels per item by a top-down rule, stopping at the first ``yes'': is the ask itself not ``compute one number'' (advice, a forecast, or a request needing unavailable data)? then \textsc{out-of-scope}. Is a required numeric value missing from the text? then \textsc{request-info}. Are all values present, but would an interpretation choice (percent vs.\ decimal, which period, which metric, day-count basis, gross vs.\ net, per-share vs.\ total) change the number? then \textsc{clarify}. Otherwise, a complete and unambiguous computation is \textsc{answer}.
+The \textsc{request-info} versus \textsc{clarify} contrast (a missing number versus an unclear interpretation) is trained explicitly, and the full instructions ship with the audit trail.
+Each action maps onto a funnel outcome (\textsc{answer}$\leftrightarrow$compute, \textsc{request-info}$\leftrightarrow$F, \textsc{clarify}$\leftrightarrow$I, \textsc{out-of-scope}$\leftrightarrow$N/M), so emitting a confident number where the human label is \textsc{request-info}, \textsc{clarify}, or \textsc{out-of-scope} is a false numeric acceptance defined by human judgment rather than by our taxonomy.
+
+\paragraph{Scoring protocol.}
+Each system's raw output is normalized to an action in $\{$A, R, C, O$\}$, with the full per-system mapping in the released audit trail. Two conventions matter for reading Table~\ref{tab:v2ext}. CoT and plain R-PAL expose only whether they answered, never why they declined, so scoring them four-way would discard credit for correct abstention. Their Match is therefore the binary agreement between answering and a human \textsc{answer} label, whereas R-PAL$^{+}$ and VerifiQuant expose a real R/C/O decision and are scored four-way. An M-refusal is scored \textsc{out-of-scope} per \S\ref{sec:v2ext}, even though every M-refusal here carries an explicit clarification question, which is a conservative reading of our own convention rather than one chosen after seeing the scores: an \textsc{M}$\to$\textsc{clarify} reading would raise VerifiQuant's Match from $32.5\%$ to $35.0\%$. Let $\mathrm{GT}(i)$ be the human majority label of item $i$ over the $n{=}80$ items, $e_S(i){:=}\mathrm{emit}_S(i){\in}\{0,1\}$ whether system $S$ commits a numeric answer on item $i$, and $\mathrm{RCO}=\{i : \mathrm{GT}(i)\neq\text{A}\}$ the $46$ items a plain number is inappropriate for.
+\[
+\mathrm{HumanFNAR}(S) = \frac{|\{\, i \in \mathrm{RCO} : e_S(i){=}1 \,\}|}{|\mathrm{RCO}|}
+\]
+A number that carries an I\textsubscript{SOFT} warning counts as emitted. A \textsc{clarify} label means the panel wanted the question asked before any computation, and a warned number does not ask, so this convention is stricter than the trap metric of \S\ref{sec:v2problem}. Human-FNAR is the headline because it needs only whether a number was emitted, which every system exposes, and no gold answer.
+Every system answers the same 46 non-\textsc{answer} items, so the tests of \S\ref{sec:v2rq4} are paired. Against plain R-PAL, VerifiQuant alone emits a number on 0 items and R-PAL alone on 22 (exact McNemar $p<10^{-6}$). Against R-PAL$^{+}$ the counts are 3 and 5 ($p{=}.73$), and against CoT 1 and 7 ($p{=}.07$). An unpaired Fisher test on the same rates gives the same reading ($p<10^{-5}$ and $p{=}.74$).
+Answer coverage is $\mathrm{AnsCov}(S)=\frac{1}{|\mathrm{AA}|}\sum_{i\in\mathrm{AA}} e_S(i)$ over the 34 items $\mathrm{AA}=\{i:\mathrm{GT}(i)=\text{A}\}$, and Match is the share of the 80 items on which a system's action equals $\mathrm{GT}(i)$, four-way or binary as above. Table~\ref{tab:v2ext} omits accuracy because source gold answers do not transfer after rewriting. Fresh golds constructed for the 34 answerable items serve only the diagnostic analysis above.
+
+\paragraph{What the human set tests.}
+Table~\ref{tab:app-human-exits} splits each system's handling by the panel's label. Most items VerifiQuant declines stop at N, so the low Human-FNAR of \S\ref{sec:v2rq4} comes mainly from the library boundary. Where VerifiQuant does select a contract, it asks for the missing input on 5 of 7 \textsc{request-info} items, while R-PAL$^{+}$ asks on all 7 and on 16 of the 20 overall. On the 10 \textsc{clarify} items VerifiQuant raises no hard clarification and asks three questions through M, while R-PAL$^{+}$ raises one. The set therefore supports the scope signal, not a claim that the input and ambiguity checks outperform a single prompt on natural phrasing. The scope signal is also a claim that can be wrong. Of the 24 \textsc{answer} items that stop at N, 7 have an applicable contract that retrieval ranked outside the top 4 (\S\ref{sec:v2rq4}).
+
+\begin{table}[t]
+\caption{Handling by human label on the 80 human-labeled queries.}
+\label{tab:app-human-exits}
+\small
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+Label (items) & N & M & F & E & I\textsubscript{H} & Num & Other \\
+\midrule
+\multicolumn{8}{@{}l}{\emph{VerifiQuant}} \\
+\textsc{answer} (34) & 24 & 1 & 1 & 1 & 0 & 7 & 0 \\
+\textsc{request-info} (20) & 13 & 1 & 5 & 0 & 0 & 1 & 0 \\
+\textsc{clarify} (10) & 4 & 3 & 1 & 0 & 0 & 2 & 0 \\
+\textsc{out-of-scope} (16) & 11 & 1 & 1 & 2 & 0 & 1 & 0 \\
+\midrule
+\multicolumn{8}{@{}l}{\emph{R-PAL$^{+}$}} \\
+\textsc{answer} (34) & 9 & 0 & 0 & 0 & 0 & 22 & 3 \\
+\textsc{request-info} (20) & 4 & 0 & 16 & 0 & 0 & 0 & 0 \\
+\textsc{clarify} (10) & 3 & 2 & 0 & 0 & 1 & 4 & 0 \\
+\textsc{out-of-scope} (16) & 11 & 0 & 1 & 0 & 1 & 2 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Num counts emitted numbers, including those with an I\textsubscript{SOFT} warning, and Other counts R-PAL$^{+}$ decisions with no number and no gate label, such as a program that failed to run.
+
+\paragraph{Ethical considerations.}
+The items are synthetic and contain no personal information, and only labels and rationales about each question were collected. Participation was voluntary, annotators are anonymized as \textit{Annotator}~1--5, and consultation with our institution determined that ethics-committee review was not required.
+
+\paragraph{Released artifacts.}
+We release the 250-card contract library, the staged prompts that build it, and the 80-trap set in the repository of \S\ref{sec:v2method}. The human evaluation ships with its 80 queries and provenance, the five per-annotator label files, the frozen majority ground truth, and the agreement report. Scoring and aggregation scripts come with an audit trail that records the scoring conventions and when labels were frozen relative to each system run.
+
+
+\section{Bounded-repair verifier}\label{app:repair}
+Table~\ref{tab:repairbench} breaks the 906 mutants of \S\ref{sec:v2method} down by mutation class. Gen.\ counts generated mutants, Eq.\ the arithmetically equivalent ones that are excluded, Rej./non-eq.\ the rejected share of the rest, and FA the false accepts. The 20 false accepts concentrate in conditional transforms whose guard branch the five sampled bindings did not exercise, including 10 identity mutants.
+
+\begin{table}[t]
+\caption{Bounded-repair verifier by mutation class.}
+\label{tab:repairbench}
+\centering
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Mutation class & Gen. & Eq. & Rej./non-eq. & FA \\
+\midrule
+function-call injection & 179 & 0 & 179/179 (100\%) & 0 \\
+oversized AST & 179 & 0 & 179/179 (100\%) & 0 \\
+operator swap & 171 & 8 & 159/163 (97.5\%) & 4 \\
+coefficient perturbation & 164 & 9 & 152/155 (98.1\%) & 3 \\
+variable swap & 34 & 2 & 29/32 (90.6\%) & 3 \\
+identity (no-op) & 179 & 8 & 161/171 (94.2\%) & 10 \\
+\midrule
+Total & 906 & 27 & \textbf{859/879 (97.7\%)} & 20 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Regulatory context}\label{app:regulatory}
+This appendix expands the design consideration stated in the introduction.
+The major supervisory frameworks do not yet say how an LLM inside a numeric financial workflow should be governed.
+In April 2026 the U.S. banking agencies replaced SR~11-7 with SR~26-2 and placed generative and agentic AI outside its scope, leaving each institution to determine appropriate controls \cite{fed2026sr262}.
+The PRA's model-risk principles are technology-neutral and contain no provision specific to generative models \cite{pra2023ss123}.
+The EU AI Act regulates providers of general-purpose models and high-risk uses such as creditworthiness assessment, not an LLM embedded in a financial workflow as such \cite{euaiact2024}.
+We therefore work in the opposite direction and treat the requirements these frameworks share as design targets: declare the scope of use (C1), validate inputs (C2), disclose ambiguity (C3), accept only verifiable changes (C4), keep a traceable record (C5), and hand control to a person when the system cannot resolve a question (C6) \cite{finra2020ai}.
+Each mechanism of VerifiQuant answers one of these targets, and the badges in Figure~\ref{fig:v2pipeline} mark which. We do not claim regulatory compliance.
+
+\section{What each evaluation is for}\label{app:evals}
+The $1\%$ tolerance of \S\ref{sec:v2baselines} is a general-purpose threshold rather than the stricter convention the benchmark applies to its own leaderboard.
+
+\paragraph{Self-consistency reference point.} Sweeping a self-consistency threshold (five samples, vote share as the score) over the 250 clean questions moves coverage only from \scCovOpen{} to \scCovTight{} and SWR from \scSWRopen{} to \scSWRtight{}, because \scUnanimous{} of the 250 are already unanimous and the score has little resolution left to spend. That reference point carries no retrieval and is not a conformal procedure.
+
+\paragraph{Out-of-library split.} The out-of-library comparison of \S\ref{sec:v2rq3} is matched in the same way as the clean set. Both systems run the same backbone on the same 199 questions with the same question and context, and both retrieve top-4 from the \emph{same} 50-family library, so the baseline is not given a larger library or a different prompt. Because the split is predetermined by formula family rather than difficulty, both systems receive the same unchanged questions. They differ in what follows retrieval: VerifiQuant runs the funnel and the selected contract's code, whereas R-PAL writes its own program with the retrieved contracts as context.
+
+Each evaluation of \S\ref{sec:v2design} answers a different question (Table~\ref{tab:evals}). The two in-library sets test the checks themselves. The out-of-library split and the library-agnostic human set test only the scope signal. The repair mutants of \S\ref{sec:v2method} test the repair verifier.
+
+\begin{table}[t]
+\caption{What each evaluation is for.}
+\label{tab:evals}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.27\linewidth}>{\raggedright\arraybackslash}p{0.21\linewidth}>{\raggedright\arraybackslash}p{0.43\linewidth}@{}}
+\toprule
+Evaluation & Library status & What it measures \\
+\midrule
+Clean set (250) & in-library & cost of the checks in coverage and accuracy \\
+Traps (80) & in-library & whether checks stop inputs that admit no number \\
+Coverage sweep (5 sizes) & ID and OOD & whether abstention tracks library membership \\
+OOD split (199) & out-of-library & price of the boundary against R-PAL \\
+Human set (80) & library-agnostic & the same question under human-defined labels \\
+Repair mutants (906) & in-library & whether the repair verifier accepts wrong patches \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Library-coverage sweep}\label{app:sweep}
+Figure~\ref{fig:v2libsweep} plots the sweep of \S\ref{sec:v2rq3}: abstention, accuracy, and silent-wrong rate for in-library and out-of-library questions at each library size, with the selectivity gap between the two abstention rates.
+
+\begin{figure}[t]
+\centering
+%% Sweep source: results/libsweep_top4 (top-4 rerun, 2026-10-15). July top-3: libsweep/.
+%% scripts/plot_libsweep.py --sweep-dir results/libsweep_top4 --suffix _top4_compact --compact
+\includegraphics[width=0.86\linewidth]{figures/libsweep_250q_top4_compact.png}
+\vspace{-2mm}
+\caption{In-library and out-of-library behavior of autonomous VerifiQuant ($K{=}1$) on the 250 clean questions as contract-library coverage increases.}
+\Description{A line chart compares abstention, accuracy, and silent-wrong behavior for in-library and out-of-library questions as the contract library grows.}
+\label{fig:v2libsweep}
+\end{figure}
+
+%% Flush every deferred float here. Without it the single-column tables queued behind the
+%% full-width Table A1 were silently dropped at the end of the document (and a blank page appeared).
+\clearpage
+
+\section{Two illustrative traps}\label{app:cases}
+\paragraph{A corrupted price.}
+In trap E-test-1080 of the 80-trap set, a weekly price rate-of-change question keeps its closing price of \$165, while the opening price, originally \$150, is set to \$2.5. The question still reads as routine, but the stock now appears to gain $6{,}500\%$ in a week. Plain R-PAL reports $6{,}500\%$ in its run, and so do all three runs of R-PAL$^{+}$ and all three runs of Staged. Staged+Spec stops at its boundary stage in all three runs, because it sees the contract's declared check. VerifiQuant stops at E in all three runs, where the contract's \texttt{price\_coherence\_extreme\_change} check fires on the bound values. The case shows the pattern of Appendix~\ref{app:staged} in one item: staging alone does not catch the violation, and the declared check does, whether a model judges it or code executes it.
+
+\paragraph{An out-of-scope ask in a pilot set.}
+Before the 80-trap set, we ran a 50-trap pilot built with the same operators. In one N trap, a question about the total throughput time of a production process was replaced by a request to price the scenario under a Heston stochastic-volatility model. Plain R-PAL ignored the request and computed the throughput time, 21.5 hours, in two of its three runs, a clean number for a question nobody asked. R-PAL$^{+}$ intercepted the request in all three runs. The pilot is not part of any reported number.
+
+%% Prompts, one column, generated by scripts/export_prompts_appendix.py (do not edit by hand).
+\input{appendix_prompts}

@@ -1,0 +1,29 @@
+{
+  "baseline": "cot_single_shot_flash",
+  "ran_at": "2026-07-12T09:44:06.039472",
+  "success": true,
+  "elapsed_seconds": 1581.5,
+  "command": [
+    "python3",
+    "preprocessing/run_cot_self_improve_pipeline.py",
+    "--input",
+    "results/paper_v2_250/questions_250.jsonl",
+    "--output",
+    "results/paper_v2_250/results/cot_single_shot_flash/output.jsonl",
+    "--summary-output",
+    "results/paper_v2_250/results/cot_single_shot_flash/summary.json",
+    "--max-turns",
+    "1",
+    "--cot-model",
+    "gemini-2.5-flash",
+    "--oracle-model",
+    "gemini-2.5-flash"
+  ],
+  "params": {
+    "type": "cot",
+    "cot_model": "gemini-2.5-flash",
+    "oracle_model": "gemini-2.5-flash",
+    "max_turns": 1,
+    "description": "CoT single-shot Flash"
+  }
+}

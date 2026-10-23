@@ -1,0 +1,467 @@
+{
+  "e12_pro_backbone": {
+    "vq_pro": {
+      "rows_per_run": [
+        80,
+        80,
+        80
+      ],
+      "api_error_rows_per_run": [
+        0,
+        0,
+        0
+      ],
+      "fnar_per_run": [
+        0.125,
+        0.0875,
+        0.1
+      ],
+      "fnar_mean": 0.1042,
+      "diag_acc_mean": 0.75,
+      "action_acc_mean": 0.7375,
+      "per_operator_fnar": {
+        "F": 0.1,
+        "E": 0.1333,
+        "I": 0.1333,
+        "N": 0.05
+      },
+      "i_split_fnar": {
+        "I_HARD": 0.1667,
+        "I_SOFT": 0.119
+      }
+    },
+    "rpal_plus_pro": {
+      "rows_per_run": [
+        80,
+        80,
+        80
+      ],
+      "api_error_rows_per_run": [
+        0,
+        0,
+        0
+      ],
+      "fnar_per_run": [
+        0.25,
+        0.2125,
+        0.2
+      ],
+      "fnar_mean": 0.2208,
+      "diag_acc_mean": 0.6667,
+      "action_acc_mean": 0.425,
+      "per_operator_fnar": {
+        "F": 0.0,
+        "E": 0.2,
+        "I": 0.6833,
+        "N": 0.0
+      },
+      "i_split_fnar": {
+        "I_HARD": 0.3889,
+        "I_SOFT": 0.8095
+      }
+    },
+    "gap_rpal_plus_pro_minus_vq_pro": {
+      "point": 0.1167,
+      "ci95": [
+        0.0165,
+        0.2152
+      ],
+      "clusters": 52
+    },
+    "flash_reference": {
+      "vq_top4_fnar": 0.1042,
+      "rpal_plus_fnar": 0.275,
+      "gap": {
+        "point": 0.1708,
+        "ci95_base_clustered": [
+          0.0684,
+          0.2698
+        ]
+      }
+    }
+  },
+  "e6_scripted_user": {
+    "vq": {
+      "runs": 3,
+      "missing_rows": [
+        0,
+        0,
+        0
+      ],
+      "all_26": {
+        "number_at_turn1": {
+          "per_run": [
+            3,
+            3,
+            4
+          ],
+          "mean_rate": 0.1282
+        },
+        "withheld": {
+          "per_run": [
+            23,
+            23,
+            22
+          ],
+          "mean_rate": 0.8718
+        },
+        "named": {
+          "per_run": [
+            22,
+            21,
+            20
+          ],
+          "mean_rate": 0.8077
+        },
+        "recovered_strict": {
+          "per_run": [
+            20,
+            19,
+            18
+          ],
+          "mean_rate": 0.7308
+        },
+        "recovered_lenient": {
+          "per_run": [
+            20,
+            19,
+            18
+          ],
+          "mean_rate": 0.7308
+        },
+        "wrong_after_reply": {
+          "per_run": [
+            0,
+            0,
+            0
+          ],
+          "mean_rate": 0.0
+        },
+        "still_withheld": {
+          "per_run": [
+            3,
+            4,
+            4
+          ],
+          "mean_rate": 0.141
+        }
+      },
+      "F_20": {
+        "number_at_turn1": {
+          "per_run": [
+            2,
+            2,
+            2
+          ],
+          "mean_rate": 0.1
+        },
+        "withheld": {
+          "per_run": [
+            18,
+            18,
+            18
+          ],
+          "mean_rate": 0.9
+        },
+        "named": {
+          "per_run": [
+            17,
+            17,
+            17
+          ],
+          "mean_rate": 0.85
+        },
+        "recovered_strict": {
+          "per_run": [
+            16,
+            16,
+            16
+          ],
+          "mean_rate": 0.8
+        },
+        "recovered_lenient": {
+          "per_run": [
+            16,
+            16,
+            16
+          ],
+          "mean_rate": 0.8
+        },
+        "wrong_after_reply": {
+          "per_run": [
+            0,
+            0,
+            0
+          ],
+          "mean_rate": 0.0
+        },
+        "still_withheld": {
+          "per_run": [
+            2,
+            2,
+            2
+          ],
+          "mean_rate": 0.1
+        }
+      },
+      "I_HARD_6": {
+        "number_at_turn1": {
+          "per_run": [
+            1,
+            1,
+            2
+          ],
+          "mean_rate": 0.2222
+        },
+        "withheld": {
+          "per_run": [
+            5,
+            5,
+            4
+          ],
+          "mean_rate": 0.7778
+        },
+        "named": {
+          "per_run": [
+            5,
+            4,
+            3
+          ],
+          "mean_rate": 0.6667
+        },
+        "recovered_strict": {
+          "per_run": [
+            4,
+            3,
+            2
+          ],
+          "mean_rate": 0.5
+        },
+        "recovered_lenient": {
+          "per_run": [
+            4,
+            3,
+            2
+          ],
+          "mean_rate": 0.5
+        },
+        "wrong_after_reply": {
+          "per_run": [
+            0,
+            0,
+            0
+          ],
+          "mean_rate": 0.0
+        },
+        "still_withheld": {
+          "per_run": [
+            1,
+            2,
+            2
+          ],
+          "mean_rate": 0.2778
+        }
+      }
+    },
+    "rpal_plus": {
+      "runs": 3,
+      "missing_rows": [
+        0,
+        0,
+        0
+      ],
+      "all_26": {
+        "number_at_turn1": {
+          "per_run": [
+            3,
+            3,
+            3
+          ],
+          "mean_rate": 0.1154
+        },
+        "withheld": {
+          "per_run": [
+            23,
+            23,
+            23
+          ],
+          "mean_rate": 0.8846
+        },
+        "named": {
+          "per_run": [
+            18,
+            19,
+            20
+          ],
+          "mean_rate": 0.7308
+        },
+        "recovered_strict": {
+          "per_run": [
+            18,
+            17,
+            19
+          ],
+          "mean_rate": 0.6923
+        },
+        "recovered_lenient": {
+          "per_run": [
+            22,
+            20,
+            21
+          ],
+          "mean_rate": 0.8077
+        },
+        "wrong_after_reply": {
+          "per_run": [
+            0,
+            0,
+            0
+          ],
+          "mean_rate": 0.0
+        },
+        "still_withheld": {
+          "per_run": [
+            1,
+            3,
+            2
+          ],
+          "mean_rate": 0.0769
+        }
+      },
+      "F_20": {
+        "number_at_turn1": {
+          "per_run": [
+            0,
+            0,
+            0
+          ],
+          "mean_rate": 0.0
+        },
+        "withheld": {
+          "per_run": [
+            20,
+            20,
+            20
+          ],
+          "mean_rate": 1.0
+        },
+        "named": {
+          "per_run": [
+            16,
+            17,
+            18
+          ],
+          "mean_rate": 0.85
+        },
+        "recovered_strict": {
+          "per_run": [
+            16,
+            15,
+            17
+          ],
+          "mean_rate": 0.8
+        },
+        "recovered_lenient": {
+          "per_run": [
+            20,
+            18,
+            19
+          ],
+          "mean_rate": 0.95
+        },
+        "wrong_after_reply": {
+          "per_run": [
+            0,
+            0,
+            0
+          ],
+          "mean_rate": 0.0
+        },
+        "still_withheld": {
+          "per_run": [
+            0,
+            2,
+            1
+          ],
+          "mean_rate": 0.05
+        }
+      },
+      "I_HARD_6": {
+        "number_at_turn1": {
+          "per_run": [
+            3,
+            3,
+            3
+          ],
+          "mean_rate": 0.5
+        },
+        "withheld": {
+          "per_run": [
+            3,
+            3,
+            3
+          ],
+          "mean_rate": 0.5
+        },
+        "named": {
+          "per_run": [
+            2,
+            2,
+            2
+          ],
+          "mean_rate": 0.3333
+        },
+        "recovered_strict": {
+          "per_run": [
+            2,
+            2,
+            2
+          ],
+          "mean_rate": 0.3333
+        },
+        "recovered_lenient": {
+          "per_run": [
+            2,
+            2,
+            2
+          ],
+          "mean_rate": 0.3333
+        },
+        "wrong_after_reply": {
+          "per_run": [
+            0,
+            0,
+            0
+          ],
+          "mean_rate": 0.0
+        },
+        "still_withheld": {
+          "per_run": [
+            1,
+            1,
+            1
+          ],
+          "mean_rate": 0.1667
+        }
+      }
+    },
+    "gap_vq_minus_rpal_plus": {
+      "recovered_strict": {
+        "point": 0.0385,
+        "ci95": [
+          -0.1667,
+          0.2436
+        ],
+        "clusters": 26
+      },
+      "recovered_lenient": {
+        "point": -0.0769,
+        "ci95": [
+          -0.2949,
+          0.1282
+        ],
+        "clusters": 26
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "tag": "r4_full",
+  "model": "gemini-2.5-flash",
+  "lib_db": "results/libsweep/lib_100/cards.db",
+  "strict_binding_flag": "",
+  "n": 250,
+  "correct": 175,
+  "silent_wrong": 33,
+  "abstain": 42,
+  "near_miss": 23,
+  "strict_fired": 0,
+  "elapsed_s": 3048.7,
+  "ran_at": "2026-07-21T13:53:57"
+}

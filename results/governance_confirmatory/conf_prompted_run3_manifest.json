@@ -1,0 +1,30 @@
+{
+  "protocol": "governance_matched_rpal_v1",
+  "mode": "prompted",
+  "created_at": "2026-07-29T21:37:37",
+  "git_commit": "a9520dd7cfac543d90afb129d018dc7f92f54cab",
+  "model": "gemini-2.5-flash",
+  "top_k": 4,
+  "dataset": {
+    "path": "results/governance_confirmatory/trap_set.jsonl",
+    "sha256": "934d2482342abda9930f85688e22a812354418580d8f567c2f6166a8d475926d"
+  },
+  "card_db": {
+    "path": "results/paper_v2_250/fic/cards.db",
+    "sha256": "97e3f963b2809e23751d155af3c652e4ca7e8165eb1d0ea1cd05da3658438922"
+  },
+  "function_library": {
+    "path": "FinanceReasoning/data/functions/functions-article-all.json",
+    "sha256": "1c1d11ef6173208da0014b6bbb71cc8e2aa2683da9ba1ada4bf9e593fb4c7293",
+    "size": 3133
+  },
+  "retrieval_query": "question + newline + context",
+  "prompt_template": "You are a financial reasoning assistant using retrieved reference functions.\n\nBefore calculating, decide whether the request is safe and sufficiently specified.\nUse this taxonomy and priority order:\n- M: the user's intent or requested metric is unclear; ask what they want to evaluate.\n- N: the requested calculation is unsupported or the references are only superficially related; refuse.\n- F: a required numeric/input field is absent or redacted; ask for the exact missing field.\n- E: a provided value violates a financial, mathematical, or domain boundary; identify it and do not calculate.\n- I_HARD: an unresolved unit, direction, timing, basis, or convention can change the answer; clarify before calculating.\n- I_SOFT: the calculation can proceed, but an interpretation assumption must be disclosed as a warning.\n- READY: the request has one clear intent, supported logic, complete inputs, admissible values, and no material ambiguity.\n\nThe retrieved candidates are not guaranteed to be applicable or safe. Do not force-fit one.\nFor READY or I_SOFT, write a self-contained Python solve() function. Only `math` may be imported.\nFor M/N/F/E/I_HARD, do not provide executable code or a numeric answer.\n\nReturn ONLY one valid JSON object with exactly these fields:\n{{\n  \"decision\": \"execute|warn|clarify|refuse\",\n  \"diagnostic\": \"READY|M|N|F|E|I_HARD|I_SOFT\",\n  \"reason\": \"concise evidence-grounded explanation\",\n  \"action_targets\": [\"exact missing field, invalid field/rule, or ambiguity target\"],\n  \"clarification_question\": \"one actionable question or empty string\",\n  \"warning\": \"explicit assumption/warning for I_SOFT or empty string\",\n  \"code\": \"self-contained Python code as a JSON string, or empty string\"\n}}\n\nQuestion:\n{question}\n\nContext:\n{context}\n\nRetrieved reference functions (ranked):\n{references}\n",
+  "scoring": "raw artifacts only; offline scorer required",
+  "forbidden_prompt_inputs": [
+    "ground_truth",
+    "python_solution",
+    "operator",
+    "expected_diagnostic"
+  ]
+}

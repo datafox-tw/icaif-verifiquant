@@ -1,0 +1,13 @@
+{
+  "protocol": "governance_matched_rpal_v1",
+  "run_name": "gov_run3_prompted_traps",
+  "mode": "prompted",
+  "n": 50,
+  "complete": true,
+  "raw_outcomes": {
+    "governance_intercept": 27,
+    "numeric": 23
+  },
+  "elapsed_s": 334.5,
+  "note": "Not a scored result; use scripts/analyze_governance_eval.py"
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "run": "vq_flash",
+    "kind": "vq",
+    "n_rows": 250,
+    "unmatched_ids": [],
+    "medium": {
+      "n": 180,
+      "correct": 171,
+      "silent_wrong": 5,
+      "abstain": 4,
+      "coverage": 0.9778,
+      "selective_accuracy": 0.9716,
+      "swr": 0.0278,
+      "silent_wrong_ids": [
+        "test-1771",
+        "test-1004",
+        "test-1702",
+        "test-1777",
+        "test-1063"
+      ],
+      "abstain_ids": [
+        "test-1088",
+        "test-1980",
+        "test-1264",
+        "test-1950"
+      ]
+    },
+    "hard": {
+      "n": 70,
+      "correct": 63,
+      "silent_wrong": 3,
+      "abstain": 4,
+      "coverage": 0.9429,
+      "selective_accuracy": 0.9545,
+      "swr": 0.0429,
+      "silent_wrong_ids": [
+        "test-2137",
+        "test-2009",
+        "test-2104"
+      ],
+      "abstain_ids": [
+        "test-2188",
+        "test-2081",
+        "test-2011",
+        "test-2125"
+      ]
+    },
+    "all": {
+      "n": 250,
+      "correct": 234,
+      "silent_wrong": 8,
+      "abstain": 8,
+      "coverage": 0.968,
+      "selective_accuracy": 0.9669,
+      "swr": 0.032,
+      "silent_wrong_ids": [
+        "test-1771",
+        "test-1004",
+        "test-1702",
+        "test-2137",
+        "test-2009",
+        "test-1777",
+        "test-2104",
+        "test-1063"
+      ],
+      "abstain_ids": [
+        "test-2188",
+        "test-1088",
+        "test-1980",
+        "test-1264",
+        "test-2081",
+        "test-2011",
+        "test-2125",
+        "test-1950"
+      ]
+    }
+  }
+]

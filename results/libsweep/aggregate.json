@@ -1,0 +1,64 @@
+{
+  "points": [
+    {
+      "frac": 10,
+      "n_id": 25,
+      "n_ood": 225,
+      "complete": true,
+      "id_acc": 0.84,
+      "id_abstain": 0.08,
+      "id_sw": 0.08,
+      "ood_abstain": 0.9155555555555556,
+      "ood_sw": 0.013333333333333334,
+      "selectivity_gap": 0.8355555555555556
+    },
+    {
+      "frac": 25,
+      "n_id": 62,
+      "n_ood": 188,
+      "complete": true,
+      "id_acc": 0.8387096774193549,
+      "id_abstain": 0.11290322580645161,
+      "id_sw": 0.04838709677419355,
+      "ood_abstain": 0.8936170212765957,
+      "ood_sw": 0.02127659574468085,
+      "selectivity_gap": 0.7807137954701441
+    },
+    {
+      "frac": 50,
+      "n_id": 125,
+      "n_ood": 125,
+      "complete": true,
+      "id_acc": 0.816,
+      "id_abstain": 0.12,
+      "id_sw": 0.064,
+      "ood_abstain": 0.816,
+      "ood_sw": 0.024,
+      "selectivity_gap": 0.696
+    },
+    {
+      "frac": 75,
+      "n_id": 188,
+      "n_ood": 62,
+      "complete": true,
+      "id_acc": 0.824468085106383,
+      "id_abstain": 0.13297872340425532,
+      "id_sw": 0.0425531914893617,
+      "ood_abstain": 0.8064516129032258,
+      "ood_sw": 0.04838709677419355,
+      "selectivity_gap": 0.6734728894989704
+    },
+    {
+      "frac": 100,
+      "n_id": 250,
+      "n_ood": 0,
+      "complete": true,
+      "id_acc": 0.816,
+      "id_abstain": 0.144,
+      "id_sw": 0.04,
+      "ood_abstain": null,
+      "ood_sw": null,
+      "selectivity_gap": null
+    }
+  ]
+}

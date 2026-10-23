@@ -1,0 +1,38 @@
+{
+  "ran_at": "20260720_145158",
+  "elapsed_seconds": 1888.4,
+  "config": {
+    "lib_db": "results/libsweep/lib_25/cards.db",
+    "questions": "results/paper_v2_250/questions_250.jsonl",
+    "split_rule": "family (function_id) present in library cards.db",
+    "limit_ood": 999,
+    "limit_id": 999,
+    "seed": 0,
+    "top_k": 3,
+    "model": "gemini-2.5-flash",
+    "k_rounds": 1,
+    "total_ood_available": 188,
+    "total_id_available": 62
+  },
+  "VQ": {
+    "OOD": {
+      "abstain": 168,
+      "correct": 16,
+      "silent_wrong": 4,
+      "n": 188,
+      "abstain_rate": 0.8936170212765957,
+      "silent_wrong_rate": 0.02127659574468085,
+      "force_fit_correct_rate": 0.0851063829787234
+    },
+    "ID": {
+      "abstain": 7,
+      "correct": 44,
+      "silent_wrong": 11,
+      "n": 62,
+      "accuracy": 0.7096774193548387,
+      "silent_wrong_rate": 0.1774193548387097,
+      "abstain_rate": 0.11290322580645161
+    }
+  },
+  "CoT_baseline": null
+}

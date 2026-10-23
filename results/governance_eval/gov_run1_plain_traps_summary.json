@@ -1,0 +1,13 @@
+{
+  "protocol": "governance_matched_rpal_v1",
+  "run_name": "gov_run1_plain_traps",
+  "mode": "plain",
+  "n": 50,
+  "complete": true,
+  "raw_outcomes": {
+    "declined": 16,
+    "numeric": 34
+  },
+  "elapsed_s": 393.3,
+  "note": "Not a scored result; use scripts/analyze_governance_eval.py"
+}

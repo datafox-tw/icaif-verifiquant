@@ -1,0 +1,15 @@
+{
+  "protocol": "governance_matched_rpal_v1",
+  "run_name": "conf_plain_run1",
+  "mode": "plain",
+  "n": 80,
+  "complete": true,
+  "raw_outcomes": {
+    "numeric": 39,
+    "declined": 37,
+    "no_code": 3,
+    "denylist": 1
+  },
+  "elapsed_s": 756.4,
+  "note": "Not a scored result; use scripts/analyze_governance_eval.py"
+}

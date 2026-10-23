@@ -1,0 +1,15 @@
+# The package (contract store, card build, diagnostic funnel)
+google-genai>=1.51
+SQLAlchemy>=2.0
+PyYAML>=6.0
+
+# Offline analysis, the paper-number audit and the figures
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+
+# Only for some runners: scripts/build_messy_query_pilot.py (GPT rewrite of the human set),
+# scripts/run_paper_experiments.py (.env loading) and scripts/api_guard.py (retry on transport errors)
+openai>=1.0
+python-dotenv>=1.0
+httpx>=0.27

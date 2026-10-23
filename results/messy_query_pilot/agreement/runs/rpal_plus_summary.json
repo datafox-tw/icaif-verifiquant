@@ -1,0 +1,16 @@
+{
+  "protocol": "governance_matched_rpal_v1",
+  "run_name": "rpal_plus",
+  "mode": "prompted",
+  "n": 80,
+  "complete": true,
+  "raw_outcomes": {
+    "numeric": 28,
+    "governance_intercept": 48,
+    "exec_fail": 3,
+    "assessment_parse_fail": 1
+  },
+  "elapsed_s": 717.5,
+  "note": "Not a scored result; use scripts/analyze_governance_eval.py",
+  "trim_note": "Recounted after mq-81/mq-82 (two off-design items outside the stratified v3 authoring set) were removed; see scripts/trim_messy_set_to_80.py. Raw 82-item run log retained under _pre_trim_82q/."
+}

@@ -1,0 +1,574 @@
+{
+  "label": "VQ_Flash_V3 (K=3 @ round1)",
+  "total_traps": 50,
+  "caught": 37,
+  "abstain_informal": 0,
+  "silent_wrong": 13,
+  "missing": 0,
+  "trap_swr": 0.26,
+  "structured_catch_rate": 0.74,
+  "intercept_rate": 0.74,
+  "per_operator": {
+    "F": {
+      "caught": 10,
+      "abstain_informal": 0,
+      "silent_wrong": 0,
+      "total": 10,
+      "trap_swr": 0.0
+    },
+    "E": {
+      "caught": 7,
+      "abstain_informal": 0,
+      "silent_wrong": 3,
+      "total": 10,
+      "trap_swr": 0.3
+    },
+    "I": {
+      "caught": 9,
+      "abstain_informal": 0,
+      "silent_wrong": 1,
+      "total": 10,
+      "trap_swr": 0.1
+    },
+    "N": {
+      "caught": 10,
+      "abstain_informal": 0,
+      "silent_wrong": 0,
+      "total": 10,
+      "trap_swr": 0.0
+    },
+    "M": {
+      "caught": 1,
+      "abstain_informal": 0,
+      "silent_wrong": 9,
+      "total": 10,
+      "trap_swr": 0.9
+    }
+  },
+  "confusion_matrix": {
+    "F": {
+      "F": 10
+    },
+    "E": {
+      "E": 6,
+      "I_SOFT_warn": 2,
+      "success": 1,
+      "F": 1
+    },
+    "I": {
+      "success": 1,
+      "I_SOFT_warn": 9
+    },
+    "N": {
+      "N": 8,
+      "M": 2
+    },
+    "M": {
+      "I_SOFT_warn": 8,
+      "I_HARD": 1,
+      "success": 1
+    }
+  },
+  "details": [
+    {
+      "trap_id": "F-test-1006",
+      "operator": "F",
+      "expected_diagnostic": "F",
+      "expected_behavior": "refuse_or_ask",
+      "got_status": "error",
+      "got_diagnostic": "F",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "F-test-1008",
+      "operator": "F",
+      "expected_diagnostic": "F",
+      "expected_behavior": "refuse_or_ask",
+      "got_status": "error",
+      "got_diagnostic": "F",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "F-test-1022",
+      "operator": "F",
+      "expected_diagnostic": "F",
+      "expected_behavior": "refuse_or_ask",
+      "got_status": "error",
+      "got_diagnostic": "F",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "F-test-1023",
+      "operator": "F",
+      "expected_diagnostic": "F",
+      "expected_behavior": "refuse_or_ask",
+      "got_status": "error",
+      "got_diagnostic": "F",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "F-test-1026",
+      "operator": "F",
+      "expected_diagnostic": "F",
+      "expected_behavior": "refuse_or_ask",
+      "got_status": "error",
+      "got_diagnostic": "F",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "F-test-1028",
+      "operator": "F",
+      "expected_diagnostic": "F",
+      "expected_behavior": "refuse_or_ask",
+      "got_status": "error",
+      "got_diagnostic": "F",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "F-test-1035",
+      "operator": "F",
+      "expected_diagnostic": "F",
+      "expected_behavior": "refuse_or_ask",
+      "got_status": "error",
+      "got_diagnostic": "F",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "F-test-1057",
+      "operator": "F",
+      "expected_diagnostic": "F",
+      "expected_behavior": "refuse_or_ask",
+      "got_status": "error",
+      "got_diagnostic": "F",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "F-test-1062",
+      "operator": "F",
+      "expected_diagnostic": "F",
+      "expected_behavior": "refuse_or_ask",
+      "got_status": "error",
+      "got_diagnostic": "F",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "F-test-1070",
+      "operator": "F",
+      "expected_diagnostic": "F",
+      "expected_behavior": "refuse_or_ask",
+      "got_status": "error",
+      "got_diagnostic": "F",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "E-test-1008",
+      "operator": "E",
+      "expected_diagnostic": "E",
+      "expected_behavior": "abstain_or_repair",
+      "got_status": "alert",
+      "got_diagnostic": "E",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "E-test-1022",
+      "operator": "E",
+      "expected_diagnostic": "E",
+      "expected_behavior": "abstain_or_repair",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 504.0,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "E-test-1026",
+      "operator": "E",
+      "expected_diagnostic": "E",
+      "expected_behavior": "abstain_or_repair",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 0.06,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "E-test-1028",
+      "operator": "E",
+      "expected_diagnostic": "E",
+      "expected_behavior": "abstain_or_repair",
+      "got_status": "alert",
+      "got_diagnostic": "E",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "E-test-1035",
+      "operator": "E",
+      "expected_diagnostic": "E",
+      "expected_behavior": "abstain_or_repair",
+      "got_status": "alert",
+      "got_diagnostic": "E",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "E-test-1062",
+      "operator": "E",
+      "expected_diagnostic": "E",
+      "expected_behavior": "abstain_or_repair",
+      "got_status": "alert",
+      "got_diagnostic": "E",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "E-test-1070",
+      "operator": "E",
+      "expected_diagnostic": "E",
+      "expected_behavior": "abstain_or_repair",
+      "got_status": "alert",
+      "got_diagnostic": "E",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "E-test-1108",
+      "operator": "E",
+      "expected_diagnostic": "E",
+      "expected_behavior": "abstain_or_repair",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 2236.06797749979,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "E-test-1237",
+      "operator": "E",
+      "expected_diagnostic": "E",
+      "expected_behavior": "abstain_or_repair",
+      "got_status": "error",
+      "got_diagnostic": "F",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "E-test-1427",
+      "operator": "E",
+      "expected_diagnostic": "E",
+      "expected_behavior": "abstain_or_repair",
+      "got_status": "alert",
+      "got_diagnostic": "E",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "I-test-1006",
+      "operator": "I",
+      "expected_diagnostic": "I_HARD",
+      "expected_behavior": "clarify",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 21.5,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "I-test-1008",
+      "operator": "I",
+      "expected_diagnostic": "I_SOFT",
+      "expected_behavior": "proceed_with_warning",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 88.46153846153845,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "I-test-1026",
+      "operator": "I",
+      "expected_diagnostic": "I_SOFT",
+      "expected_behavior": "proceed_with_warning",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 0.06,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "I-test-1057",
+      "operator": "I",
+      "expected_diagnostic": "I_SOFT",
+      "expected_behavior": "proceed_with_warning",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 0.25000000000000006,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "I-test-1062",
+      "operator": "I",
+      "expected_diagnostic": "I_SOFT",
+      "expected_behavior": "proceed_with_warning",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 25.0,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "I-test-1070",
+      "operator": "I",
+      "expected_diagnostic": "I_SOFT",
+      "expected_behavior": "proceed_with_warning",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 4.6,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "I-test-1427",
+      "operator": "I",
+      "expected_diagnostic": "I_SOFT",
+      "expected_behavior": "proceed_with_warning",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 0.40000000000000036,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "I-test-1442",
+      "operator": "I",
+      "expected_diagnostic": "I_SOFT",
+      "expected_behavior": "proceed_with_warning",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 0.2584989506418267,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "I-test-1443",
+      "operator": "I",
+      "expected_diagnostic": "I_SOFT",
+      "expected_behavior": "proceed_with_warning",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 0.1913578981670916,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "I-test-1446",
+      "operator": "I",
+      "expected_diagnostic": "I_SOFT",
+      "expected_behavior": "proceed_with_warning",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 0.08447177119769855,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "N-test-1006",
+      "operator": "N",
+      "expected_diagnostic": "N",
+      "expected_behavior": "graceful_refuse",
+      "got_status": "refusal",
+      "got_diagnostic": "N",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "N-test-1007",
+      "operator": "N",
+      "expected_diagnostic": "N",
+      "expected_behavior": "graceful_refuse",
+      "got_status": "refusal",
+      "got_diagnostic": "N",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "N-test-1008",
+      "operator": "N",
+      "expected_diagnostic": "N",
+      "expected_behavior": "graceful_refuse",
+      "got_status": "refusal",
+      "got_diagnostic": "N",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "N-test-1022",
+      "operator": "N",
+      "expected_diagnostic": "N",
+      "expected_behavior": "graceful_refuse",
+      "got_status": "refusal",
+      "got_diagnostic": "M",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "N-test-1023",
+      "operator": "N",
+      "expected_diagnostic": "N",
+      "expected_behavior": "graceful_refuse",
+      "got_status": "refusal",
+      "got_diagnostic": "N",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "N-test-1026",
+      "operator": "N",
+      "expected_diagnostic": "N",
+      "expected_behavior": "graceful_refuse",
+      "got_status": "refusal",
+      "got_diagnostic": "N",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "N-test-1028",
+      "operator": "N",
+      "expected_diagnostic": "N",
+      "expected_behavior": "graceful_refuse",
+      "got_status": "refusal",
+      "got_diagnostic": "N",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "N-test-1035",
+      "operator": "N",
+      "expected_diagnostic": "N",
+      "expected_behavior": "graceful_refuse",
+      "got_status": "refusal",
+      "got_diagnostic": "N",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "N-test-1057",
+      "operator": "N",
+      "expected_diagnostic": "N",
+      "expected_behavior": "graceful_refuse",
+      "got_status": "refusal",
+      "got_diagnostic": "M",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "N-test-1062",
+      "operator": "N",
+      "expected_diagnostic": "N",
+      "expected_behavior": "graceful_refuse",
+      "got_status": "refusal",
+      "got_diagnostic": "N",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "M-test-1006",
+      "operator": "M",
+      "expected_diagnostic": "M",
+      "expected_behavior": "ask_to_disambiguate",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 21.5,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "M-test-1007",
+      "operator": "M",
+      "expected_diagnostic": "M",
+      "expected_behavior": "ask_to_disambiguate",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 36.6,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "M-test-1008",
+      "operator": "M",
+      "expected_diagnostic": "M",
+      "expected_behavior": "ask_to_disambiguate",
+      "got_status": "needs_clarification",
+      "got_diagnostic": "I_HARD",
+      "got_answer": null,
+      "verdict": "caught"
+    },
+    {
+      "trap_id": "M-test-1022",
+      "operator": "M",
+      "expected_diagnostic": "M",
+      "expected_behavior": "ask_to_disambiguate",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 504.0,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "M-test-1023",
+      "operator": "M",
+      "expected_diagnostic": "M",
+      "expected_behavior": "ask_to_disambiguate",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 8500.0,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "M-test-1026",
+      "operator": "M",
+      "expected_diagnostic": "M",
+      "expected_behavior": "ask_to_disambiguate",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 0.06,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "M-test-1028",
+      "operator": "M",
+      "expected_diagnostic": "M",
+      "expected_behavior": "ask_to_disambiguate",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 2.272727272727273,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "M-test-1035",
+      "operator": "M",
+      "expected_diagnostic": "M",
+      "expected_behavior": "ask_to_disambiguate",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 76.19047619047619,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "M-test-1057",
+      "operator": "M",
+      "expected_diagnostic": "M",
+      "expected_behavior": "ask_to_disambiguate",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 0.25000000000000006,
+      "verdict": "silent_wrong"
+    },
+    {
+      "trap_id": "M-test-1062",
+      "operator": "M",
+      "expected_diagnostic": "M",
+      "expected_behavior": "ask_to_disambiguate",
+      "got_status": "success",
+      "got_diagnostic": "None",
+      "got_answer": 25.0,
+      "verdict": "silent_wrong"
+    }
+  ]
+}

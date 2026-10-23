@@ -1,0 +1,291 @@
+{
+  "protocol": "matched_retrieval_pal_v1_posthoc_audit_unified_vq_scorer",
+  "source_raw_file": "results/retrieval_pal_baseline/rpal_top4_gemini_25_flash.jsonl",
+  "raw_metrics": {
+    "n": 250,
+    "correct": 235,
+    "silent_wrong": 7,
+    "abstain": 8,
+    "accuracy": 0.94,
+    "swr": 0.028,
+    "coverage": 0.968,
+    "selective_accuracy": 0.9710743801652892,
+    "accuracy_wilson_95": [
+      0.9033771072831172,
+      0.9633055891608915
+    ],
+    "swr_wilson_95": [
+      0.013628058600839217,
+      0.05665777612286046
+    ]
+  },
+  "audited_metrics": {
+    "n": 250,
+    "correct": 242,
+    "silent_wrong": 6,
+    "abstain": 2,
+    "accuracy": 0.968,
+    "swr": 0.024,
+    "coverage": 0.992,
+    "selective_accuracy": 0.9758064516129032,
+    "accuracy_wilson_95": [
+      0.9381375971659135,
+      0.9836976345063503
+    ],
+    "swr_wilson_95": [
+      0.01104477730613677,
+      0.051362123813526464
+    ]
+  },
+  "by_tier": {
+    "hard": {
+      "n": 70,
+      "correct": 67,
+      "silent_wrong": 1,
+      "abstain": 2,
+      "accuracy": 0.9571428571428572,
+      "swr": 0.014285714285714285,
+      "coverage": 0.9714285714285714,
+      "selective_accuracy": 0.9852941176470589,
+      "accuracy_wilson_95": [
+        0.8814033125147246,
+        0.9853184589958887
+      ],
+      "swr_wilson_95": [
+        0.002526246457890312,
+        0.07658187131208327
+      ]
+    },
+    "medium": {
+      "n": 180,
+      "correct": 175,
+      "silent_wrong": 5,
+      "abstain": 0,
+      "accuracy": 0.9722222222222222,
+      "swr": 0.027777777777777776,
+      "coverage": 1.0,
+      "selective_accuracy": 0.9722222222222222,
+      "accuracy_wilson_95": [
+        0.936631929551566,
+        0.9880778779669105
+      ],
+      "swr_wilson_95": [
+        0.011922122033089549,
+        0.06336807044843389
+      ]
+    }
+  },
+  "by_retrieval": {
+    "hit": {
+      "n": 237,
+      "correct": 229,
+      "silent_wrong": 6,
+      "abstain": 2,
+      "accuracy": 0.9662447257383966,
+      "swr": 0.02531645569620253,
+      "coverage": 0.9915611814345991,
+      "selective_accuracy": 0.9744680851063829,
+      "accuracy_wilson_95": [
+        0.9348177988262938,
+        0.9827983005037386
+      ],
+      "swr_wilson_95": [
+        0.011653259711609514,
+        0.054122204771389036
+      ]
+    },
+    "miss": {
+      "n": 13,
+      "correct": 13,
+      "silent_wrong": 0,
+      "abstain": 0,
+      "accuracy": 1.0,
+      "swr": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "accuracy_wilson_95": [
+        0.7719046276458016,
+        0.9999999999999999
+      ],
+      "swr_wilson_95": [
+        0.0,
+        0.22809537235419838
+      ]
+    }
+  },
+  "retrieval": {
+    "hit": 237,
+    "miss": 13,
+    "recall_at_4": 0.948,
+    "rank_counts": {
+      "1": 191,
+      "2": 24,
+      "3": 16,
+      "4": 6
+    }
+  },
+  "audit_action_counts": {
+    "abstention_unchanged": 1,
+    "boolean_scorer_correction": 2,
+    "confirmed_ast_denial": 1,
+    "legacy_regex_false_positive_replayed": 6,
+    "rescored_unchanged": 239,
+    "unified_vq_scorer_correction": 1
+  },
+  "changed_cases": [
+    {
+      "case_id": "test-1117",
+      "audit_action": "legacy_regex_false_positive_replayed",
+      "raw_verdict": "abstain",
+      "audited_verdict": "correct",
+      "output": "1300000",
+      "gold": 1300000,
+      "deny_detail": ""
+    },
+    {
+      "case_id": "test-1894",
+      "audit_action": "legacy_regex_false_positive_replayed",
+      "raw_verdict": "abstain",
+      "audited_verdict": "correct",
+      "output": "24000",
+      "gold": 24000,
+      "deny_detail": ""
+    },
+    {
+      "case_id": "test-1442",
+      "audit_action": "legacy_regex_false_positive_replayed",
+      "raw_verdict": "abstain",
+      "audited_verdict": "correct",
+      "output": "25.85",
+      "gold": 25.85,
+      "deny_detail": ""
+    },
+    {
+      "case_id": "test-1014",
+      "audit_action": "legacy_regex_false_positive_replayed",
+      "raw_verdict": "abstain",
+      "audited_verdict": "correct",
+      "output": "0.4",
+      "gold": 0.4,
+      "deny_detail": ""
+    },
+    {
+      "case_id": "test-1842",
+      "audit_action": "boolean_scorer_correction",
+      "raw_verdict": "silent_wrong",
+      "audited_verdict": "correct",
+      "output": "True",
+      "gold": true,
+      "deny_detail": ""
+    },
+    {
+      "case_id": "test-1890",
+      "audit_action": "unified_vq_scorer_correction",
+      "raw_verdict": "correct",
+      "audited_verdict": "silent_wrong",
+      "output": "139000",
+      "gold": 138000,
+      "deny_detail": ""
+    },
+    {
+      "case_id": "test-1008",
+      "audit_action": "legacy_regex_false_positive_replayed",
+      "raw_verdict": "abstain",
+      "audited_verdict": "correct",
+      "output": "88.46",
+      "gold": 88.46,
+      "deny_detail": ""
+    },
+    {
+      "case_id": "test-1105",
+      "audit_action": "legacy_regex_false_positive_replayed",
+      "raw_verdict": "abstain",
+      "audited_verdict": "correct",
+      "output": "25.0",
+      "gold": 25.0,
+      "deny_detail": ""
+    },
+    {
+      "case_id": "test-2125",
+      "audit_action": "confirmed_ast_denial",
+      "raw_verdict": "abstain",
+      "audited_verdict": "abstain",
+      "output": null,
+      "gold": true,
+      "deny_detail": "forbidden_import_from:datetime"
+    },
+    {
+      "case_id": "test-2059",
+      "audit_action": "boolean_scorer_correction",
+      "raw_verdict": "silent_wrong",
+      "audited_verdict": "correct",
+      "output": "False",
+      "gold": false,
+      "deny_detail": ""
+    }
+  ],
+  "residual_silent_wrong": [
+    {
+      "case_id": "test-1490",
+      "level": "medium",
+      "output": "3.6",
+      "gold": 3.35,
+      "retrieval_hit_rank": 1,
+      "target_function_id": "article-678"
+    },
+    {
+      "case_id": "test-2021",
+      "level": "hard",
+      "output": "6.67",
+      "gold": 6.33,
+      "retrieval_hit_rank": 2,
+      "target_function_id": "article-1644"
+    },
+    {
+      "case_id": "test-1890",
+      "level": "medium",
+      "output": "139000",
+      "gold": 138000,
+      "retrieval_hit_rank": 1,
+      "target_function_id": "article-91"
+    },
+    {
+      "case_id": "test-1435",
+      "level": "medium",
+      "output": "1.1387",
+      "gold": 1.1614,
+      "retrieval_hit_rank": 1,
+      "target_function_id": "article-219"
+    },
+    {
+      "case_id": "test-1958",
+      "level": "medium",
+      "output": "4",
+      "gold": 5,
+      "retrieval_hit_rank": 1,
+      "target_function_id": "article-1733"
+    },
+    {
+      "case_id": "test-1577",
+      "level": "medium",
+      "output": "1.2409",
+      "gold": 1.2592,
+      "retrieval_hit_rank": 1,
+      "target_function_id": "article-450"
+    }
+  ],
+  "residual_abstain": [
+    {
+      "case_id": "test-2125",
+      "reason": "denylist",
+      "deny_detail": "forbidden_import_from:datetime",
+      "retrieval_hit_rank": 1
+    },
+    {
+      "case_id": "test-2197",
+      "reason": "declined",
+      "deny_detail": "",
+      "retrieval_hit_rank": 4
+    }
+  ]
+}

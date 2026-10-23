@@ -1,0 +1,706 @@
+[
+  {
+    "id": "mq-01",
+    "intended": "ambiguous",
+    "source_id": "test-50",
+    "source_question": "what is the net change amount of unrecognized tax benefits during 2007 , ( in millions ) ? Answer to the nearest integer.",
+    "source_gold": 17
+  },
+  {
+    "id": "mq-02",
+    "intended": "clean",
+    "source_id": "test-573",
+    "source_question": "What is the amount of capital gains tax Jonathan owes after deducting his capital losses? Answer to the nearest dollar.",
+    "source_gold": 3750
+  },
+  {
+    "id": "mq-03",
+    "intended": "missing",
+    "source_id": "test-1493",
+    "source_question": "What is the intrinsic value of the project investment based on the projected cash flows and given discount rate? Answer to the nearest integer.",
+    "source_gold": 911708,
+    "authoring_audit": {
+      "omitted_input": "annual discount rate",
+      "why_required": "Present value cannot be determined from the cash-flow amounts and timing without a discount rate.",
+      "present_numeric_count": 10,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-04",
+    "intended": "clean",
+    "source_id": "test-487",
+    "source_question": "What is the netback per barrel of oil for the company? Provide the answer in dollars to two decimal places.",
+    "source_gold": 37.0
+  },
+  {
+    "id": "mq-05",
+    "intended": "clean",
+    "source_id": "test-1199",
+    "source_question": "What was the percentage change in the net sales from Germany between 2018 and 2019? Answer to two decimal places.",
+    "source_gold": 10.18
+  },
+  {
+    "id": "mq-06",
+    "intended": "ambiguous",
+    "source_id": "test-503",
+    "source_question": "What was the sum of Accrued expenses and Other long-term liabilities in 2019? Answer to the nearest integer.",
+    "source_gold": 35
+  },
+  {
+    "id": "mq-07",
+    "intended": "missing",
+    "source_id": "test-228",
+    "source_question": "what was the difference in millions of deferral of revenue and recognition of deferred revenue for the fiscal year ended june 30 , 2019? Answer to the nearest integer.",
+    "source_gold": -76,
+    "authoring_audit": {
+      "omitted_input": "recognition of deferred revenue",
+      "why_required": "The requested difference directly requires the recognition amount, which cannot be inferred without the beginning balance and all other rollforward components.",
+      "present_numeric_count": 5,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-08",
+    "intended": "clean",
+    "source_id": "test-965",
+    "source_question": "What is the absorption cost per unit of the blender? Answer in USD to two decimal places.",
+    "source_gold": 110.0
+  },
+  {
+    "id": "mq-09",
+    "intended": "clean",
+    "source_id": "test-1979",
+    "source_question": "What is the total Cost of Goods Sold (COGS) for the 120 units sold by TechMart using the LIFO inventory method? Provide the answer in dollars, rounded to the nearest integer.",
+    "source_gold": 27400
+  },
+  {
+    "id": "mq-10",
+    "intended": "missing",
+    "source_id": "test-315",
+    "source_question": "as of december 2013 what was the value of the equity compensation plans approved by security holders to be issued upon exercise of outstanding options warrants and rights Answer to three decimal places.",
+    "source_gold": 3739366.45,
+    "authoring_audit": {
+      "omitted_input": "weighted-average exercise price",
+      "why_required": "Aggregate intrinsic value requires the spread between market price and exercise price multiplied by the option count.",
+      "present_numeric_count": 2,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-11",
+    "intended": "clean",
+    "source_id": "test-725",
+    "source_question": "what portion of the total contingent acquisition payments is due in the next 12 months? Answer as percentage to three decimal places.",
+    "source_gold": 29.434
+  },
+  {
+    "id": "mq-12",
+    "intended": "judgment",
+    "source_id": "test-1134",
+    "source_question": "What is the nominal rate of return for the investor's shares in percentage terms? Provide your answer as a percentage to two decimal places.",
+    "source_gold": 60.0
+  },
+  {
+    "id": "mq-13",
+    "intended": "missing",
+    "source_id": "test-1798",
+    "source_question": "What is the total unrecognized tax benefit - ending balance across all 3 years? Answer to the nearest integer.",
+    "source_gold": 24584,
+    "authoring_audit": {
+      "omitted_input": "2019 ending balance of unrecognized tax benefits",
+      "why_required": "A three-year sum needs the 2019 ending balance; the settlements line is not a substitute for that balance.",
+      "present_numeric_count": 6,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-14",
+    "intended": "ambiguous",
+    "source_id": "test-32",
+    "source_question": "what is the range of height of monopole towers , in feet? Answer to the nearest integer.",
+    "source_gold": 150
+  },
+  {
+    "id": "mq-15",
+    "intended": "judgment",
+    "source_id": "test-1412",
+    "source_question": "what is the growth rate in net earnings attributable to altria group inc . from 2013 to 2014? Answer to three decimal places.",
+    "source_gold": 11.797
+  },
+  {
+    "id": "mq-16",
+    "intended": "missing",
+    "source_id": "test-777",
+    "source_question": "What is the quick ratio for the technology company? Answer as a percentage to two decimal places.",
+    "source_gold": 120.0,
+    "authoring_audit": {
+      "omitted_input": "current liabilities",
+      "why_required": "The quick-assets numerator is available, but the ratio cannot be computed without current liabilities as the denominator.",
+      "present_numeric_count": 3,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-17",
+    "intended": "missing",
+    "source_id": "test-1118",
+    "source_question": "What is the roll-down return of the bond over the year? Provide the answer as a percentage to two decimal places.",
+    "source_gold": 5.43,
+    "authoring_audit": {
+      "omitted_input": "coupon cash received during the holding period",
+      "why_required": "Holding-period return includes both the price change and coupon income, so prices alone are insufficient.",
+      "present_numeric_count": 2,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-18",
+    "intended": "ambiguous",
+    "source_id": "test-1629",
+    "source_question": "A financier looking to calculate the enterprise value multiple (EV/EBITDA) of a business has collected the relevant information, what is the business's EV/EBITDA multiple? Answer to a single decimal place.",
+    "source_gold": 3.5
+  },
+  {
+    "id": "mq-19",
+    "intended": "clean",
+    "source_id": "test-498",
+    "source_question": "What is the percentage of the purchase obligations of more than 5 years in the total purchase obligations? Answer to two decimal places.",
+    "source_gold": 8.64
+  },
+  {
+    "id": "mq-20",
+    "intended": "clean",
+    "source_id": "test-1296",
+    "source_question": "what is the percentage change in the weighted average common shares outstanding for basic computations from 2010 to 2011? Answer to three decimal places.",
+    "source_gold": -7.77
+  },
+  {
+    "id": "mq-21",
+    "intended": "judgment",
+    "source_id": "test-360",
+    "source_question": "what was the 2005 tax expense? Answer to three decimal places.",
+    "source_gold": 129.6
+  },
+  {
+    "id": "mq-22",
+    "intended": "ambiguous",
+    "source_id": "test-183",
+    "source_question": "In 2019, what is the change in high price between the third quarter and fourth quarter? Answer to two decimal places.",
+    "source_gold": -3.52
+  },
+  {
+    "id": "mq-23",
+    "intended": "clean",
+    "source_id": "test-1485",
+    "source_question": "What is the dividend-adjusted forward price for the stock? Answer to two decimal places.",
+    "source_gold": 149.49
+  },
+  {
+    "id": "mq-24",
+    "intended": "missing",
+    "source_id": "test-657",
+    "source_question": "in 2013 what was the percent of the allowances for doubtful accounts Answer to three decimal places.",
+    "source_gold": 2.726,
+    "authoring_audit": {
+      "omitted_input": "gross accounts receivable for 2014",
+      "why_required": "The percentage uses gross accounts receivable as its denominator; total current assets cannot replace it.",
+      "present_numeric_count": 3,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-25",
+    "intended": "missing",
+    "source_id": "test-1533",
+    "source_question": "For the quarter ended March 31, 2015, what was the percentage decrease in the share price from the highest to the lowest? Answer to three decimal places.",
+    "source_gold": 9.302,
+    "authoring_audit": {
+      "omitted_input": "low sale price for the quarter",
+      "why_required": "The percentage drop requires both the high and low prices; trading volume does not determine the low.",
+      "present_numeric_count": 2,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-26",
+    "intended": "judgment",
+    "source_id": "test-1429",
+    "source_question": "What is the effective duration of the bond? Answer to two decimal places.",
+    "source_gold": 3.81
+  },
+  {
+    "id": "mq-27",
+    "intended": "clean",
+    "source_id": "test-517",
+    "source_question": "what was the 2001 first quarter average of high and low stock prices? Answer to three decimal places.",
+    "source_gold": 50.725
+  },
+  {
+    "id": "mq-28",
+    "intended": "ambiguous",
+    "source_id": "test-909",
+    "source_question": "The table below provides details about a zero-coupon bond. What is the key rate '01 for a shift of 10 years (in basis points)? Answer to three decimal places.",
+    "source_gold": 0.042
+  },
+  {
+    "id": "mq-29",
+    "intended": "missing",
+    "source_id": "test-124",
+    "source_question": "What is the increase / (decrease) in the Adjusted EBITDA margin from 2018 to 2019? Answer to a single decimal place.",
+    "source_gold": -0.6,
+    "authoring_audit": {
+      "omitted_input": "2019 adjusted EBITDA margin",
+      "why_required": "A margin change needs the margin in both years; revenue alone does not determine the 2019 margin.",
+      "present_numeric_count": 4,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-30",
+    "intended": "clean",
+    "source_id": "test-1210",
+    "source_question": "what is the percentage change in the total carrying amount of goodwill from 2015 to 2017? Answer to three decimal places.",
+    "source_gold": 10.419
+  },
+  {
+    "id": "mq-31",
+    "intended": "judgment",
+    "source_id": "test-1713",
+    "source_question": "What is the nominal annual interest rate advertised by the bank? Answer as a percentage to two decimal places.",
+    "source_gold": 5.15
+  },
+  {
+    "id": "mq-32",
+    "intended": "clean",
+    "source_id": "test-365",
+    "source_question": "what is the debt-to-equity ratio in 2016? Answer as percentage to three decimal places.",
+    "source_gold": 40.248
+  },
+  {
+    "id": "mq-33",
+    "intended": "judgment",
+    "source_id": "test-549",
+    "source_question": "What is the operating profit of TechFusion Inc. for the recent quarter? Answer to the nearest dollar.",
+    "source_gold": 425000
+  },
+  {
+    "id": "mq-34",
+    "intended": "clean",
+    "source_id": "test-856",
+    "source_question": "what portion of the total leased locations are located in united states? Answer to three decimal places.",
+    "source_gold": 72.3
+  },
+  {
+    "id": "mq-35",
+    "intended": "missing",
+    "source_id": "test-48",
+    "source_question": "what is the net change in the balance of unrecognized tax benefits during 2008? Answer to the nearest integer.",
+    "source_gold": 14,
+    "authoring_audit": {
+      "omitted_input": "ending balance on December 31, 2008",
+      "why_required": "The requested subtraction directly requires the ending balance; one rollforward component cannot determine it.",
+      "present_numeric_count": 5,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-36",
+    "intended": "ambiguous",
+    "source_id": "test-1790",
+    "source_question": "What will be Jane's annual annuity payment? Answer to the nearest dollar.",
+    "source_gold": 36791
+  },
+  {
+    "id": "mq-37",
+    "intended": "missing",
+    "source_id": "test-547",
+    "source_question": "What is TechNova Corp's enterprise value, calculated to the nearest million dollars?",
+    "source_gold": 865,
+    "authoring_audit": {
+      "omitted_input": "minority interest",
+      "why_required": "The stated enterprise-value definition includes minority interest, which is not derivable from the other capital-structure figures.",
+      "present_numeric_count": 4,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-38",
+    "intended": "clean",
+    "source_id": "test-276",
+    "source_question": "what was the ratio of the tons hedged in 2017 to 2018 Answer to the nearest integer.",
+    "source_gold": 1
+  },
+  {
+    "id": "mq-39",
+    "intended": "ambiguous",
+    "source_id": "test-1385",
+    "source_question": "what was the percent of the growth in the company made matching contributions from 2007 to 2008 Answer to three decimal places.",
+    "source_gold": 85.714
+  },
+  {
+    "id": "mq-40",
+    "intended": "clean",
+    "source_id": "test-1151",
+    "source_question": "What is the difference in amount between Deferred Revenue and Other non-current liabilities as reported? Answer to the nearest integer.",
+    "source_gold": 14212
+  },
+  {
+    "id": "mq-41",
+    "intended": "missing",
+    "source_id": "test-1231",
+    "source_question": "what is the growth rate in the balance of money market funds in 2010? Answer as percentage to three decimal places.",
+    "source_gold": 6.358,
+    "authoring_audit": {
+      "omitted_input": "2010 balance in money market funds",
+      "why_required": "The growth rate needs the same money-market-fund balance in both years; total cash equivalents is a broader measure.",
+      "present_numeric_count": 4,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-42",
+    "intended": "judgment",
+    "source_id": "test-534",
+    "source_question": "what is the total expected contingent payments to impella 2019s former shareholders upon fda approval of impella devices , in millions? Answer to three decimal places.",
+    "source_gold": 11.167
+  },
+  {
+    "id": "mq-43",
+    "intended": "missing",
+    "source_id": "test-1278",
+    "source_question": "A business has total liabilities amounting to £35 million and total shareholders' equity of £55 million. What percentage do total liabilities constitute on a vertical common-size balance sheet? Answer to three decimal places.",
+    "source_gold": 38.889,
+    "authoring_audit": {
+      "omitted_input": "total shareholders' equity",
+      "why_required": "The common-size denominator is liabilities plus equity, and equity cannot be recovered from the provided liability components.",
+      "present_numeric_count": 3,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-44",
+    "intended": "missing",
+    "source_id": "test-466",
+    "source_question": "What is the Gross Domestic Product (GDP) of Econland for the past year in trillion USD? Answer to two decimal places.",
+    "source_gold": 2.4,
+    "authoring_audit": {
+      "omitted_input": "imports",
+      "why_required": "The expenditure identity subtracts imports, so GDP cannot be computed from C, I, G, and exports alone.",
+      "present_numeric_count": 4,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-45",
+    "intended": "judgment",
+    "source_id": "test-234",
+    "source_question": "considering the year 2014 , what are the variation between the expenses for environmental remediation at sites and the reserves environmental matters , in millions? Answer to three decimal places.",
+    "source_gold": 5.9
+  },
+  {
+    "id": "mq-46",
+    "intended": "ambiguous",
+    "source_id": "test-861",
+    "source_question": "what was the percentage change in the unbilled receivables on construction contracts from 2007 to 2008 Answer to three decimal places.",
+    "source_gold": -31.42
+  },
+  {
+    "id": "mq-47",
+    "intended": "judgment",
+    "source_id": "test-93",
+    "source_question": "What is the change in Other in 2019 from 2018? Answer to a single decimal place.",
+    "source_gold": -12.6
+  },
+  {
+    "id": "mq-48",
+    "intended": "judgment",
+    "source_id": "test-726",
+    "source_question": "what percentage of scheduled maturities of total debt are due after 5 years? Answer to three decimal places.",
+    "source_gold": 57.534
+  },
+  {
+    "id": "mq-49",
+    "intended": "judgment",
+    "source_id": "test-1635",
+    "source_question": "An investor purchased a stock several months ago for $85 currently selling for $98. A call option selling for $7 has an exercise price of $101. If the price of share at expiration is $107, what is the value of the covered call position for the investor? Answer to the closest dollar.",
+    "source_gold": 108
+  },
+  {
+    "id": "mq-50",
+    "intended": "judgment",
+    "source_id": "test-1069",
+    "source_question": "What is the effective GST amount the manufacturer needs to remit after considering the previous tax credits? Answer to the nearest cent.",
+    "source_gold": 12.0
+  },
+  {
+    "id": "mq-51",
+    "intended": "judgment",
+    "source_id": "test-569",
+    "source_question": "What is the book value of the machinery after 8 years of depreciation? Answer to the nearest dollar.",
+    "source_gold": 30000
+  },
+  {
+    "id": "mq-52",
+    "intended": "missing",
+    "source_id": "test-1598",
+    "source_question": "What is the real rate of return on the mutual fund investment after accounting for inflation? Provide the answer as a percentage, rounded to two decimal places.",
+    "source_gold": 3.88,
+    "authoring_audit": {
+      "omitted_input": "inflation rate for the period",
+      "why_required": "Real return adjusts the nominal return for inflation; the expense ratio does not measure inflation.",
+      "present_numeric_count": 3,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-53",
+    "intended": "clean",
+    "source_id": "test-1614",
+    "source_question": "What is the percentage change in the total long-lived assets from 2018 to 2019? Answer to two decimal places.",
+    "source_gold": 17.34
+  },
+  {
+    "id": "mq-54",
+    "intended": "missing",
+    "source_id": "test-1579",
+    "source_question": "What is the money market yield of the bond, expressed as a percentage? Answer to two decimal places.",
+    "source_gold": 10.26,
+    "authoring_audit": {
+      "omitted_input": "days to maturity",
+      "why_required": "Annualizing the holding-period discount requires the number of days to maturity.",
+      "present_numeric_count": 2,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-55",
+    "intended": "missing",
+    "source_id": "test-1840",
+    "source_question": "What is the total amount the retiree will withdraw from the retirement account over the next 5 years? Provide your answer to the nearest dollar.",
+    "source_gold": 124897,
+    "authoring_audit": {
+      "omitted_input": "annual inflation adjustment rate",
+      "why_required": "Years 2 through 5 depend on the annual inflation rate, which cannot be inferred from the initial withdrawal.",
+      "present_numeric_count": 4,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-56",
+    "intended": "clean",
+    "source_id": "test-1059",
+    "source_question": "What is the percentage change in the company's revenue from 2020 to 2023? Answer as a percentage, rounded to two decimal places.",
+    "source_gold": 25.0
+  },
+  {
+    "id": "mq-57",
+    "intended": "clean",
+    "source_id": "test-602",
+    "source_question": "what are the net revenues in investment management in 2016 , in billions? Answer to three decimal places.",
+    "source_gold": 5.813
+  },
+  {
+    "id": "mq-58",
+    "intended": "ambiguous",
+    "source_id": "test-299",
+    "source_question": "for a 2% ( 2 % ) increase in interest rates , what would have been the total impact to earnings for 2005 and 2004 ( in millions ) ? Answer to the nearest integer.",
+    "source_gold": -292
+  },
+  {
+    "id": "mq-59",
+    "intended": "ambiguous",
+    "source_id": "test-1996",
+    "source_question": "If the 1-year spot rate is 1.02%, the 2-year spot rate is 1.65% and the 3-year spot rate stands at 2.15%, how would you compute the 1-year implied forward rate two years in the future? Answer to three decimal places.",
+    "source_gold": 3.157
+  },
+  {
+    "id": "mq-60",
+    "intended": "clean",
+    "source_id": "test-1441",
+    "source_question": "What is the Economic Order Quantity (EOQ) for the product? Answer to the nearest integer.",
+    "source_gold": 245
+  },
+  {
+    "id": "mq-61",
+    "intended": "ambiguous",
+    "source_id": "test-159",
+    "source_question": "What was the change in Transportation Solutions in 2019 from 2018? Answer to the nearest integer.",
+    "source_gold": 74
+  },
+  {
+    "id": "mq-62",
+    "intended": "clean",
+    "source_id": "test-1552",
+    "source_question": "An MBS made up of four distinct mortgage pools: $1 million of mortgages maturing in 30 days, $2 million of mortgages maturing in 90 days, $3 million of mortgages maturing in 180 days, and $4 million of mortgages maturing in 360 days, is owned by XYZ Inc. Could you calculate the weighted average maturity (WAM) for this MBS? Answer to a single decimal place.",
+    "source_gold": 219.0
+  },
+  {
+    "id": "mq-63",
+    "intended": "judgment",
+    "source_id": "test-588",
+    "source_question": "What is the average incentive schemes between 2018 and 2019? Answer to a single decimal place.",
+    "source_gold": 2.5
+  },
+  {
+    "id": "mq-64",
+    "intended": "clean",
+    "source_id": "test-1738",
+    "source_question": "What will be the future value of the retiree's annuity investment after 20 years? Answer to the nearest dollar.",
+    "source_gold": 312620
+  },
+  {
+    "id": "mq-65",
+    "intended": "ambiguous",
+    "source_id": "test-653",
+    "source_question": "what percentage of factory retail stores as of march 29 , 2008 where located in europe? Answer to the nearest integer.",
+    "source_gold": 14
+  },
+  {
+    "id": "mq-66",
+    "intended": "missing",
+    "source_id": "test-296",
+    "source_question": "in millions for the years 2018 , 2017 , 2016 , what was the largest provision for credit losses? Answer to the nearest integer.",
+    "source_gold": 674,
+    "authoring_audit": {
+      "omitted_input": "2018 provision for credit losses",
+      "why_required": "Comparing all three years requires the 2018 provision; net loans outstanding is a different measure.",
+      "present_numeric_count": 6,
+      "generation_attempts": 0,
+      "regenerated_with_prompt": "partial_context_single_key_omission_v3",
+      "method": "offline_manual_curation_after_empty_context_audit"
+    }
+  },
+  {
+    "id": "mq-67",
+    "intended": "clean",
+    "source_id": "test-1998",
+    "source_question": "Press Corp. and Swank Corp. file a consolidated return. The companies had the following items of income and deductions for the current year: \nPress Corp. Swank Corp. \nIncome from operations $80000 $40000 \nSection 1231 \nloss (12000) 0 \nCapital gain(loss) 4000 (3000) \nWhat is Press and Swank's consolidated taxable income? Answer to the nearest dollar.",
+    "source_gold": 109000
+  },
+  {
+    "id": "mq-68",
+    "intended": "ambiguous",
+    "source_id": "test-75",
+    "source_question": "what would the total restructuring charges be without including prior years of 2014? Answer to the nearest integer.",
+    "source_gold": 7989
+  },
+  {
+    "id": "mq-69",
+    "intended": "clean",
+    "source_id": "test-718",
+    "source_question": "what percentage of restructuring cost comes from employee-related costs? Answer to three decimal places.",
+    "source_gold": 65.744
+  },
+  {
+    "id": "mq-70",
+    "intended": "clean",
+    "source_id": "test-691",
+    "source_question": "what percent of total contractual obligations in 2011 are made up of long-term debt obligations? Answer to the nearest integer.",
+    "source_gold": 97
+  },
+  {
+    "id": "mq-71",
+    "intended": "ambiguous",
+    "source_id": "test-379",
+    "source_question": "in 2010 what was the ratio of the cumulative return for intel , to the the dow jones u.s . technology index* Answer to three decimal places.",
+    "source_gold": 0.822
+  },
+  {
+    "id": "mq-72",
+    "intended": "ambiguous",
+    "source_id": "test-59",
+    "source_question": "what is the decrease observed in the additions for tax positions of prior years , in millions? Answer to the nearest integer.",
+    "source_gold": 2
+  },
+  {
+    "id": "mq-73",
+    "intended": "judgment",
+    "source_id": "test-1087",
+    "source_question": "What is the Discount for Lack of Marketability (DLOM) for the company's shares? Answer as a percentage to two decimal places.",
+    "source_gold": 40.0
+  },
+  {
+    "id": "mq-74",
+    "intended": "clean",
+    "source_id": "test-539",
+    "source_question": "Parent gave securities with an adjusted basis of $10000 and fair market value of $9000 to a child. Later the child sold the securities for $7000. What is the child's basis for the securities sold? Answer to the nearest dollar.",
+    "source_gold": 9000
+  },
+  {
+    "id": "mq-75",
+    "intended": "clean",
+    "source_id": "test-1338",
+    "source_question": "what is the percent change in the fair value financial market instruments as part of the hedging strategy during 2010 compare to 2009? Answer to three decimal places.",
+    "source_gold": -55.319
+  },
+  {
+    "id": "mq-76",
+    "intended": "judgment",
+    "source_id": "test-551",
+    "source_question": "Does the put-call parity hold for these options? Answer as \"True\" for yes or \"False\" for no.",
+    "source_gold": false
+  },
+  {
+    "id": "mq-77",
+    "intended": "ambiguous",
+    "source_id": "test-1962",
+    "source_question": "by what percentage did protect carrying values of excess inventories increase from 2002 to 2003? Answer to the nearest integer.",
+    "source_gold": 39
+  },
+  {
+    "id": "mq-78",
+    "intended": "clean",
+    "source_id": "test-112",
+    "source_question": "What is the increase/ (decrease) in Statutory Audit, Certification, Audit of Individual and Consolidated Financial Statements from the period 2018 to 2019? Answer to the nearest integer.",
+    "source_gold": -451500
+  },
+  {
+    "id": "mq-79",
+    "intended": "judgment",
+    "source_id": "test-458",
+    "source_question": "What are the total fees the hedge fund is entitled to collect for the year? Answer in millions to two decimal places.",
+    "source_gold": 11.0
+  },
+  {
+    "id": "mq-80",
+    "intended": "ambiguous",
+    "source_id": "test-996",
+    "source_question": "What will be the total value of the investment at the end of 8 years? Answer to the nearest dollar.",
+    "source_gold": 29549
+  }
+]

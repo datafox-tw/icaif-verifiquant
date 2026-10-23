@@ -1,0 +1,31 @@
+{
+  "per_operator": 10,
+  "operators": {
+    "F": {
+      "produced": 10,
+      "needs_review": 0,
+      "target": 10
+    },
+    "E": {
+      "produced": 10,
+      "needs_review": 0,
+      "target": 10
+    },
+    "I": {
+      "produced": 10,
+      "needs_review": 0,
+      "target": 10
+    },
+    "N": {
+      "produced": 10,
+      "needs_review": 0,
+      "target": 10
+    },
+    "M": {
+      "produced": 10,
+      "needs_review": 0,
+      "target": 10
+    }
+  },
+  "total_traps": 50
+}

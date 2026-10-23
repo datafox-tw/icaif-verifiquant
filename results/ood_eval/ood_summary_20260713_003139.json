@@ -1,0 +1,35 @@
+{
+  "ran_at": "20260713_003139",
+  "elapsed_seconds": 776.6,
+  "config": {
+    "lib_db": "results/paper_v1/fic/cards.db",
+    "questions": "results/paper_v2_250/questions_250.jsonl",
+    "split_rule": "family (function_id) present in library cards.db",
+    "limit_ood": 60,
+    "limit_id": 20,
+    "seed": 0,
+    "top_k": 3,
+    "model": "gemini-2.5-flash",
+    "k_rounds": 1,
+    "total_ood_available": 60,
+    "total_id_available": 20
+  },
+  "OOD": {
+    "abstain": 56,
+    "correct": 1,
+    "silent_wrong": 3,
+    "n": 60,
+    "abstain_rate": 0.9333333333333333,
+    "silent_wrong_rate": 0.05,
+    "force_fit_correct_rate": 0.016666666666666666
+  },
+  "ID": {
+    "abstain": 3,
+    "correct": 16,
+    "silent_wrong": 1,
+    "n": 20,
+    "accuracy": 0.8,
+    "silent_wrong_rate": 0.05,
+    "abstain_rate": 0.15
+  }
+}

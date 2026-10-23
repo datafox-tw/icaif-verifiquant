@@ -1,0 +1,14 @@
+{
+  "tag": "r3_fei",
+  "model": "gemini-2.5-flash",
+  "lib_db": "results/libsweep/lib_100/cards.db",
+  "strict_binding_flag": "",
+  "n": 250,
+  "correct": 176,
+  "silent_wrong": 34,
+  "abstain": 40,
+  "near_miss": 23,
+  "strict_fired": 0,
+  "elapsed_s": 3186.6,
+  "ran_at": "2026-07-21T13:03:08"
+}

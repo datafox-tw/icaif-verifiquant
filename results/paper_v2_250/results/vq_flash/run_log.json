@@ -1,0 +1,40 @@
+{
+  "baseline": "vq_flash",
+  "ran_at": "2026-07-12T20:36:04.678431",
+  "success": true,
+  "elapsed_seconds": 4321.1,
+  "command": [
+    "python3",
+    "preprocessing/run_framework_guided_self_improve_pipeline.py",
+    "--input",
+    "results/paper_v2_250/questions_250.jsonl",
+    "--db-url",
+    "sqlite:///results/paper_v2_250/fic/cards.db",
+    "--output",
+    "results/paper_v2_250/results/vq_flash/output.jsonl",
+    "--summary-output",
+    "results/paper_v2_250/results/vq_flash/summary.json",
+    "--max-turns",
+    "3",
+    "--top-k",
+    "4",
+    "--selector-model",
+    "gemini-2.5-flash",
+    "--extractor-model",
+    "gemini-2.5-flash",
+    "--judge-model",
+    "gemini-2.5-flash",
+    "--oracle-model",
+    "gemini-2.5-flash"
+  ],
+  "params": {
+    "type": "verifiquant",
+    "judge_model": "gemini-2.5-flash",
+    "selector_model": "gemini-2.5-flash",
+    "extractor_model": "gemini-2.5-flash",
+    "oracle_model": "gemini-2.5-flash",
+    "max_turns": 3,
+    "top_k": 4,
+    "description": "VQ full, Flash 2.5, K=3 — 250Q"
+  }
+}

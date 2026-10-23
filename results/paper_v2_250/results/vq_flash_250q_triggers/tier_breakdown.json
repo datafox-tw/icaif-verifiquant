@@ -1,0 +1,76 @@
+[
+  {
+    "run": "vq_flash_250q_triggers",
+    "kind": "vq",
+    "n_rows": 250,
+    "unmatched_ids": [],
+    "medium": {
+      "n": 180,
+      "correct": 174,
+      "silent_wrong": 0,
+      "abstain": 6,
+      "coverage": 0.9667,
+      "selective_accuracy": 1.0,
+      "swr": 0.0,
+      "silent_wrong_ids": [],
+      "abstain_ids": [
+        "test-1088",
+        "test-1980",
+        "test-1264",
+        "test-1750",
+        "test-1950",
+        "test-1993"
+      ]
+    },
+    "hard": {
+      "n": 70,
+      "correct": 61,
+      "silent_wrong": 3,
+      "abstain": 6,
+      "coverage": 0.9143,
+      "selective_accuracy": 0.9531,
+      "swr": 0.0429,
+      "silent_wrong_ids": [
+        "test-2137",
+        "test-2009",
+        "test-2104"
+      ],
+      "abstain_ids": [
+        "test-2188",
+        "test-2002",
+        "test-2081",
+        "test-2011",
+        "test-2022",
+        "test-2125"
+      ]
+    },
+    "all": {
+      "n": 250,
+      "correct": 235,
+      "silent_wrong": 3,
+      "abstain": 12,
+      "coverage": 0.952,
+      "selective_accuracy": 0.9874,
+      "swr": 0.012,
+      "silent_wrong_ids": [
+        "test-2137",
+        "test-2009",
+        "test-2104"
+      ],
+      "abstain_ids": [
+        "test-2188",
+        "test-1088",
+        "test-2002",
+        "test-1980",
+        "test-1264",
+        "test-1750",
+        "test-2081",
+        "test-2011",
+        "test-2022",
+        "test-2125",
+        "test-1950",
+        "test-1993"
+      ]
+    }
+  }
+]

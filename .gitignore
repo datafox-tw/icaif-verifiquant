@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+.DS_Store
+*.db-journal
+# FinanceReasoning is fetched separately (see datasets/README.md), never committed
+FinanceReasoning/
+verifiquant/data/*.json
+# local experiment output
+out/

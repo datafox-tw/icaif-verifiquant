@@ -1,0 +1,79 @@
+{
+  "repaired_at": "2026-07-12T09:02:27.606748",
+  "stage": "pre-run lint gate (build-time, no gold answers involved)",
+  "reason": "statement-form E-check expressions (try/except, import) are un-evaluable by runtime eval(); detected by lint_echecks standalone pass",
+  "repairs": [
+    {
+      "fic_id": "fic_article_365",
+      "field": "grant_date",
+      "old": "try: datetime.strptime(inputs['grant_date'], '%Y-%m-%d'); True; except ValueError: False",
+      "new": "isinstance(inputs['grant_date'], str) and len(inputs['grant_date']) == 10 and inputs['grant_date'][4] == '-' and inputs['grant_date'][7] == '-' and inputs['grant_date'][:4].isdigit() and inputs['grant_date'][5:7].isdigit() and inputs['grant_date'][8:10].isdigit()"
+    },
+    {
+      "fic_id": "fic_article_365",
+      "field": "exercise_date",
+      "old": "try: datetime.strptime(inputs['exercise_date'], '%Y-%m-%d'); True; except ValueError: False",
+      "new": "isinstance(inputs['exercise_date'], str) and len(inputs['exercise_date']) == 10 and inputs['exercise_date'][4] == '-' and inputs['exercise_date'][7] == '-' and inputs['exercise_date'][:4].isdigit() and inputs['exercise_date'][5:7].isdigit() and inputs['exercise_date'][8:10].isdigit()"
+    },
+    {
+      "fic_id": "fic_article_365",
+      "field": "sale_date",
+      "old": "try: datetime.strptime(inputs['sale_date'], '%Y-%m-%d'); True; except ValueError: False",
+      "new": "isinstance(inputs['sale_date'], str) and len(inputs['sale_date']) == 10 and inputs['sale_date'][4] == '-' and inputs['sale_date'][7] == '-' and inputs['sale_date'][:4].isdigit() and inputs['sale_date'][5:7].isdigit() and inputs['sale_date'][8:10].isdigit()"
+    },
+    {
+      "fic_id": "fic_article_2303",
+      "field": "brackets",
+      "old": "try: import json; b = json.loads(inputs['brackets']); return isinstance(b, dict) and all(isinstance(k, (int, float, str)) and isinstance(v, (int, float)) for k,v in b.items()) and all(float(k) >= 0 for k in b.keys()) except (json.JSONDecodeError, TypeError, ValueError): return False",
+      "new": "isinstance(json.loads(inputs['brackets']), dict) and all(isinstance(v, (int, float)) for v in json.loads(inputs['brackets']).values()) and all(str(k).lstrip('-').replace('.', '', 1).isdigit() and float(k) >= 0 for k in json.loads(inputs['brackets']).keys())"
+    }
+  ],
+  "repair_passes": [
+    {
+      "repaired_at": "2026-07-12T19:23:12.968928",
+      "stage": "scalar-output policy audit (post VQ run1; audit covered ALL 250 cards, not only failing ones)",
+      "method": "dynamic replay of every (fic_id, provided_inputs) pair used in run1 + static AST scan of all cards; type check only, no gold answers consulted",
+      "auto_fixed": [
+        {
+          "fic_id": "fic_article_2883",
+          "old_return": "return nvi_series",
+          "new_return": "return nvi_series[-1]",
+          "basis": "pre-declared scalar-output policy (stage_core prompt, commit f7fd111); no gold consulted"
+        },
+        {
+          "fic_id": "fic_article_2569",
+          "old_return": "return {'post_buyback_eps': post_buyback_eps}",
+          "new_return": "return post_buyback_eps",
+          "basis": "pre-declared scalar-output policy (stage_core prompt, commit f7fd111); no gold consulted"
+        },
+        {
+          "fic_id": "fic_article_333",
+          "old_return": "return vpt",
+          "new_return": "return vpt[-1]",
+          "basis": "pre-declared scalar-output policy (stage_core prompt, commit f7fd111); no gold consulted"
+        },
+        {
+          "fic_id": "fic_article_334",
+          "old_return": "return vwap_list",
+          "new_return": "return vwap_list[-1]",
+          "basis": "pre-declared scalar-output policy (stage_core prompt, commit f7fd111); no gold consulted"
+        }
+      ],
+      "needs_review_not_fixed": [
+        {
+          "fic_id": "fic_article_2105",
+          "reason": "output spec deliberately array (slope, intercept); its case test-2199 already correct — no safe unambiguous scalarization"
+        },
+        {
+          "fic_id": "fic_article_2551",
+          "reason": "output spec deliberately array (per-year depreciation schedule); card not selected in run1"
+        }
+      ],
+      "false_positives_cleared": [
+        "fic_article_1975",
+        "fic_article_961",
+        "fic_article_501"
+      ]
+    }
+  ]
+}

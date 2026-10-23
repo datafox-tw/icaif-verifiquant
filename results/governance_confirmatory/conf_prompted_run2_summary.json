@@ -1,0 +1,13 @@
+{
+  "protocol": "governance_matched_rpal_v1",
+  "run_name": "conf_prompted_run2",
+  "mode": "prompted",
+  "n": 80,
+  "complete": true,
+  "raw_outcomes": {
+    "numeric": 24,
+    "governance_intercept": 56
+  },
+  "elapsed_s": 502.1,
+  "note": "Not a scored result; use scripts/analyze_governance_eval.py"
+}

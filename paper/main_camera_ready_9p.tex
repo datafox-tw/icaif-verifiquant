@@ -1,0 +1,676 @@
+%% VerifiQuant ICAIF 8-page v2 — standalone Overleaf source.
+%% Figures and references.bib remain external project assets.
+%% VerifiQuant ICAIF-ready draft (sigconf)
+%% Page budget: ICAIF = 8 pages all-inclusive, references counted.
+%% Strategy: blocks marked
+%%   %% [ICAIF-CUT] ... %% [/ICAIF-CUT]
+%% are the pre-agreed trim candidates for the ICAIF 8-page all-in version.
+%% Result macros are embedded below so this paper has a single TeX source.
+\documentclass[sigconf]{acmart}
+% Embedded result macros — single source of truth for numbers that may still change.
+% VQ 250Q values below are the canonical POST-scalar-fix run (vq_flash, 2026-07-12):
+%   234 correct / 8 SW / 8 abstain = 93.6%. Run dir: results/paper_v2_250/results/vq_flash/.
+%   (The pre-fix run1 = 231/10/9 = 92.4% lives in results/vq_flash_run1_prescalarfix/ and is superseded.)
+%   Provenance: docs/2026-07-12_experiment_record_master.md. If numbers change, update this block in main_v2.tex.
+
+% ── VerifiQuant, 250Q, K=3 (Flash) — canonical run on type-audited cards (2026-07-12) ──
+\newcommand{\vqCorrectAll}{234}
+\newcommand{\vqAccAll}{93.6\%}
+\newcommand{\vqSWAll}{8}
+\newcommand{\vqAbstainAll}{8}
+\newcommand{\vqCovAll}{96.8\%}
+\newcommand{\vqSelAccAll}{96.7\%}
+\newcommand{\vqSWRAll}{3.2\%}
+\newcommand{\vqCorrectMed}{171}
+\newcommand{\vqSWMed}{5}
+\newcommand{\vqAbstainMed}{4}
+\newcommand{\vqSWRMed}{2.8\%}
+\newcommand{\vqSelAccMed}{97.2\%}
+\newcommand{\vqCorrectHard}{63}
+\newcommand{\vqSWHard}{3}
+\newcommand{\vqAbstainHard}{4}
+\newcommand{\vqSWRHard}{4.3\%}
+\newcommand{\vqSelAccHard}{95.5\%}
+% SWR improvement ratios vs CoT single-shot (13.9 / 28.6 / 18.0)
+\newcommand{\vqSWRatioMed}{5.0$\times$}
+\newcommand{\vqSWRatioHard}{6.7$\times$}
+\newcommand{\vqSWRatioAll}{5.6$\times$}
+% residual-failure attribution: initial (pre-audit) run decomposition
+\newcommand{\swResidual}{10}
+\newcommand{\swClassA}{3}
+\newcommand{\swClassB}{2}
+\newcommand{\swClassC}{2}
+\newcommand{\swClassD}{3}
+% canonical (post-audit) run residuals: B=selection, C=binding, D=convention
+\newcommand{\swResidualCanon}{8}
+\newcommand{\swCanonB}{3}
+\newcommand{\swCanonC}{2}
+\newcommand{\swCanonD}{3}
+
+% ── VerifiQuant + deterministic hint triggers, 250Q (VQ_HINT_TRIGGERS=1) ──
+\newcommand{\vqtCorrectAll}{235}
+\newcommand{\vqtAccAll}{94.0\%}
+\newcommand{\vqtSWAll}{3}
+\newcommand{\vqtAbstainAll}{12}
+\newcommand{\vqtSWRAll}{1.2\%}
+\newcommand{\vqtSelAccAll}{98.7\%}
+\newcommand{\vqtCorrectMed}{174}\newcommand{\vqtSWMed}{0}\newcommand{\vqtAbstainMed}{6}
+\newcommand{\vqtSWRMed}{0.0\%}\newcommand{\vqtSelAccMed}{100\%}
+\newcommand{\vqtCorrectHard}{61}\newcommand{\vqtSWHard}{3}\newcommand{\vqtAbstainHard}{6}
+\newcommand{\vqtSWRHard}{4.3\%}\newcommand{\vqtSelAccHard}{95.3\%}
+
+% ── CoT single-shot, 250Q (honest ternary accounting) ──
+\newcommand{\cotCorrectAll}{194}
+\newcommand{\cotAccAll}{77.6\%}
+\newcommand{\cotSWAll}{45}
+\newcommand{\cotAbstainAll}{11}
+\newcommand{\cotSWRAll}{18.0\%}
+\newcommand{\cotSelAccAll}{81.2\%}
+\newcommand{\cotSWRMed}{13.9\%}
+\newcommand{\cotSWRHard}{28.6\%}
+\newcommand{\cotCorrectMed}{148}\newcommand{\cotSWMed}{25}\newcommand{\cotAbstainMed}{7}
+\newcommand{\cotCorrectHard}{46}\newcommand{\cotSWHard}{20}\newcommand{\cotAbstainHard}{4}
+
+% ── CoT + GT-blind oracle (K=3), 250Q ──
+\newcommand{\cotoCorrectAll}{205}
+\newcommand{\cotoAccAll}{82.0\%}
+\newcommand{\cotoSWAll}{37}
+\newcommand{\cotoAbstainAll}{8}
+\newcommand{\cotoSWRAll}{14.8\%}
+\newcommand{\cotoSelAccAll}{84.7\%}
+\newcommand{\cotoCovAll}{96.8\%}          %% (205 + 37) / 250
+\newcommand{\cotoSWRMed}{11.1\%}
+\newcommand{\cotoSWRHard}{24.3\%}
+\newcommand{\cotoCorrectMed}{157}\newcommand{\cotoSWMed}{20}\newcommand{\cotoAbstainMed}{3}
+\newcommand{\cotoCorrectHard}{48}\newcommand{\cotoSWHard}{17}\newcommand{\cotoAbstainHard}{5}
+
+%%  Retrieval-matched PAL/PoT execution baseline (R-PAL), 250Q, audited, unified VQ scorer 
+\newcommand{\rpalCorrectAll}{242}
+\newcommand{\rpalAccAll}{96.8\%}
+\newcommand{\rpalSWAll}{6}
+\newcommand{\rpalAbstainAll}{2}
+\newcommand{\rpalCovAll}{99.2\%}
+\newcommand{\rpalSelAccAll}{97.6\%}
+\newcommand{\rpalSWRAll}{2.4\%}
+%%  Plain (no-retrieval) PAL baseline, 250Q, unified VQ scorer 
+\newcommand{\palAccAll}{91.2\%}
+\newcommand{\palSWRAll}{7.2\%}
+\newcommand{\palSelAccAll}{92.7\%}
+\newcommand{\palCovAll}{98.4\%}
+%%  Governance stress set (50 contract-derived traps; F/E/I/N = 40 evaluable). 
+%% FNAR = false numeric acceptance rate. R-PAL numbers are 3-run means.
+%% Confirmatory 80-trap balanced set (F/E/I/N=80; VQ K=1 vs plain / prompted R-PAL).
+%% prompted R-PAL = mean of 3 runs. See results/governance_confirmatory/.
+\newcommand{\govVQfnar}{10.4\%}           %% VQ K=1, F/E/I/N, 3-run mean at top-4 (12.5/10.0/8.75)
+%% VQ trap source: results/governance_confirmatory_1014/vq_k1_top4_run{1,2,3}.jsonl
+%% (summary confirmatory_summary_top4.json). The submitted 11.3% was one run at the CLI default top-3.
+\newcommand{\govPromptFnar}{27.5\%}       %% prompted R-PAL, F/E/I/N (3-run mean)
+\newcommand{\govPlainFnar}{48.8\%}        %% plain R-PAL, F/E/I/N (39/80 = 0.4875)
+\newcommand{\govGap}{17.1}                %% prompted R-PAL minus VQ, F/E/I/N (points)
+\newcommand{\govCIlo}{6.8}                %% base-clustered 95% CI lower (points)
+\newcommand{\govCIhi}{27.0}               %% base-clustered 95% CI upper (points)
+\newcommand{\govVQdiag}{76.7\%}
+\newcommand{\govVQaction}{75.4\%}
+\newcommand{\govPromptDiag}{65.4\%}
+\newcommand{\govPromptAction}{55.8\%}
+%% R-PAL+ clean 250Q, 3-run mean (93.2/93.6/92.0 coverage; 91.6/93.2/91.2 accuracy).
+%% Runs: results/governance_eval/prompted_clean250_run{1,2,3}.jsonl
+\newcommand{\govPromptCovAll}{92.9\%}
+\newcommand{\govPromptAccAll}{92.0\%}
+\newcommand{\govPromptSWRAll}{0.9\%}
+\newcommand{\govPromptSelAccAll}{99.0\%}
+%% I_HARD (n=6) / I_SOFT (n=14) FNAR split
+\newcommand{\govVQihard}{22.2\%}
+\newcommand{\govVQisoft}{21.4\%}
+\newcommand{\govPromptIhard}{50.0\%}
+\newcommand{\govPromptIsoft}{92.9\%}
+%% Staged controls (E7): S1 splits R-PAL+ into the five VerifiQuant stages, S2 also gives each
+%% stage the contract's declared content as text. Trap FNAR = 3-run means; clean = 3-run means.
+%% Source: results/governance_confirmatory_1014/staged_* (scripts/run_staged_rpal_governance_eval.py).
+\newcommand{\stagedOneFnar}{15.8\%}     %% S1, 15.0/13.75/18.75
+\newcommand{\stagedTwoFnar}{8.8\%}      %% S2, 8.75 in all three runs
+\newcommand{\stagedOneCov}{67.1\%}     %% S1 clean coverage, 68.8/65.2/67.2
+\newcommand{\stagedTwoCov}{74.8\%}     %% S2 clean coverage, 75.2/74.0/75.2
+\newcommand{\stagedOneAcc}{66.7\%}     %% S1 clean accuracy, 3-run mean
+\newcommand{\stagedTwoAcc}{73.6\%}     %% S2 clean accuracy, 3-run mean
+%% Pro backbone (E12), 3 runs each: results/governance_confirmatory_1015_pro.
+\newcommand{\proPromptFnar}{22.1\%}     \newcommand{\proVQfnar}{10.4\%}
+\newcommand{\proGap}{11.7}  \newcommand{\proCIlo}{1.7}  \newcommand{\proCIhi}{21.5}
+%% Extended (arXiv) version: set \arxivtrue to append appendix_camera_ready.tex.
+\newif\ifarxiv
+\arxivfalse
+%% The prompt appendix needs listings; load it only in the arXiv build.
+\ifarxiv\usepackage{listings}\fi
+%% \extref prints the same words in both builds, so the ACM pages are identical inside the arXiv PDF.
+%% The ACM build has no appendix to \ref, so it uses fixed letters; the build script's page
+%% comparison catches any drift between these letters and the appendix order.
+\expandafter\def\csname extletter-app:staged\endcsname{A}
+\expandafter\def\csname extletter-app:scripted\endcsname{B}
+\expandafter\def\csname extletter-app:pro\endcsname{C}
+\expandafter\def\csname extletter-app:reruns\endcsname{D}
+\expandafter\def\csname extletter-app:human\endcsname{E}
+\expandafter\def\csname extletter-app:repair\endcsname{F}
+\expandafter\def\csname extletter-app:regulatory\endcsname{G}
+\expandafter\def\csname extletter-app:evals\endcsname{H}
+\expandafter\def\csname extletter-app:sweep\endcsname{I}
+\expandafter\def\csname extletter-app:cases\endcsname{J}
+\expandafter\def\csname extletter-app:prompts\endcsname{K}
+\newcommand{\extref}[1]{App.~\ifarxiv\ref{#1}\else\csname extletter-#1\endcsname\fi}
+%% Confirmatory numbers are in; pilotnote now expands to nothing.
+\newcommand{\pilotnote}{}
+%% ── Self-consistency confidence threshold: the score-based selective-prediction
+%% reference point in the related-work discussion. Source run:
+%%   results/sc_baseline/sc5_gemini_25_flash{.jsonl,_summary.json}
+%%   (k=5, temperature 1.0, majority vote by 1% numeric clustering, vote share = score).
+%% The sweep is recomputed offline from the stored per-question samples, so it costs
+%% no additional model calls. Guarded by scripts/assert_paper_numbers.py.
+\newcommand{\scCovOpen}{88.8\%}      %% tau=0: 222/250 answered (28 yield no parseable answer)
+\newcommand{\scSWRopen}{8.0\%}       %% 20/250
+\newcommand{\scCovTight}{84.0\%}     %% tau=1 (unanimous): 210/250, matches VQ K=1 coverage exactly
+\newcommand{\scSWRtight}{6.4\%}      %% 16/250
+\newcommand{\scSelAccTight}{92.4\%}  %% 194/210
+\newcommand{\scUnanimous}{210}       %% questions of 250 on which all five samples agree
+%% P2 retrieval near-OOD (24 probes; target family ablated from the library).
+%% force-fit = confident numeric output when no applicable formula remains.
+\newcommand{\nearoodN}{24}
+\newcommand{\nearoodVQbare}{0\%}          %% VQ, target+neighbors removed
+\newcommand{\nearoodVQnear}{8.3\%}        %% VQ, neighbors remain (2/24)
+\newcommand{\nearoodRPALbare}{100\%}      %% R-PAL, target+neighbors removed
+\newcommand{\nearoodRPALnear}{100\%}      %% R-PAL, neighbors remain
+%% OOD-family selectivity (ood_eval: 199 OOD / 51 ID, family absent from 50-fam lib).
+%% Source: results/ood_eval_top4/ood_results_e13_top4.jsonl (top-4 rerun, 2026-10-15).
+%% Same aggregates as the July top-3 run (10 of 250 verdicts changed, in offsetting directions).
+\newcommand{\oodVQabsOOD}{88.9\%}   \newcommand{\oodVQabsID}{19.6\%}   \newcommand{\oodVQgap}{69.3}
+\newcommand{\oodCoTabsOOD}{60.3\%}  \newcommand{\oodCoTabsID}{49.0\%}  \newcommand{\oodCoTgap}{11.3}
+\newcommand{\oodCoTans}{35.7\%}     %% CoT answers this share of OOD from memory
+\newcommand{\oodCoTswOOD}{4.0\%}    \newcommand{\oodVQswOOD}{4.0\%}
+\newcommand{\oodVQcorrOOD}{7.0\%}   %% VQ answers few OOD (14/199), rest abstained
+%% OOD selective accuracy = correct/(correct+SW) among ANSWERED. VQ's few OOD
+%% answers are the least reliable (selection-frontier); this is the honest cost.
+\newcommand{\oodVQselOOD}{63.6\%}   \newcommand{\oodRPALselOOD}{95.5\%}  \newcommand{\oodCoTselOOD}{89.9\%}
+%% R-PAL on the SAME 199 OOD set (retrieval from 50-fam lib): barely abstains,
+%% stays accurate from parametric knowledge, silent-wrong tail with no signal.
+\newcommand{\oodRPALabsOOD}{0.5\%}
+\newcommand{\oodRPALcorrOOD}{95.0\%}
+\newcommand{\oodRPALswOOD}{4.5\%}
+%% near-OOD: among R-PAL's (near-100%) answers, this share was correct / silent-wrong
+\newcommand{\nearoodRPALcorr}{92\%}
+\newcommand{\nearoodRPALsw}{8\%}
+
+% Draft placeholder: renders results still pending human-label aggregation.
+% Remove this macro (and fill the cells) once scripts/aggregate_messy_labels.py has run.
+\newcommand{\TODO}[1]{\textbf{[TODO:~#1]}}
+
+%% Layout tightening for the 8-page all-inclusive budget.
+%% Float, caption, and array separations only: body font size, leading, column
+%% width, and margins are all left at the acmart defaults.
+\setlength{\textfloatsep}{11pt plus 2pt minus 3pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\dbltextfloatsep}{11pt plus 2pt minus 3pt}
+\setlength{\dblfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{5pt}
+\setlength{\belowcaptionskip}{0pt}
+\renewcommand{\arraystretch}{0.95}
+\setlength{\bibsep}{1pt plus 0.5pt minus 0.5pt}
+
+%% Rights block from the ACM rights confirmation (CC-BY 4.0), copied verbatim, 2026-10-16.
+\copyrightyear{2026}
+\acmYear{2026}
+\setcopyright{cc}
+\setcctype{by}
+\acmConference[ICAIF '26]{7th ACM International Conference on AI in Finance}{November 14--17, 2026}{Milan, Italy}
+\acmBooktitle{7th ACM International Conference on AI in Finance (ICAIF '26), November 14--17, 2026, Milan, Italy}
+\acmDOI{10.1145/3858063.3858688}
+\acmISBN{979-8-4007-3087-0/2026/11}
+\settopmatter{printacmref=true}
+
+\usepackage{array}
+\begin{document}
+
+\title{VerifiQuant: Governance-by-Execution for Financial LLM Workflows}
+
+%% Ko and Yeh share one affiliation block (acmart groups consecutive \author entries).
+\author{Yu-Chi Ko}
+\orcid{0009-0005-7193-7970}
+\email{r14946005@ntu.edu.tw}
+\affiliation{
+  \department{Data Science Degree Program}
+  \institution{National Taiwan University and Academia Sinica}
+  \city{Taipei}
+  \country{Taiwan}
+}
+
+\author{Mi-Yen Yeh}
+\orcid{0000-0001-7707-4487}
+\email{miyen@iis.sinica.edu.tw}
+\affiliation{
+  \department{Data Science Degree Program}
+  \institution{National Taiwan University and Academia Sinica}
+  \city{Taipei}
+  \country{Taiwan}
+}
+\author{Shou-De Lin}
+\orcid{0000-0001-9970-1250}
+\email{sdlin@csie.ntu.edu.tw}
+\affiliation{
+  \department{Department of Computer Science and Information Engineering}
+  \institution{National Taiwan University}
+  \city{Taipei}
+  \country{Taiwan}
+}
+
+\renewcommand{\shortauthors}{Ko et al.}
+
+\begin{abstract}
+Large language models embedded in financial workflows fail most dangerously by emitting confident, well-formatted but wrong numbers with no signal distinguishing them from correct ones.
+We argue that the central deployment problem is \emph{governability}: a system must determine when a question supports a numeric answer and when it should instead clarify, intercept, or refuse.
+We present \textbf{VerifiQuant}, a governance-by-execution framework that packages financial logic into inference contracts and evaluates each query through an executable diagnostic funnel before deterministic computation.
+This separation makes computation, clarification, and refusal structured and auditable while keeping financial arithmetic outside the language model.
+Against matched retrieval-and-execution baselines, and within a declared contract library, the principal benefit is not higher accuracy on well-posed questions but safer behavior when an input does not justify a number.
+When it finds no applicable contract, it says so instead of guessing.
+Coverage sweeps and failure analysis put a price on this boundary: safety is bought with coverage rather than with accuracy, and residual failures remain attributable to specific runtime frontiers.
+\end{abstract}
+
+\begin{CCSXML}
+<ccs2012>
+<concept><concept_id>10010405.10003550</concept_id><concept_desc>Applied computing~Economics</concept_desc><concept_significance>500</concept_significance></concept>
+<concept><concept_id>10010147.10010178</concept_id><concept_desc>Computing methodologies~Artificial intelligence</concept_desc><concept_significance>500</concept_significance></concept>
+</ccs2012>
+\end{CCSXML}
+\ccsdesc[500]{Applied computing~Economics}
+\ccsdesc[500]{Computing methodologies~Artificial intelligence}
+\keywords{financial reasoning, AI governance, selective prediction, auditability} %, neuro-symbolic systems
+
+\maketitle
+
+%% Display-math separations must be set after \maketitle: \normalsize resets them,
+%% so a preamble \setlength would be silently overwritten.
+\setlength{\abovedisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{5pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{2pt plus 2pt}
+\setlength{\belowdisplayshortskip}{4pt plus 2pt minus 2pt}
+
+\section{Introduction}
+Financial institutions are deploying large language models (LLMs) in workflows that end in numbers: valuation memos, portfolio analytics, client calculators, and regulatory reports. Program-aided methods such as PAL \cite{gao2023pal} make the arithmetic in these workflows reliable, because the model writes a program and an interpreter runs it. Reliable arithmetic does not make an answer legitimate. A question can be out of scope, lack a required input, violate a boundary, or leave open a convention that changes the computation. A program that runs can still substitute an available formula for an unsupported method or silently assume the missing input, and it returns a clean number either way. The deployment question is therefore whether a system can be stopped from emitting a number when the query does not justify one. VerifiQuant packages each formula family into a contract, judges the contract's declared scope, inputs, boundaries, and ambiguities in separate stages, and only then runs the contract's own code. PAL and its successors execute the computation. VerifiQuant executes the decision as to whether computing is legitimate. On inputs that admit no valid number, it emits a number 17 points less often than a single-prompt baseline given the same checks as text, and on well-posed questions it adds no accuracy.
+
+Testing this claim requires holding everything else fixed. A system with contracts also carries retrieval and deterministic execution, so beating a plain generative baseline would not say which component earned the gain. We therefore build \textbf{R-PAL}, a retrieval-augmented program-aided baseline in the PAL/PoT family: it receives the \emph{same} top-4 retrieved contracts VerifiQuant does, writes a self-contained program, and executes it deterministically, but runs no gates.
+On clean questions R-PAL matches or beats autonomous VerifiQuant (\S\ref{sec:v2res}). On inputs that support no legitimate numeric answer, contract-grounded governance intercepts what execution alone force-fits. We then supply that baseline, as prompt text, with the same taxonomy of intent, scope, input, boundary, and ambiguity checks (M/N/F/E/I, Table~\ref{tab:symbols}).
+Its false numeric acceptance rate (FNAR), the share of inputs admitting no valid number on which a system still commits one (\S\ref{sec:v2problem}), stays at \govPromptFnar{}, whereas VerifiQuant's staged contract checks bring it to \govVQfnar{}.
+The difference is not only in noticing a problem. The prompted baseline names the right diagnosis on \govPromptDiag{} of these inputs but takes the matching action on only \govPromptAction{}, while VerifiQuant moves from \govVQdiag{} to \govVQaction{}. A single prompt can point at the problem without governing what happens next.
+Clean-set accuracy is therefore not our contribution. What we contribute is \emph{governed behavior on malformed inputs}.
+Regulation also shaped the design. The major supervisory frameworks do not yet say how an LLM inside a numeric financial workflow should be governed \cite{fed2026sr262,pra2023ss123,euaiact2024}, so we treat the requirements they share as design targets, marked C1--C6 in Figure~\ref{fig:v2pipeline} and detailed in \extref{app:regulatory}\footnote{Appendices A--K are in the extended version, released with the code at \url{https://github.com/datafox-tw/icaif-verifiquant}.}. We do not claim regulatory compliance.
+
+\paragraph{Contributions.}
+\emph{First}, VerifiQuant reads each Financial Inference Contract's declared specification in stages, scope, inputs, boundaries, and ambiguity, and so accepts far fewer malformed inputs as numbers than a single-prompt baseline given the same taxonomy. Two staged controls locate this gain in staged decisions over the declared specification rather than in the taxonomy itself.
+\emph{Second}, VerifiQuant runs each contract's own code instead of a model-written program. A staged control that reads the same specification but writes its own programs matches the trap result yet answers fewer clean questions (\stagedTwoCov{} against $84.0\%$), mostly because those programs fail to run.
+\emph{Third}, the structured funnel records every decision, so each refusal, clarification, or number traces back to the contract and check that produced it, and its deterministic steps replay from the stored binding.
+We also price these gains. On clean questions the baselines match or beat autonomous VerifiQuant, and library sweeps, an out-of-library split, and 80 queries labeled by five blind finance-trained annotators show that outside its library it mainly offers a \emph{scope signal}, a claim that no contract applies, made instead of a guess.
+
+\section{Problem Formulation and Related Work}\label{sec:v2problem}
+\paragraph{Scope.} Our evaluated territory is the formula-grounded numerical core: a single question whose answer is one number, produced by applying a known financial formula to inputs that appear in the given text, such as pricing a bond from its face value, coupon, maturity, and yield, or computing a present value from a cash-flow schedule and a discount rate.
+Multi-document extraction, data freshness, jurisdictional policy, and non-numerical judgment are out of scope.
+A question is \emph{in-library} when its formula family is present in the contract library and \emph{out-of-library} (OOD) when it is absent, always within this benchmark's ontology. Both terms describe a single question. An evaluation set can instead be drawn \emph{library-agnostically}, without consulting the library, in which case it mixes the two in a proportion we do not set (\S\ref{sec:v2ext}).
+
+\paragraph{Outcomes and metrics.}
+Within that scope we frame the deployment question directly: \emph{given a financial question and context, when is emitting a numeric answer legitimate?}
+Each response falls into one of three outcomes: a \textbf{correct} numeric answer, a \textbf{silent wrong}, or a \textbf{structured abstention or clarification} that names why no answer was emitted.
+For an evaluation set $D$ of $n$ items, let $e_S(i)\in\{0,1\}$ indicate that system $S$ commits a number on item $i$, and let $c_S(i)\in\{0,1\}$ indicate that the number is correct within the tolerance of \S\ref{sec:v2design}. Coverage is $\mathrm{Cov}=\tfrac{1}{n}\sum_{i} e_S(i)$ and accuracy is $\mathrm{Acc}=\tfrac{1}{n}\sum_{i} c_S(i)$. Selective accuracy is $\mathrm{SelAcc}=\mathrm{Acc}/\mathrm{Cov}$, and the silent-wrong rate is $\mathrm{SWR}=\tfrac{1}{n}\sum_{i} e_S(i)(1-c_S(i))=\mathrm{Cov}-\mathrm{Acc}$.
+Every emitted wrong number counts as a silent wrong, including one that carries a soft-ambiguity warning (I\textsubscript{SOFT}, \S\ref{sec:v2method}). Treating warned numbers as flagged would lower autonomous SWR from 2.8\% to 1.6\%, so the reported rate is conservative. Silent-wrong rate is the key deployment-risk metric, and for every system informal prose refusals count as abstention.
+
+Each trap in $T$ is built so that no legitimate \emph{unqualified single} numeric answer exists: a required field is missing, a declared boundary is violated, a material convention remains unresolved, or the ask is outside the evaluated task scope. Two F traps miss this, because the field they remove has a declared default (\S\ref{sec:v2rq2}).
+An un-intercepted number is therefore a false numeric acceptance by construction, not an ordinary accuracy error, and the rate $\mathrm{FNAR}(S)=\tfrac{1}{|T|}\sum_{t\in T} e_S(t)(1-w_S(t))$ needs no gold answer.
+Here $w_S(t)=1$ only when $t$ is a soft-ambiguity trap that $S$ labels I\textsubscript{SOFT} and answers with a warning. For such a trap the ambiguity changes how the number is read, not how it is computed, so a warned number is the correct handling.
+We also report two attribution scores. \emph{Exact diagnostic} $\mathrm{Diag}(S)$ is the fraction of traps whose emitted label $\hat{d}_S(t)$ equals the generating class $d(t)$ (F, E, I\textsubscript{HARD}/I\textsubscript{SOFT}, or N). \emph{Action} $\mathrm{Act}(S)$ is stricter than merely withholding a number: it also requires the matching grounded response, namely requesting the removed F field, naming the targeted E rule or field, asking a non-numeric I\textsubscript{HARD} clarification or issuing an I\textsubscript{SOFT} warning, or refusing an N request as out of scope.
+Finally, we write $s_S(i)=1$ when $S$ stops on item $i$ with a structured statement that its library holds no applicable contract. We call this claim a \emph{scope signal}, which can be wrong when a contract exists but goes unretrieved (\S\ref{sec:v2rq4}). It is defined only for systems that carry a library.
+\paragraph{Executing the computation.}
+Several directions address parts of this problem. Program-aided reasoning \cite{gao2023pal,chen2023pot} delegates arithmetic to an interpreter and removes computation error, but it does not qualify the query: a perfectly executing program can still encode the wrong formula, binding, or convention with no signal that it did. Neuro-symbolic methods \cite{pan2023logiclm,olausson2023linc,ye2023satlm} obtain guarantees by translating language into solver input, but the translation step is the dominant error source and specification synthesis is undecidable in general \cite{zhou2026formaljudge}. A head-to-head would not isolate governance either: those systems translate and solve, but never decide whether a query qualifies. VerifiQuant moves formalization offline instead: contracts are built and validated at build time, so runtime only selects and binds within a contract-backed, declared scope.
+
+\paragraph{Deciding whether to answer.}
+Answer-or-abstain methods \cite{elyaniv2010foundations,geifman2017selective}, and more recently conformal and calibration-based procedures \cite{quach2024conformal,kadavath2022language}, threshold a confidence score and can carry statistical error bounds, but they abstain on a probability rather than on a named cause. A score-based rule also buys little here. On the same 250 clean questions, a five-sample self-consistency threshold set to VerifiQuant's $84.0\%$ coverage holds \scSelAccTight{} selective accuracy against $96.7\%$, because \scUnanimous{} of the 250 are already unanimous (\extref{app:evals}). VerifiQuant instead abstains on \emph{contract-declared checks} (scope, schema, boundary, ambiguity), so each exit names which check failed. Model-risk, auditability, and oversight requirements \cite{fed2026sr262,pra2023ss123,euaiact2024,finra2020ai} motivate these controls but define targets, not a compliance claim, and multi-agent financial systems \cite{kundu2025multiagent} add natural-language consensus in which failures propagate silently across agents \cite{cemri2025mas}.
+
+\section{VerifiQuant}\label{sec:v2method}
+\subsection{Financial Inference Contract}
+An FIC packages one formula family into four essentials keyed by \texttt{fic\_id}: (i) \emph{applicability and non-applicability} conditions plus retrieval metadata that decide whether the contract applies; (ii) \emph{typed inputs}; (iii) \emph{deterministic compute} code in plain Python; and (iv) \emph{numerical invariants and declared semantic ambiguities} (period timing, percent-versus-decimal, unit basis), each ambiguity carrying resolution options and a hard/soft level.
+For concreteness, the \texttt{Loan} card types \texttt{principal}, \texttt{annual\_interest\_rate}, and \texttt{loan\_term\_years}, carries a boundary check that fires when the rate reaches $1.0$, and declares the decimal-versus-percentage reading of that same rate as a hard ambiguity. A rate entered as $6$ is therefore intercepted deterministically, while the same confusion below $1.0$ surfaces as a clarification.
+The LLM's role is \emph{mapping into contracts}, that is, selecting, binding, and flagging. It never performs the financial computation.
+Contracts are governed at build time: compute code passes execution smoke tests, invariant expressions are lint-gated against the exact runtime evaluation namespace, and a pre-declared output-type policy is enforced by audit.
+The 250-card library used here is generated fully automatically by three LLM calls per family plus deterministic normalization. The first writes the core card from the family's reference function and the question it was sampled from, with that question's context and worked solution. The second and third derive retrieval metadata and repair rules from the core card. No call reads a gold answer.
+No contract was hand-tuned for these experiments. Build-time corrections are automatic lint and type-policy rules, and the prompts that generate the library are released with the code.\footnote{\url{https://github.com/datafox-tw/icaif-verifiquant}}
+At runtime the funnel checks inputs against each contract but does not independently verify that the contract itself is correct (\S\ref{sec:v2boundary}).
+
+\subsection{Executable diagnostic funnel}
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.75\linewidth]{figures/pipeline_v6.pdf}
+\caption{The VerifiQuant executable diagnostic funnel and bounded-repair loop. Orange steps involve an LLM and blue steps are deterministic. The scope decision has a deterministic retrieval check and an LLM selector. Badges C1--C6 mark the design targets of \S1: scope of use (C1), input validation (C2), ambiguity disclosure (C3), verifiable change (C4), traceable record (C5), and hand-off to a person (C6).}
+\Description{A left-to-right funnel routes a question through a deterministic retrieval check, an LLM selector for intent and scope, then schema, boundary, ambiguity, and compute stages. Failed checks produce structured exits. Successful paths end in a numeric answer with a diagnostic report, and hard ambiguities are routed through verified repair.}
+\label{fig:v2pipeline}
+\end{figure*}
+Given a question and context, the funnel asks a fixed sequence of questions (Figure~\ref{fig:v2pipeline}, Table~\ref{tab:symbols}). Each gate either passes the query on or stops it at a named exit, and only a query that passes every gate reaches deterministic computation.
+
+\begin{table}[t]
+\caption{Gate symbols used throughout.}
+\label{tab:symbols}
+\small
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{0.38\linewidth}>{\raggedright\arraybackslash}p{0.33\linewidth}@{}}
+\toprule
+Gate & Question asked & Exit when it fails \\
+\midrule
+N (scope) & Does any contract apply? & scope refusal \\
+M (intent) & Which quantity is wanted? & disambiguation request \\
+F (input) & Are required inputs present? & slot-filling request \\
+E (boundary) & Do inputs satisfy the declared checks? & alert naming the check \\
+I (ambiguity) & Is a declared convention left open? & clarify (HARD) or warn (SOFT) \\
+C (compute) & Run the contract's code & number and report \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{N and M} decide, in two stages, whether exactly one applicable contract exists. The first stage is deterministic. Candidates come from a purely lexical retriever: SQLite FTS5 BM25 over each card's title, summary, keywords, and embedding text, merged with a keyword-overlap ranking and filtered by the contract's declared selection hints. Nothing in the retriever is fitted to the evaluation sets, and the same retriever and top-4 depth serve all three compared systems.
+Two deterministic conditions end at N: no candidate is retrieved, or the top retrieval score falls below a fixed threshold. Otherwise an LLM \emph{selector} reads the top-4 candidates and makes a three-way decision. It selects one contract, or it stops at M with a disambiguation request when the user names only a broad goal that several contracts could serve, or it stops at N when no candidate supports the requested quantity. The N gate therefore involves an LLM step. In our runs every N refusal came from the selector, all 47 on the traps over three runs and all 52 on the human-labeled set.
+Depth is not the binding constraint here. The gold contract of a clean question lies in the top 4 for $94.8\%$ of the 250, and widening to 16 adds only $4.0$ points, so we fix $k{=}4$ (\extref{app:reruns}). Dense and hybrid retrievers remain untested.
+\textbf{F and E} come next. The LLM binds values from the text to the contract's typed inputs, and the two gates that follow are deterministic Python. F checks that every required input is present and otherwise requests the missing fields. E runs the contract's boundary and scale checks and otherwise names the violated check. Both gates inspect the values the LLM bound, so a wrong value that still lies within bounds passes, which is the binding frontier of \S\ref{sec:v2boundary}.
+\textbf{I} asks whether a convention the contract declares in advance, such as percent versus decimal or the start versus the end of a period, is left open by the question. The LLM decides only which declared conventions remain unresolved. A convention that changes the computation (I\textsubscript{HARD}) stops the query and presents the declared options. One that changes only the interpretation (I\textsubscript{SOFT}) lets computation proceed with a warning. The blocking level is declared by the contract, not chosen at runtime.
+\textbf{C} runs the contract's deterministic code, so no number is produced by the model.
+Thus, abstention is a designed outcome rather than a fallback. Five funnel conditions end in a structured exit that states where the query stopped, why, and what is needed to continue, and I\textsubscript{SOFT} is the only case that continues with a warning. The LLM acts in exactly three places: selecting a contract, binding inputs, and judging whether a declared ambiguity is resolved.
+
+\paragraph{Audit trail.}
+Of the design targets in \S1, a traceable record is the one most directly written into regulation: the EU AI Act requires high-risk systems to log events automatically over their lifetime for traceability \cite[Art.~12]{euaiact2024}. VerifiQuant is auditable at two levels. At the system level, each contract is a reviewable, versioned document that states the formula, input types, checks, and declared conventions, and it passes lint and smoke gates before entering the library. At the query level, every output carries a \emph{DiagnosticReport}. When a number is emitted, the report records the selected contract and its version, the retrieved candidates and their scores, the selector's decision, the bound values, the checks passed, and the ambiguities handled. When the query stops, it records the gate, the rule and evidence behind the stop, and what the user should supply.
+Deterministic execution and invariant evaluation replay exactly from the stored binding. LLM-mediated selection and binding are logged and can be re-executed as recorded, but a fresh rerun from raw text is \emph{not} guaranteed to take the identical path. A model's own chain of thought cannot stand in for such a record, because it need not reflect the computation that produced the answer \cite{turpin2023language}.
+%% [ICAIF-CUT] Rerun-stability detail; the replay guarantee is stated in the sentences above.
+%% Across four independent $K{=}3$ reruns of the canonical 50-question subset, every run ends with 45 correct answers, zero silent wrongs, and five abstentions; the number of cases recovered after the first turn varies from four to eight.
+%% [/ICAIF-CUT]
+
+\subsection{Bounded repair}
+When a hard ambiguity changes the required computation, free-form regeneration would reopen the door the funnel just closed.
+Repairs use AST-bounded transforms. Before acceptance, the numerical effect must match a contract-declared algebraic relation at the point of use on five sampled bindings. This is bounded numerical validation, not formal equivalence. It catches single-sided errors, but a wrong invariant paired with a compensating patch would pass. We assume a non-adversarial patch generator, not an attacker fitting patches to the sampled bindings.
+We audit the 179 synthesizable transform specs in the 250-card library with six generated patch-error classes. Of 906 mutants, 27 are arithmetically equivalent and excluded. The verifier rejects \textbf{97.7\%} of the remaining 879 mutants. The other 20 are false accepts (2.3\%), and both structural attacks are rejected at 100\%. The 20 concentrate in conditional transforms whose guard branch none of the five bindings exercised, so 10 identity patches that change nothing also pass (\extref{app:repair}). This controlled set probes verifier mechanisms. It does not estimate the catch rate for LLM-generated patches in the wild.
+
+\section{Experimental Design}\label{sec:v2design}
+Each evaluation answers a different question (\extref{app:evals}). The two in-library sets test the checks themselves. The out-of-library split and the library-agnostic human set test only the scope signal.
+
+\subsection{Clean in-library evaluation}
+We evaluate on 250 FinanceReasoning \cite{tang2025financereasoning} questions (180 medium, 70 hard), a difficulty-stratified random sample (seed 42) of the function-linked subset in which each question carries a formula-level reference implementation.
+The contract library is built from those reference functions and their questions (\S\ref{sec:v2method}), and the pipeline deduplicates formula kernels by AST hashing.
+By construction a card therefore contains the formula its matching question needs, and about a third of the cards also repeat a value from that question (\extref{app:prompts}). The evaluation is \emph{in-library}, and it measures routing, binding, and gating, not unseen-formula derivation.
+This is a structural constraint of the only benchmark that ships per-question formula provenance.
+The out-of-library analysis of \S\ref{sec:v2res} uses a second, fixed split of the same 250 questions: the library is rebuilt from 50 formula families, which leaves 199 questions whose family is absent (OOD) and 51 whose family is present (ID). Both systems run the same backbone on the same 199 unchanged questions and retrieve top-4 from the \emph{same} 50-family library. They differ in what follows retrieval: the funnel and the contract's code for VerifiQuant, a model-written program for R-PAL.
+
+\subsection{Matched baselines}\label{sec:v2baselines}
+We compare systems on the clean set.
+\emph{CoT} is a single-shot generative baseline (the LLM computes).
+\emph{PAL} writes Python executed deterministically, with no retrieval and no contracts.
+\textbf{R-PAL}, a retrieval-augmented PAL/PoT baseline, is the load-bearing comparison: it receives VerifiQuant's \emph{identical} top-4 contract retrieval as candidate context, then writes a self-contained program executed deterministically.
+R-PAL shares VerifiQuant's backbone (Gemini 2.5 Flash), question and context, top-4 retrieval, deterministic execution, and scoring (1\% output-scale-normalized tolerance). VerifiQuant differs in two coupled ways: it runs executable governance gates, and it reaches them through separate selection, binding, and ambiguity calls where R-PAL makes one.
+Any R-PAL program that fails to parse, raises, times out, or returns ``cannot solve'' is counted as abstention, not silent wrong.
+One scorer applies the $1\%$ tolerance to every system, and FNAR does not depend on it, because it counts only whether a number was emitted.
+%% [ICAIF-CUT] Fuller tolerance rationale, folded into the sentence above for the 8-page build.
+%% It is deliberately loose enough to absorb unit and scale reporting differences instead of
+%% numerical error, and a tighter threshold would move all accuracies together.
+%% [/ICAIF-CUT]
+\textbf{R-PAL$^{+}$} is identical to R-PAL in backbone, retrieval context, execution environment, and scoring. Its prompt additionally supplies the complete M/N/F/E/I governance taxonomy and requires an explicit execute, refuse, or clarify decision before program generation. It has no executable gates, but it also makes a single call where VerifiQuant makes several, so on its own it does not separate \emph{describing} the controls from \emph{executing} them.
+Two staged controls pull the coupled differences apart. \emph{Staged R-PAL$^{+}$} (Staged) splits R-PAL$^{+}$ into the same five stages, from scope to program, and leaves every check to the model. \emph{Spec-prompted R-PAL$^{+}$} (Staged+Spec) also hands each stage the contract's declared specification as text, which is never executed (\extref{app:staged}).
+
+\subsection{Governance perturbations}
+To test qualification directly we derive traps from clean questions and their contracts by deterministic operators: \textbf{F} removes a required input, \textbf{E} injects a value violating a declared E-check, \textbf{I} deletes a declared disambiguator, and \textbf{N} substitutes an out-of-scope ask.
+The label \emph{is} the operator, and each E injection is verified to fire the contract's own predicate.
+Because traps are contract-derived, this is a \emph{mechanism-targeted stress test}, not an estimate of natural deployment incidence.
+Natural queries rarely come with a known correct handling, so the operators supply one: each trap's intended exit is fixed by construction, apart from the two F traps of \S\ref{sec:v2rq2}.
+The M (under-specified intent) operator does not yield a reliable quantitative trap, because an under-specified question retains metric-bearing context. We hence make no numeric claim for M.
+We use a balanced 80-trap confirmatory set (F/E/I/N, 20 each, from 52 base questions with at most two operators each). Balancing allows a per-operator reading, at the price that any aggregate depends on the equal weighting (\S\ref{sec:v2res}).
+
+\subsection{Autonomous vs.\ clarification-assisted operation}\label{sec:v2kmode}
+$K{=}1$ (funnel-only, no clarification) is the primary deployable setting.
+$K{=}3$ is an idealized recoverability analysis: a constrained oracle may read the question's intent specification (ground-truth computation code) but never the numeric answer, and may only rewrite the question/context.
+$K{=}3$ is therefore an upper-bound-style analysis of what clarification could recover, not a production result. All trap evaluation uses $K{=}1$, because an oracle would re-inject redacted values and defuse the traps.
+
+
+\subsection{Human-labeled external-validity set}\label{sec:v2ext}
+
+The F/E/I/N traps are contract-derived, so a skeptic can ask whether their labels merely re-encode our own checks (\S\ref{sec:v2design}). We therefore add a set whose correct handling is decided by people who see neither our contracts nor our systems.
+GPT-5.2 drafted the 80 queries from FinanceReasoning topics without access to our contracts, taxonomy, gold answers, or system outputs. The drafts meant to lack an input simply left the context empty, which made them too easy to spot, so we revised those 18 with human review to omit exactly one indispensable number, before any label was collected (\extref{app:human}). The author is not the Gemini solver that every evaluated system uses, so a query's messiness does not track what the solver finds easy. The sources lie outside the 250 of \S\ref{sec:v2design}, because rewriting those would guarantee a contract for every item, and the set is therefore \emph{library-agnostic}: it mixes in-library and out-of-library questions in a proportion we do not set. Items are stratified over four latent user intents so that enough of them call for something other than a number, and the stratum is hidden from annotators.
+Five finance-trained annotators, blind to the source, the stratum, and every system output, each assign one action by a top-down rule: \textsc{out-of-scope} if the ask is not to compute one number, \textsc{request-info} if a required value is missing, \textsc{clarify} if an interpretation choice would change the number, and \textsc{answer} otherwise. These actions map onto funnel outcomes (compute, F, I, and N/M), so a confident number on a non-\textsc{answer} item is a false acceptance defined by human judgment rather than by our taxonomy. Majority labels are frozen before any system is scored. Full details are in \extref{app:human}.
+
+\paragraph{Ethics and artifacts.}
+Items are synthetic and do not contain personal information, participation was voluntary, the annotators are anonymized, and a consultation with our institution determined that an ethics-committee review was not required. We release the 250-card contract library, the staged prompts that build it, the 80-trap set, and the human evaluation with its queries, per-annotator labels, frozen majority, agreement report, and scoring scripts, in the repository of \S\ref{sec:v2method}, and print every prompt in \extref{app:prompts}.
+
+\section{Results}\label{sec:v2res}
+RQ1 and RQ2 stay in-library, RQ3 moves to the library boundary, and RQ4 uses the library-agnostic human set.
+\subsection{RQ1: On well-posed questions, does governance add accuracy?}
+No, and this expected result precisely delineates the boundary of our claim.
+Panel A of Table~\ref{tab:v2main} reports both VerifiQuant operating modes. Its R-PAL$^{+}$ row is a mean of three runs, and the other rows are single audited runs. The primary deployable setting, autonomous $K{=}1$, reaches $81.2\%$ accuracy and $2.8\%$ SWR at $84.0\%$ coverage. R-PAL answers nearly all questions and reaches \rpalAccAll{} accuracy and \rpalSWRAll{} SWR. VerifiQuant's clarification-assisted $K{=}3$ result (\vqAccAll{} accuracy, \vqSWRAll{} SWR) is an idealized recoverability upper bound rather than the autonomous headline. R-PAL and that upper bound are not statistically distinguishable (accuracy $\Delta{=}{+}3.2$ points, 95\% CI $[-0.4, 6.8]$, exact McNemar $p{=}.134$; SWR $\Delta{=}{-}0.8$ points, 95\% CI $[-3.6, 2.0]$, $p{=}.791$). %% [ICAIF-CUT] McNemar discordant counts; the p-values and CIs above already carry the claim.
+%% The accuracy discordants are 15 R-PAL-only versus 7 VerifiQuant-only correct cases; the SWR discordants are 6 versus 8.
+%% [/ICAIF-CUT] 
+%Three-run means are used only for the R-PAL trap results in Panel B.
+Moreover, the clean-accuracy axis is \emph{saturated}: once the right formula is retrieved and executed deterministically, well-posed in-library questions leave little headroom for any governance layer to claim.
+Scaling the backbone does not remove the failure mode either: replacing Flash with Gemini 2.5 Pro raises single-shot CoT accuracy from $77.6\%$ to $82.4\%$, but its silent-wrong rate falls only from $18.0\%$ to $15.2\%$. Every other system comparison holds the backbone fixed at Flash, and \S\ref{sec:v2rq2} repeats the trap comparison on Pro.
+R-PAL$^{+}$ behaves the same way (\govPromptAccAll{} accuracy at \govPromptSWRAll{} SWR), yet it accepts more than twice as many false numbers as VerifiQuant on the traps of RQ2. Standing on the clean set therefore does not predict governed behavior.
+
+\begin{table}[t]
+\caption{Clean questions (Panel A) and traps (Panel B). $K{=}3$ is an intent-oracle upper bound, not an autonomous result.}
+\label{tab:v2main}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\multicolumn{4}{@{}l}{\emph{Panel A: all well-posed clean questions}}\\
+System & Acc & SWR & Sel.\,Acc \\
+\midrule
+CoT (single-shot) & \cotAccAll{} & \cotSWRAll{} & \cotSelAccAll{} \\
+PAL (no retrieval) & \palAccAll{} & \palSWRAll{} & \palSelAccAll{} \\
+R-PAL (top-4 retrieval) & \rpalAccAll{} & \rpalSWRAll{} & \rpalSelAccAll{} \\
+R-PAL$^{+}$ (taxonomy prompt) & \govPromptAccAll{} & \govPromptSWRAll{} & \govPromptSelAccAll{} \\
+\textbf{VerifiQuant} ($K{=}1$, autonomous) & 81.2\% & 2.8\% & 96.7\% \\
+\quad $K{=}3$ (clarification upper bound) & \vqAccAll{} & \vqSWRAll{} & \vqSelAccAll{} \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Panel B: traps built to admit no valid number (F/E/I/N)}}\\
+System & FNAR & Diag & Act \\
+\midrule
+R-PAL (plain) & \govPlainFnar{} & --- & --- \\
+R-PAL$^{+}$ (taxonomy prompt) & \govPromptFnar{} & \govPromptDiag{} & \govPromptAction{} \\
+\textbf{VerifiQuant} ($K{=}1$) & \textbf{\govVQfnar{}} & \govVQdiag{} & \govVQaction{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{RQ2: On inputs that should not produce a number, does contract grounding help?}\label{sec:v2rq2}
+This is the headline result (Table~\ref{tab:v2main}, Panel B). Here and in Table~\ref{tab:v2trapop}, the R-PAL$^{+}$ and VerifiQuant figures are means of three runs.
+On the F/E/I/N traps, plain R-PAL force-fits a program and accepts a confident number \govPlainFnar{} of the time.
+Handing R-PAL the \emph{full} M/N/F/E/I governance taxonomy in its prompt lowers this only to \govPromptFnar{}.
+VerifiQuant reaches \govVQfnar{}, a reduction of \govGap{} points over the single-prompt taxonomy baseline (base-question-clustered 95\% CI $[\govCIlo{},\govCIhi{}]$). They also emit the correct structured exit far more often (exact diagnostic \govVQdiag{}, action \govVQaction{}, versus \govPromptDiag{}/\govPromptAction{}).
+The panel answers three questions at once: execution is not governance, retrieval access is not governance, and \emph{describing} governance in a single prompt does not \emph{enforce} it.
+Because the traps are contract-derived (\S\ref{sec:v2design}), a declared check fires deterministically once the right contract is selected and its inputs are bound. The non-trivial content of this result is therefore not that a check catches its own violation. It is that selection and binding succeed often enough for the check to apply, and that judging each contract's declared checks in stages outperforms supplying the identical taxonomy in a single prompt.
+The FNAR advantage concentrates on E and I, where correctness depends on an executable boundary or an unresolved convention rather than on an obviously missing field (Table~\ref{tab:v2trapop}). There, plain R-PAL force-fits almost always, and even the taxonomy-prompted variant stays high, whereas VerifiQuant's contract checks hold. When one E trap sets a stock's previous price to \$2.5, for example, both baselines report a $6{,}500\%$ weekly gain in every run, while the contract's E check \texttt{price\_coherence\_\allowbreak extreme\_change}, which fires on a price change above $200\%$, stops VerifiQuant in every run (\extref{app:cases}).
+Because the four operators carry equal weight, $\mathrm{FNAR}=\frac{1}{4}\sum_{o}\mathrm{FNAR}_o$, and the \govGap{}-point gap splits into I 14.6, E 5.4, F $-2.5$, and N $-0.4$ points. The aggregate therefore reflects the balanced design rather than any deployment mix, and a workload dominated by missing fields would show little benefit.
+On F and N the systems are close, and VerifiQuant is in fact marginally \emph{worse} than the taxonomy-prompted baseline (F: $10\%$ vs.\ $0\%$; N: $1.7\%$ vs.\ $0\%$). A missing field or a blatant out-of-scope ask is conspicuous enough for prompting to refuse. VerifiQuant's two F acceptances come from traps that break the F definition, since both remove a share count the contract marks optional with a default of 100. Without them its F rate is $0\%$ and the gap widens to 20.1 points (95\% CI $[11.0, 29.2]$, \extref{app:reruns}). Its rare N acceptance is an out-of-scope ask force-fit onto a near-neighbor contract.
+That is the selection frontier we localize in \S\ref{sec:v2boundary}, not a gate omission.
+The per-class columns of Table~\ref{tab:v2trapop} show where each system's exits are wrong, not only how often it emits a number. VerifiQuant is strongest on the operator whose evidence is a missing field (F, exact diagnostic $90\%$) and weakest on the one that requires reading an unstated convention (I, $62\%$). Its I errors are informative: of its 23 wrong I exits over the three runs, 11 pass as ready and 9 stop at a neighboring gate (M, E, or F), so the residual is mostly a missing trigger inside the ambiguity gate rather than a gap in the contract's declared ambiguities. R-PAL$^{+}$ shows the opposite profile. It labels conspicuous operators almost perfectly (F $100\%$, N $88\%$) while collapsing on I ($10\%$), the same asymmetry visible in FNAR, and what a single prompt can and cannot enforce.
+
+\paragraph{Staging versus execution.}
+The staged controls of \S\ref{sec:v2baselines} separate the two coupled differences. Staged lowers the trap FNAR of R-PAL$^{+}$ from \govPromptFnar{} to \stagedOneFnar{}, but only by abstaining more widely, and its clean coverage falls to \stagedOneCov{}. Staged+Spec lowers trap FNAR further to \stagedTwoFnar{}, level with VerifiQuant (difference $-1.7$ points, 95\% CI $[-8.3, 4.8]$). Clean coverage, however, reaches only \stagedTwoCov{} against $84.0\%$ (exact McNemar $p<.01$ in each of three runs), and most of that gap is model-written programs that fail to run, which executing the contract's own code avoids. On malformed inputs the advantage therefore comes from deciding in stages over declared contract content. Execution adds no measurable reduction in FNAR there. What it buys is clean coverage and a record that replays as stored.
+On Gemini 2.5 Pro the gap narrows to \proGap{} points (R-PAL$^{+}$ \proPromptFnar{}, VerifiQuant \proVQfnar{}, 95\% CI $[\proCIlo{},\proCIhi{}]$), nearly all of it in I (\extref{app:pro}).
+\begin{table}[t]
+\caption{Trap results by operator (20 traps each).}
+\label{tab:v2trapop}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+& R-PAL & \multicolumn{2}{c}{R-PAL$^{+}$} & \multicolumn{3}{c}{VerifiQuant} \\
+\cmidrule(lr){2-2}\cmidrule(lr){3-4}\cmidrule(l){5-7}
+Operator & FNAR & FNAR & Diag & FNAR & Diag & Act \\
+\midrule
+E (boundary) & 90\% & 30\% & 63\% & \textbf{8.3\%} & 77\% & 77\% \\
+I (ambiguity) & 95\% & 80\% & 10\% & \textbf{21.7\%} & 62\% & 62\% \\
+F (input) & 10\% & 0\% & 100\% & 10\% & 90\% & 85\% \\
+N (scope) & 0\% & 0\% & 88\% & 1.7\% & 78\% & 78\% \\
+\addlinespace
+Overall & \govPlainFnar{} & \govPromptFnar{} & \govPromptDiag{} & \textbf{\govVQfnar{}} & \govVQdiag{} & \govVQaction{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\subsection{RQ3: What is the safety--utility trade-off?}\label{sec:v2rq3}
+% We give three complementary pieces of evidence, starting with the trade-off as a whole.
+
+\paragraph{Safety versus utility.}
+Figure~\ref{fig:v2safety} places autonomous operating points on a safety--utility plane. The horizontal axis is clean coverage over 250 well-posed questions and the vertical axis is false numeric acceptance over the 80 F/E/I/N traps, and the axes remain separate rather than assuming a clean-to-trap mixing ratio. All three systems are evaluated on the same 250 clean questions, so the points are directly comparable and trace a monotone frontier. Plain R-PAL answers almost everything (\rpalCovAll{} coverage) but accepts a confident number on nearly half the traps (\govPlainFnar{}). Supplying the taxonomy in the prompt moves R-PAL$^{+}$ to \govPromptCovAll{} coverage at \govPromptFnar{}. VerifiQuant reaches \govVQfnar{} at $84.0\%$ clean coverage.
+The safety is not free. VerifiQuant forgoes roughly fifteen points of clean coverage relative to plain execution. In return, it buys a reduction in false numeric acceptance that neither execution alone nor single-prompt governance attains. Only Staged+Spec, which reads the same specification in stages, matches it, and at lower clean coverage.
+
+\begin{figure}[t]
+\centering
+%% scripts/plot_safety_utility.py --vq top4x3 --with-staged --compact (legend names: Staged, Staged+Spec)
+\includegraphics[width=0.86\linewidth]{figures/safety_utility_250q_top4_staged_compact.pdf}
+\vspace{-2mm}
+\caption{Clean-input coverage versus malformed-input false numeric acceptance for autonomous systems. The staged controls Staged and Staged+Spec of \S\ref{sec:v2baselines} are shown for reference.}
+\Description{A scatter plot compares clean coverage with trap false numeric acceptance for plain R-PAL, taxonomy-prompted R-PAL, VerifiQuant, and the two staged controls, which sit to the left of VerifiQuant at lower coverage.}
+\label{fig:v2safety}
+\end{figure}
+
+A gate ablation adds controls cumulatively on the same backbone (Table~\ref{tab:v2gateladder}). It is a dedicated autonomous $K{=}1$ run over all 250 clean questions with the full contract library and the same scoring as the main results. This gate-disable run is distinct from the canonical $K{=}1$ history truncation in Table~\ref{tab:v2kabl}: its full-funnel rung has $4.4\%$ SWR ($11/250$), compared with the canonical $2.8\%$ ($7/250$), so the claim concerns the within-run trend rather than equality of the absolute endpoints. Silent-wrong rate falls or holds at every rung, from CoT's $18.0\%$ to $4.4\%$ at the full funnel, while accuracy trades off as the I and M/N gates convert ambiguous cases into abstention.
+Execution buys most of the initial drop, and the later gates move answerable-but-unqualified cases into abstention.
+The pattern is monotone: \emph{gates buy safety with coverage, not accuracy}.
+
+\paragraph{What the funnel costs.}
+The same ladder prices the controls, since every rung runs the same 250 questions on one backbone in one environment (Table~\ref{tab:v2gateladder}).
+Selection, binding, and execution alone take $6.6$\,s per question, and the \emph{deterministic} F/E gates add only $0.2$\,s because they are executed Python rather than model calls. The cost sits in the ambiguity gate, which adds a third model call and raises it to $12.7$\,s. The full funnel runs at $12.2$\,s against $10.5$\,s for plain R-PAL and $8.2$\,s for R-PAL$^{+}$ on the same set, so the governed funnel costs roughly $1.2\times$ a retrieval-and-execution baseline and under a third of five-sample self-consistency ($38.1$\,s).
+These wall-clock means come from an earlier run of the same ladder and bound the order of magnitude, not the marginal cost of a deployment (\extref{app:reruns}).
+
+\begin{table}[t]
+\caption{Cumulative gate ablation on the 250 clean questions.}
+%% Source: results/gate_ladder_top4 (top-4 rerun, 2026-10-15). July top-3: gate_ladder/.
+\label{tab:v2gateladder}
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Configuration & Acc & SWR & Abst \\
+\midrule
+CoT single-shot (LLM computes) & 77.6\% & 18.0\% & 11 \\
+FIC select + bind + execute (no gates) & 90.0\% & 5.6\% & 11 \\
+\quad + F/E gates & 87.2\% & 5.6\% & 18 \\
+\quad + I gate & 82.4\% & 4.8\% & 32 \\
+\quad + M/N gates (full funnel) & 82.0\% & \textbf{4.4\%} & 34 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%% [ICAIF-CUT] Difficulty-shift paragraph, traded for the RQ4 power caveat in the 8-page build.
+%% Restore if space allows: medium-to-hard roughly doubles CoT's SWR (\cotSWRMed{} to
+%% \cotSWRHard{}) while VerifiQuant stays in a narrow band (\vqSWRMed{} to \vqSWRHard{}),
+%% so the advantage widens from \vqSWRatioMed{} to \vqSWRatioHard{}.
+%% [/ICAIF-CUT]
+
+A library-coverage sweep turns the scope signal into a measurable property.
+We rebuild the contract library at nested fractions of the 250 formula families (25/62/125/188/250 families, fixed seed, each subset contained in the next) and rerun all 250 questions against each. A question is in-library (ID) or out-of-library (OOD) according to whether its formula family is present, so the denominators shift with coverage (225 OOD / 25 ID at 10\%, 62 OOD / 188 ID at 75\%).
+The sweep controls changes to the full evaluation pool, but it does not by itself eliminate difficulty differences between the evolving ID and OOD subsets.
+Writing $\mathrm{Abs}=1-\mathrm{Cov}$ for the abstention rate on a subset, VerifiQuant's abstention is selective at every size (\extref{app:sweep}). OOD abstention stays high ($91.1\%{\to}79.0\%$ as the library grows), while ID abstention stays low ($8.0\%{\to}13.2\%$), so the selectivity gap $\mathrm{Abs}_{\mathrm{OOD}}-\mathrm{Abs}_{\mathrm{ID}}$ stays between $66$ and $83$ points throughout. Meanwhile, ID accuracy is flat ($83.2$--$87.1\%$) as the library grows tenfold.
+The one visible cost is honest. OOD silent-wrong rises overall as the library densifies, from $2.2\%$ to $4.8\%$, though not monotonically ($3.7\%$ at 25\% and $2.4\%$ at 50\%). Semantically adjacent contracts make near-neighbor force-fitting more tempting. This is the selection frontier of \S\ref{sec:v2boundary}.
+% now measured as a function of density.
+
+This selectivity is a trade-off, not a coverage win.
+On the fixed out-of-library split of \S\ref{sec:v2design} (199 questions whose formula family is absent from the 50-family library), the matched execution baseline answers almost all of them from parametric knowledge and is \oodRPALcorrOOD{} correct, abstaining on \oodRPALabsOOD{}. VerifiQuant abstains on \oodVQabsOOD{} of the same questions and answers \oodVQcorrOOD{} correctly. VerifiQuant is therefore not more accurate out of library, and this is the result that most constrains our claim: its own out-of-library selective accuracy is lower (\oodVQselOOD{} vs.\ \oodRPALselOOD{}), its residual silent-wrong rate there is no better than the baseline's (\oodVQswOOD{} vs.\ \oodRPALswOOD{}), and abstaining does not reduce silent-wrong risk on this split. The parametric knowledge that makes the baseline accurate here is exactly what carries no signal when it is wrong.
+What it provides is a \emph{contract-backed boundary}: it emits a number only when it selects a contract and otherwise declines as outside its declared scope, whereas execution and prompting emit confident numbers that no contract backs.
+
+\subsection{RQ4: Do human-defined labels reproduce the ordering?}\label{sec:v2rq4}
+This is the external-validity check for the contract-derived trap result, with labels defined by human experts rather than by our operators (\S\ref{sec:v2ext}).
+We first establish that the human labels are reliable. Agreement across the five experts is almost perfect (Fleiss' $\kappa = 0.84$), and a $\ge 3/5$ majority is reached on all 80 items, so no adjudication is required. The majority splits into 34 \textsc{answer}, 20 \textsc{request-info}, 10 \textsc{clarify}, and 16 \textsc{out-of-scope}, so 46 of the 80 queries call for something other than a plain number. These are the panel's labels, not the sampling conditions of \S\ref{sec:v2ext}. We then score each system by its \emph{human-defined} false numeric acceptance rate, that is, the share of \textsc{request-info}/\textsc{clarify}/\textsc{out-of-scope} queries answered with a confident number, and by action-level agreement with the human majority label (Table~\ref{tab:v2ext}).
+VerifiQuant's human-defined FNAR ($8.7\%$) is again the lowest, below R-PAL$^{+}$ ($13.0\%$), CoT ($21.7\%$), and plain R-PAL ($56.5\%$), and among the three systems Panel~B also evaluates the ordering is unchanged. Over the 46 non-\textsc{answer} items these rates are 4, 6, 10, and 26 emitted numbers, so only the separation from plain R-PAL is individually significant (exact McNemar on the same items, $p<10^{-6}$, against $p{=}.73$ for VerifiQuant versus R-PAL$^{+}$). What RQ4 establishes is therefore not a second powered comparison of the two governed systems. A panel blind to every system, labeling queries our operators never touched, reproduces the numeric ordering of Panel~B. It does not validate the F and I checks on natural phrasing, because that low rate rests mainly on scope refusal, as we show next.
+
+Of the 42 non-answer items it declines, 28 exit at N with a scope signal. Of the 20 items the panel labels \textsc{request-info}, only 5 exit at F. Even where it selects a contract, it asks for the missing input on 5 of 7 such items, against 7 of 7 for R-PAL$^{+}$ (\extref{app:human}). This set therefore provides no evidence that VerifiQuant detects missing information or ambiguity better than a single prompt.
+
+The same boundary explains why VerifiQuant's Match ($32.5\%$) and answered count ($11/80$) are low. It answers only 7 of the 34 items the panel judged answerable ($20.6\%$). In 24 of the 27 shortfalls the query exits at N. We checked each of the 24 against all 250 contracts, counting a contract as applicable when its declared purpose covers the asked quantity and its code computes it from the given inputs. For 17 the library holds no applicable contract: 10 ask for a named financial formula and 7 for an elementary calculation such as a share, a ratio, or a difference. Declining is then the designed behavior, as when a LIFO-costing question finds only a FIFO-costing card and the selector rejects it. For the other 7 a contract exists but ranks outside the top 4, six of them a generic percent-change card, which is a genuine retrieval loss that a wider $k$ does not recover. The library comes from a random sample of 250 questions and was not built to cover common requests, so which human-set items happen to be covered is a property of that sample.
+A gold answer derived for all 34 answerable items shows the cost plainly. R-PAL and R-PAL$^{+}$ are correct on every item they answer, and the only item any system misses is a single forward-rate question, missed by both CoT and VerifiQuant. Abstention here buys no accuracy.
+As on the out-of-library split, parametric knowledge buys coverage without a signal, and contract grounding buys a signal without coverage.
+
+\paragraph{Scoring protocol.}
+Human-FNAR is the share of the 46 non-\textsc{answer} items on which a system emits a number, $\mathrm{HumanFNAR}(S)=|\{i\in\mathrm{RCO}: e_S(i){=}1\}|/|\mathrm{RCO}|$ with $\mathrm{RCO}=\{i:\mathrm{GT}(i)\neq\text{A}\}$. A number that carries an I\textsubscript{SOFT} warning counts as emitted, which is stricter than the trap metric, because a \textsc{clarify} label asks for the question before any computation. Human-FNAR is the headline because it needs only whether a number was emitted, which every system exposes, and no gold answer. Answer coverage is the share of the 34 \textsc{answer} items a system answers. Match is agreement with the human majority action. It is binary for CoT and plain R-PAL, which never say why they decline, and four-way otherwise, so Match is comparable only within each pair. An M refusal is scored \textsc{out-of-scope}, and scoring it as \textsc{clarify} instead raises VerifiQuant's Match from $32.5\%$ to $35.0\%$ (\extref{app:human}).
+
+\begin{table}[t]
+\caption{Results on the human-labeled set ($n{=}80$).}
+\label{tab:v2ext}
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+System & Human-FNAR & Ans.\,cov & Match \\
+\midrule
+CoT (single-shot) & 21.7\% & 100.0\% & 87.5\% \\
+R-PAL (top-4 retrieval) & 56.5\% & 100.0\% & 67.5\% \\
+R-PAL$^{+}$ (taxonomy prompt) & 13.0\% & 64.7\% & 66.3\% \\
+\textbf{VerifiQuant} ($K{=}1$) & \textbf{8.7\%} & 20.6\% & 32.5\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Boundary and Failure Analysis}\label{sec:v2boundary}
+\paragraph{Where the claim holds.}
+The empirical claim requires three conditions: the target formula family exists in the library; the contract's specification and invariants are sufficiently correct; and the question is formula-grounded deterministic numerical reasoning.
+Open-world numerical reasoning and cross-dataset generalization fall outside the scope of this claim.
+Where these conditions fail, VerifiQuant provides at most a scope signal, not a correct answer.
+The clean-set result is in-library by construction, and out-of-library behavior is exactly the trade-off examined in RQ3.
+
+\paragraph{Two sources of the coverage cost.}
+On clean in-library questions the gates turn about fifteen points of coverage into abstention, which is the design at work, whereas on the human-labeled set most of the loss arises before any check runs, when retrieval surfaces no applicable contract (\S\ref{sec:v2rq4}). VerifiQuant is therefore a system for choosing within a declared library, and its utility is bounded by that library and by the retriever that indexes it.
+
+\paragraph{Where failures remain.}
+Every residual silent wrong localizes to one of three predeclared, LLM-mediated \emph{runtime} frontiers: contract \emph{selection} (choosing or force-fitting a near-neighbor contract), input \emph{binding} (extracting or scaling a value wrongly), and \emph{declared-hint recall} (failing to trigger an ambiguity the contract already declares).
+Empirically, every residual observed in the 250 clean questions and 80 traps fell into one of these three frontiers, apart from the two F traps of \S\ref{sec:v2rq2}. The count depends on the operating mode: the autonomous $K{=}1$ clean truncation has seven silent wrongs (Table~\ref{tab:v2kabl}), whereas the clarification-assisted $K{=}3$ clean run has eight. The latter comprise three selection, two binding, and three declared-hint-recall failures. This eight-case attribution is not used as the $K{=}1$ SWR numerator.
+It also marks a clear limit: we do not verify input \emph{provenance}, that is, whether a bound value is drawn from the correct source field. Our checks confirm only that a value satisfies the contract's schema and boundary, not that it was sourced correctly, which is exactly why the binding frontier remains.
+Distinct from these are \emph{build-time defects}, such as a contract that omits an ambiguity or encodes a wrong invariant, and, in this library, three indicator cards that returned a series instead of a scalar. The audits and the pre-declared type-policy check of \S\ref{sec:v2method} caught these three before runtime, but they do not guarantee that every specification error is found: one contract marks a conditionally required input optional (\extref{app:reruns}).
+%A held-out validation is future work.
+% TODO(if 8pp space remains): promote to a validated result with a held-out trigger-phrase set and the
+% canonical VQ_HINT_TRIGGERS run (\vqtSWRAll{} SWR / \vqtSelAccAll{} SelAcc / \vqtAbstainAll{} abstain vs \vqSWRAll{} / \vqSelAccAll{} / \vqAbstainAll{}).
+
+\paragraph{Recoverability.}
+Clarification recovers part of the abstained mass. Truncating the same $K{=}3$ run (Table~\ref{tab:v2kabl}), VerifiQuant answers autonomously at $81.2\%$ accuracy ($K{=}1$) and, with one or two clarification opportunities, reaches $92.4\%$ at $K{=}2$ and \vqAccAll{} at $K{=}3$, converting abstentions into correct answers while keeping SWR approximately flat and selective accuracy between $96.3\%$ and $96.7\%$ throughout. These turns incur interaction cost, and the oracle sees the intent specification but never the numeric answer. Because the oracle holds that specification, this is an upper bound on clarification benefit, not evidence that an arbitrary user supplies equivalent clarification, and we report it as an idealized analysis. In three $K{=}3$ questions re-entry was triggered by a warned answer scored wrong, although the oracle never saw it. One of the three ended correct, and without them the $K{=}3$ row reads 93.2\% accuracy, 3.6\% SWR, 96.8\% coverage, and 96.3\% selective accuracy.
+The last row of Table~\ref{tab:v2kabl} gives a contract-free CoT solver the same oracle and budget. Both systems end at \vqCovAll{} coverage, but CoT reaches \cotoAccAll{} accuracy at \cotoSWRAll{} SWR, against \vqAccAll{} at \vqSWRAll{} for VerifiQuant. The two differ in where the oracle enters. For VerifiQuant it enters on a structured non-answer that names the failed check, and it converts 30 of the 40 first-turn abstentions into correct answers while breaking none of the 203 answers that were already correct. For CoT it reviews every turn blind, and it rescues 25 answers but breaks 6 of the 186 that were correct at the first turn. We read this as the value of a named exit, which tells the clarifier what to ask and when to stay silent. The two runs are matched only in oracle and budget, so the comparison bounds that effect rather than isolating it.
+%% E6 scripted user: results/scripted_user_1015 (scripts/run_scripted_user_eval.py), 2026-10-15.
+On the 26 traps that remove a required input or a hard convention, a scripted user restates only what was removed. VerifiQuant then reaches a correct answer on $73.1\%$ and R-PAL$^{+}$ on $69.2\%$, with no wrong number after the reply, so asking pays for both systems (\extref{app:scripted}).
+
+\begin{table}[t]
+\caption{Clean questions under clarification budgets. Every $K{>}1$ row is an intent-oracle upper bound.}
+\label{tab:v2kabl}
+\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Budget & Acc & SWR & Coverage & Sel.\,Acc \\
+\midrule
+$K{=}1$ (autonomous) & 81.2\% & 2.8\% & 84.0\% & 96.7\% \\
+$K{=}2$ & 92.4\% & 3.6\% & 96.0\% & 96.3\% \\
+$K{=}3$ & \vqAccAll{} & \vqSWRAll{} & \vqCovAll{} & \vqSelAccAll{} \\
+\addlinespace
+CoT + oracle ($K{=}3$) & \cotoAccAll{} & \cotoSWRAll{} & \cotoCovAll{} & \cotoSelAccAll{} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%VerifiQuant's advantage holds on human-defined FNAR, not evidence against the boundary claim.
+
+\section{Conclusion}
+% Financial LLM deployment is blocked less by what models get wrong than by what systems cannot govern.
+% Compiling scope, schema, boundary, and ambiguity checks into an executable funnel makes refusal, clarification, and repair first-class, attributable outcomes.
+% On well-posed in-library questions, a matched retrieval-execution baseline already suffices. The value of executed governance appears elsewhere: on inputs that should not produce a number, where it reduces false numeric acceptance beyond what execution or prompted governance achieve, and on the verified/unverified boundary it maintains when its library ends.
+% When a gate identifies that the computation cannot be verified, VerifiQuant emits a structured refusal or clarification rather than an unsupported number. Whether that exchange is worth making is a property of the deployment rather than of the method: it pays wherever an unflagged wrong number costs more than a declined one, as in valuation, regulatory reporting, and client-facing calculation, and it does not pay where coverage is the binding constraint.
+For formula-grounded financial workflows, model accuracy alone is insufficient: deployment also requires governing when a numeric answer is justified. Within a declared contract library, VerifiQuant reads each contract's specification in stages, runs the contract's own code, which keeps clean coverage, and records each decision, so refusal, clarification, and repair become traceable outcomes. Its value emerges not on well-posed in-library questions, where matched execution already suffices, but on inputs that should not yield a number. We built it to answer only inside its library. Out of library it declines almost everything and answers \oodVQcorrOOD{} of questions correctly where matched execution answers \oodRPALcorrOOD{} from parametric knowledge, with no lower silent-wrong rate, so our out-of-library results do not show that the exchange is favorable. Whether it is depends on expected harm: the silent wrongs a deployment avoids, weighted by their cost, against the extra declines it incurs, weighted by theirs. We expect that balance to favor the boundary where an unflagged wrong number is costly, as in valuation, regulatory reporting, and client-facing calculation, and not where coverage is the binding constraint.
+
+\paragraph{Limitations and next steps.}
+This work is a first step. VerifiQuant reduces and localizes silent wrongs without eliminating them, and their attribution uses gold answers unavailable in deployment. The evidence rests on one formula-provenance benchmark and one backbone family. The trap advantage also rests on contract-derived inputs and on contracts written with their source questions in view, because the library-agnostic human set reproduces the ordering but does not separate the two governed systems. The staged controls use one prompt wording per stage, and a retrieval-matched selective baseline and a calibrated conformal procedure remain untested. Utility, finally, is bounded by a library built from a random sample of 250 questions, so on library-agnostic queries the system mostly offers a scope signal. We see three directions. First, a larger library, evaluated together with contract selection, since the sweep shows near-neighbor silent wrongs rising as the library densifies. Second, letting the model synthesize the computation within the conditions and conventions a contract declares, so that elementary calculations need no dedicated contract, while every constant and input keeps a source and the output can still be traced back to each decision. Third, better retrieval and contract naming for queries whose contract exists but is not found. A study with real users, beyond the scripted user of \S\ref{sec:v2boundary}, also remains open.
+
+\begin{acks}
+This work was supported in part by the National Science and Technology Council, Taiwan, R.O.C., under Grant 113-2628-E-001-003-MY4; the National Taiwan University and Academia Sinica Innovative Joint Program under Grant AS-NTU-114-06; and the Institute of Information Science and the Research Center for Information Technology Innovation, Academia Sinica.
+\end{acks}
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+%% arXiv = the ACM pages unchanged, then the appendix from a fresh page. ICAIF accepts no appendix in the
+%% proceedings PDF, so the ACM upload is the \arxivfalse build (main text plus references only).
+\ifarxiv
+%% Balance the last page of the main part as acmart does at the end of the ACM build, so the
+%% shared pages stay identical; the appendix then starts unbalanced on a fresh page.
+\balance
+\clearpage
+\nobalance
+\appendix
+\input{appendix_camera_ready}
+\fi
+
+\end{document}

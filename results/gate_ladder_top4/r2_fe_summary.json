@@ -1,0 +1,15 @@
+{
+  "tag": "r2_fe",
+  "model": "gemini-2.5-flash",
+  "lib_db": "results/libsweep/lib_100/cards.db",
+  "top_k": 4,
+  "strict_binding_flag": "",
+  "n": 250,
+  "correct": 192,
+  "silent_wrong": 40,
+  "abstain": 18,
+  "near_miss": 26,
+  "strict_fired": 0,
+  "elapsed_s": 1745.9,
+  "ran_at": "2026-10-15T11:50:16"
+}

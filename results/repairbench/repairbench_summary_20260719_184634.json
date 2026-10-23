@@ -1,0 +1,101 @@
+{
+  "ran_at": "20260719_184634",
+  "core": "results/paper_v2_250/fic/core.jsonl",
+  "seed": 0,
+  "samples_k": 5,
+  "specs_total": 191,
+  "usable": 179,
+  "families": 149,
+  "skipped_unsynthesizable": 12,
+  "valid_accept_k1": 172,
+  "valid_accept_k5": 171,
+  "mutants_total": 906,
+  "false_accept_k5_total": 47,
+  "equivalent_mutants_total": 27,
+  "true_false_accept_k5_total": 20,
+  "false_accept_k1_total": 60,
+  "per_class": [
+    {
+      "class": "call_inject",
+      "n": 179,
+      "reject_rate_k5": 1.0,
+      "false_accept_k5": 0,
+      "equivalent_mutants": 0,
+      "true_false_accept_k5": 0,
+      "false_accept_k1": 0,
+      "reasons_k5": {
+        "ast_guard": 179
+      }
+    },
+    {
+      "class": "coeff_perturb",
+      "n": 164,
+      "reject_rate_k5": 0.926829268292683,
+      "false_accept_k5": 12,
+      "equivalent_mutants": 9,
+      "true_false_accept_k5": 3,
+      "false_accept_k1": 17,
+      "reasons_k5": {
+        "invariant": 146,
+        "numerical": 2,
+        "ast_guard": 4,
+        "PASSED": 12
+      }
+    },
+    {
+      "class": "identity",
+      "n": 179,
+      "reject_rate_k5": 0.8994413407821229,
+      "false_accept_k5": 18,
+      "equivalent_mutants": 8,
+      "true_false_accept_k5": 10,
+      "false_accept_k1": 22,
+      "reasons_k5": {
+        "invariant": 161,
+        "PASSED": 18
+      }
+    },
+    {
+      "class": "op_swap",
+      "n": 171,
+      "reject_rate_k5": 0.9298245614035088,
+      "false_accept_k5": 12,
+      "equivalent_mutants": 8,
+      "true_false_accept_k5": 4,
+      "false_accept_k1": 16,
+      "reasons_k5": {
+        "invariant": 151,
+        "numerical": 4,
+        "ast_guard": 4,
+        "PASSED": 12
+      }
+    },
+    {
+      "class": "oversize",
+      "n": 179,
+      "reject_rate_k5": 1.0,
+      "false_accept_k5": 0,
+      "equivalent_mutants": 0,
+      "true_false_accept_k5": 0,
+      "false_accept_k1": 0,
+      "reasons_k5": {
+        "ast_guard": 179
+      }
+    },
+    {
+      "class": "var_swap",
+      "n": 34,
+      "reject_rate_k5": 0.8529411764705882,
+      "false_accept_k5": 5,
+      "equivalent_mutants": 2,
+      "true_false_accept_k5": 3,
+      "false_accept_k1": 5,
+      "reasons_k5": {
+        "numerical": 3,
+        "invariant": 25,
+        "PASSED": 5,
+        "ast_guard": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "protocol": "matched_retrieval_pal_v2",
+  "created_at": "2026-07-30T09:46:48",
+  "git_commit": "a9520dd7cfac543d90afb129d018dc7f92f54cab",
+  "model": "gemini-2.5-flash",
+  "generation_config": "SDK default, matching scripts/run_pal_baseline.py",
+  "top_k": 4,
+  "retrieval_query": "question + newline + context",
+  "retriever": "SQLAlchemyArtifactStore.retrieve_candidates (identical to canonical VQ)",
+  "candidate_content": [
+    "retrieval title",
+    "retrieval summary",
+    "public source function"
+  ],
+  "excluded_fic_content": [
+    "typed input schema",
+    "invariants and scale checks",
+    "semantic hints",
+    "repair rules",
+    "gate decisions"
+  ],
+  "questions": {
+    "path": "results/ood_eval/ood199_questions.jsonl",
+    "sha256": "34a79c7355e8b3c8e8e31b4058139107fa5cd18e37712583e80b01d537fe1177"
+  },
+  "card_db": {
+    "path": "results/paper_v1/fic/cards.db",
+    "sha256": "81a20e72201f8384a90b4b429daddfa67919b8fb2add5bf446e15485cd96f357",
+    "core_card_count": 53
+  },
+  "function_library": {
+    "path": "FinanceReasoning/data/functions/functions-article-all.json",
+    "sha256": "1c1d11ef6173208da0014b6bbb71cc8e2aa2683da9ba1ada4bf9e593fb4c7293",
+    "function_count": 3133
+  },
+  "prompt_template": "You are a financial reasoning assistant that solves problems by writing Python.\n\nYou are given top-ranked reference functions retrieved from a financial function library.\nThe candidates are retrieval results, not guaranteed to be relevant or correct for the question.\nSelect the useful candidate, if any, and adapt its logic to the exact question and context.\n\nWrite a single self-contained Python function solve() that computes the numeric answer.\nRules:\n- Only the Python standard library `math` may be imported; no other imports.\n- No input(), no file or network access.\n- solve() must return a single number (int or float).\n- Match the output unit and scale requested by the question.\n- If no candidate applies or the problem cannot be solved from the given information,\n  return the string \"CANNOT SOLVE\".\n- Do not merely call a reference function: solve() must be self-contained.\n- Return ONLY the code, in one ```python block.\n\nQuestion:\n{question}\n\nContext:\n{context}\n\nRetrieved reference functions (ranked):\n{references}\n",
+  "execution": {
+    "runner": "same extract_code/run_code/AST deny policy as scripts/run_pal_baseline.py",
+    "timeout_seconds": 10,
+    "allowed_imports": [
+      "math"
+    ]
+  },
+  "scoring": {
+    "implementation": "verifiquant.pipeline.run_error_classification_pipeline._answer_match",
+    "numeric_tolerance": "math.isclose(answer, gold, rel_tol=0.01, abs_tol=0.01)",
+    "nearest_integer": "round(answer) == round(gold) when requested by the question",
+    "unit_normalization": [
+      "answer * 100"
+    ],
+    "ternary_labels": [
+      "correct",
+      "silent_wrong",
+      "abstain"
+    ]
+  },
+  "forbidden_per_question_inputs": [
+    "python_solution",
+    "ground_truth in prompt"
+  ]
+}

@@ -1,0 +1,1085 @@
+{"kind": "valid", "fic": "fic_article_2330", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2330", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2330", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2330", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2330", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2330", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2330", "hint": "input_returns_frequency", "value": "monthly", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2330", "hint": "input_returns_frequency", "expr": "(1 - result) ** 12 - 1", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2330", "hint": "input_returns_frequency", "expr": "(2 + result) ** 12 - 1", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2330", "hint": "input_returns_frequency", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2330", "hint": "input_returns_frequency", "expr": "min((1 + result) ** 12 - 1, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2330", "hint": "input_returns_frequency", "expr": "(1 + result) ** 12 - 1 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2330", "hint": "input_returns_frequency", "value": "daily", "k1": false, "k5": false, "k5_reason": "numerical"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2330", "hint": "input_returns_frequency", "expr": "(1 - result) ** 365 - 1", "k1": false, "k5": false, "reason": "numerical"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2330", "hint": "input_returns_frequency", "expr": "(2 + result) ** 365 - 1", "k1": false, "k5": false, "reason": "numerical"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2330", "hint": "input_returns_frequency", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2330", "hint": "input_returns_frequency", "expr": "min((1 + result) ** 365 - 1, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2330", "hint": "input_returns_frequency", "expr": "(1 + result) ** 365 - 1 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_18", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_18", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_18", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_18", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_18", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_18", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_18", "hint": "day_count_convention", "value": "365_day", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_18", "hint": "day_count_convention", "expr": "result * (365 * 360)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_18", "hint": "day_count_convention", "expr": "result * (730 / 360)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_18", "hint": "day_count_convention", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_18", "hint": "day_count_convention", "expr": "min(result * (365 / 360), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_18", "hint": "day_count_convention", "expr": "result * (365 / 360) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_177", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_177", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_177", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_177", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_177", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_177", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1541", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1541", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1541", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1541", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1541", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1541", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2342", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2342", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2342", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2342", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2342", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2342", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2342", "hint": "periods_time_unit", "value": "months", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2342", "hint": "periods_time_unit", "expr": "(1 - result) ** 12 - 1", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2342", "hint": "periods_time_unit", "expr": "(2 + result) ** 12 - 1", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2342", "hint": "periods_time_unit", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2342", "hint": "periods_time_unit", "expr": "min((1 + result) ** 12 - 1, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2342", "hint": "periods_time_unit", "expr": "(1 + result) ** 12 - 1 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2342", "hint": "periods_time_unit", "value": "quarters", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2342", "hint": "periods_time_unit", "expr": "(1 - result) ** 4 - 1", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2342", "hint": "periods_time_unit", "expr": "(2 + result) ** 4 - 1", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2342", "hint": "periods_time_unit", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2342", "hint": "periods_time_unit", "expr": "min((1 + result) ** 4 - 1, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2342", "hint": "periods_time_unit", "expr": "(1 + result) ** 4 - 1 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2302", "hint": "output_scale", "value": "decimal_output", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2302", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2302", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2302", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2302", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2302", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_313", "hint": "output_form", "value": "average_rate", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_313", "hint": "output_form", "expr": "result * income", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_313", "hint": "output_form", "expr": "result / rates", "k1": false, "k5": false, "reason": "numerical"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_313", "hint": "output_form", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_313", "hint": "output_form", "expr": "min(result / income, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_313", "hint": "output_form", "expr": "result / income + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2273", "hint": "rate_format", "value": "percentage_to_decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2273", "hint": "rate_format", "expr": "(principal + (result * (loan_term_years / 12) - principal) / 100.0) / (loan_term_years * 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2273", "hint": "rate_format", "expr": "(principal + (result * (loan_term_years * 24) - principal) / 100.0) / (loan_term_years * 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_2273", "hint": "rate_format", "expr": "(principal + (result * (annual_interest_rate * 12) - principal) / 100.0) / (annual_interest_rate * 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2273", "hint": "rate_format", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2273", "hint": "rate_format", "expr": "min((principal + (result * (loan_term_years * 12) - principal) / 100.0) / (loan_term_years * 12), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2273", "hint": "rate_format", "expr": "(principal + (result * (loan_term_years * 12) - principal) / 100.0) / (loan_term_years * 12) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2750", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2750", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2750", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2750", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2750", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2750", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_520", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_520", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_520", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_520", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_520", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_520", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2457", "hint": "output_vs_wam", "value": "wam", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2457", "hint": "output_vs_wam", "expr": "1.0 * result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2457", "hint": "output_vs_wam", "expr": "2.0 / result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2457", "hint": "output_vs_wam", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2457", "hint": "output_vs_wam", "expr": "min(1.0 / result, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2457", "hint": "output_vs_wam", "expr": "1.0 / result + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2457", "hint": "output_unit_time", "value": "years", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2457", "hint": "output_unit_time", "expr": "result * 12.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2457", "hint": "output_unit_time", "expr": "result / 24.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2457", "hint": "output_unit_time", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2457", "hint": "output_unit_time", "expr": "min(result / 12.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2457", "hint": "output_unit_time", "expr": "result / 12.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_301", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_301", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_301", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_301", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_301", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_301", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2994", "hint": "benefit_value_basis", "value": "real", "k1": false, "k5": false, "k5_reason": "ast_guard"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2994", "hint": "benefit_value_basis", "expr": "result / (1 - inflation_rate)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2994", "hint": "benefit_value_basis", "expr": "result / (2 + inflation_rate)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2994", "hint": "benefit_value_basis", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2994", "hint": "benefit_value_basis", "expr": "min(result / (1 + inflation_rate), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2994", "hint": "benefit_value_basis", "expr": "result / (1 + inflation_rate) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_925", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_925", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_925", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_925", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_925", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_925", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1167", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1167", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1167", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1167", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1167", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1167", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_730", "hint": "output_rate_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_730", "hint": "output_rate_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_730", "hint": "output_rate_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_730", "hint": "output_rate_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_730", "hint": "output_rate_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_730", "hint": "output_rate_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_678", "hint": "output_rate_format", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_678", "hint": "output_rate_format", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_678", "hint": "output_rate_format", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_678", "hint": "output_rate_format", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_678", "hint": "output_rate_format", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_678", "hint": "output_rate_format", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2250", "hint": "depreciation_scope", "value": "accumulated_total_depreciation", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2250", "hint": "depreciation_scope", "expr": "(useful_life_years + year + 1) * result / (useful_life_years * (useful_life_years + 1) / 2)", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2250", "hint": "depreciation_scope", "expr": "(useful_life_years - year + 2) * result / (useful_life_years * (useful_life_years + 1) / 2)", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_2250", "hint": "depreciation_scope", "expr": "(salvage_value - year + 1) * result / (salvage_value * (salvage_value + 1) / 2)", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2250", "hint": "depreciation_scope", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2250", "hint": "depreciation_scope", "expr": "min((useful_life_years - year + 1) * result / (useful_life_years * (useful_life_years + 1) / 2), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2250", "hint": "depreciation_scope", "expr": "(useful_life_years - year + 1) * result / (useful_life_years * (useful_life_years + 1) / 2) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_30", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_30", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_30", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_30", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_30", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_30", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "value": "semi_annual_effective", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "(1 - result) ** 0.5 - 1", "k1": false, "k5": false, "reason": "numerical"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "(2 + result) ** 0.5 - 1", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "min((1 + result)**0.5 - 1, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "(1 + result)**0.5 - 1 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "value": "quarterly_effective", "k1": true, "k5": false, "k5_reason": "numerical"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "(1 - result) ** 0.25 - 1", "k1": false, "k5": false, "reason": "numerical"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "(2 + result) ** 0.25 - 1", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "min((1 + result)**0.25 - 1, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "(1 + result)**0.25 - 1 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "value": "monthly_effective", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "(1 - result) ** (1 / 12) - 1", "k1": false, "k5": false, "reason": "numerical"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "(2 + result) ** (1 / 12) - 1", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "min((1 + result)**(1/12) - 1, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_30", "hint": "ytm_compounding_basis", "expr": "(1 + result)**(1/12) - 1 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1984", "hint": "performance_fee_rate_scale", "value": "percentage", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1984", "hint": "performance_fee_rate_scale", "expr": "result * 100.0", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1984", "hint": "performance_fee_rate_scale", "expr": "result / 200.0", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1984", "hint": "performance_fee_rate_scale", "expr": "result", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1984", "hint": "performance_fee_rate_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1984", "hint": "performance_fee_rate_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1375", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1375", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1375", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1375", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1375", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1375", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1975", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1975", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1975", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1975", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1975", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1975", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1738", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1738", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1738", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1738", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1738", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1738", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_825", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_825", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_825", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_825", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_825", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_825", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1922", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1922", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1922", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1922", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1922", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1922", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2677", "hint": "output_party_focus", "value": "party_B_total", "k1": false, "k5": false, "k5_reason": "numerical"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2677", "hint": "output_party_focus", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2677", "hint": "output_party_focus", "expr": "min(result['party_B']['total'], 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2677", "hint": "output_party_focus", "expr": "result['party_B']['total'] + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1407", "hint": "output_scale", "value": "percentage_of_strike", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1407", "hint": "output_scale", "expr": "result / (strike_price / contract_size) * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1407", "hint": "output_scale", "expr": "result / (strike_price * contract_size) * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_1407", "hint": "output_scale", "expr": "result / (strike_price * option_premium) * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1407", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1407", "hint": "output_scale", "expr": "min((result / (strike_price * contract_size)) * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1407", "hint": "output_scale", "expr": "(result / (strike_price * contract_size)) * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_561", "hint": "wacc_output_scale", "value": "percentage", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_561", "hint": "wacc_output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_561", "hint": "wacc_output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_561", "hint": "wacc_output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_561", "hint": "wacc_output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_561", "hint": "wacc_output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_561", "hint": "cost_rate_input_scale", "value": "percentage", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_561", "hint": "cost_rate_input_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_561", "hint": "cost_rate_input_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_561", "hint": "cost_rate_input_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_561", "hint": "cost_rate_input_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_561", "hint": "cost_rate_input_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_561", "hint": "tax_rate_input_scale", "value": "percentage", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_561", "hint": "tax_rate_input_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_561", "hint": "tax_rate_input_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_561", "hint": "tax_rate_input_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_561", "hint": "tax_rate_input_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_561", "hint": "tax_rate_input_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2245", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2245", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2245", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2245", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2245", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2245", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_453", "hint": "duration_type", "value": "modified", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_453", "hint": "duration_type", "expr": "result / (1 - yield_rate)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_453", "hint": "duration_type", "expr": "result / (2 + yield_rate)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_453", "hint": "duration_type", "expr": "result / (1 + periods)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_453", "hint": "duration_type", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_453", "hint": "duration_type", "expr": "min(result / (1 + yield_rate), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_453", "hint": "duration_type", "expr": "result / (1 + yield_rate) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_500", "hint": "output_scale_kelly_fraction", "value": "percentage", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_500", "hint": "output_scale_kelly_fraction", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_500", "hint": "output_scale_kelly_fraction", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_500", "hint": "output_scale_kelly_fraction", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_500", "hint": "output_scale_kelly_fraction", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_500", "hint": "output_scale_kelly_fraction", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1396", "hint": "gain_loss_sign_convention", "value": "gain_negative_loss_positive", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1396", "hint": "gain_loss_sign_convention", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1396", "hint": "gain_loss_sign_convention", "expr": "min(-result, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1396", "hint": "gain_loss_sign_convention", "expr": "-result + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2566", "hint": "input_rate_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2566", "hint": "input_rate_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2566", "hint": "input_rate_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2566", "hint": "input_rate_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2566", "hint": "input_rate_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2566", "hint": "input_rate_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2566", "hint": "output_composite_rate_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2566", "hint": "output_composite_rate_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2566", "hint": "output_composite_rate_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2566", "hint": "output_composite_rate_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2566", "hint": "output_composite_rate_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2566", "hint": "output_composite_rate_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1243", "hint": "preferred_stock_participation_type", "value": "non_participating", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1243", "hint": "preferred_stock_participation_type", "expr": "result - preferred_share_percentage * (total_proceeds + participating_preferred_equity)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_1243", "hint": "preferred_stock_participation_type", "expr": "result - preferred_share_percentage * (total_proceeds - total_proceeds)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1243", "hint": "preferred_stock_participation_type", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1243", "hint": "preferred_stock_participation_type", "expr": "min(result - (preferred_share_percentage * (total_proceeds - participating_preferred_equity)), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1243", "hint": "preferred_stock_participation_type", "expr": "result - (preferred_share_percentage * (total_proceeds - participating_preferred_equity)) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_603", "hint": "gain_component_type", "value": "total_gross_gain", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_603", "hint": "gain_component_type", "expr": "result * 0.6", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_603", "hint": "gain_component_type", "expr": "result / 1.2", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_603", "hint": "gain_component_type", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_603", "hint": "gain_component_type", "expr": "min(result / 0.6, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_603", "hint": "gain_component_type", "expr": "result / 0.6 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_3041", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_3041", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_3041", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_3041", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_3041", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_3041", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1633", "hint": "base_tax_rate_scale", "value": "decimal_input", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1633", "hint": "base_tax_rate_scale", "expr": "(result + base_tax) * 100 + base_tax", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1633", "hint": "base_tax_rate_scale", "expr": "(result - base_tax) * 200 + base_tax", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_1633", "hint": "base_tax_rate_scale", "expr": "(result - estate_value) * 100 + estate_value", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1633", "hint": "base_tax_rate_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1633", "hint": "base_tax_rate_scale", "expr": "min((result - base_tax) * 100 + base_tax, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1633", "hint": "base_tax_rate_scale", "expr": "(result - base_tax) * 100 + base_tax + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_123", "hint": "day_count_convention", "value": "365_day_year", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_123", "hint": "day_count_convention", "expr": "result * (365.0 * 360.0)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_123", "hint": "day_count_convention", "expr": "result * (730.0 / 360.0)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_123", "hint": "day_count_convention", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_123", "hint": "day_count_convention", "expr": "min(result * (365.0 / 360.0), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_123", "hint": "day_count_convention", "expr": "result * (365.0 / 360.0) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_123", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_123", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_123", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_123", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_123", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_123", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1959", "hint": "output_scale_slope", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1959", "hint": "output_scale_slope", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1959", "hint": "output_scale_slope", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1959", "hint": "output_scale_slope", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1959", "hint": "output_scale_slope", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1959", "hint": "output_scale_slope", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2749", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2749", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2749", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2749", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2749", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2749", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2883", "hint": "output_format_series_vs_last", "value": "final_value", "k1": false, "k5": false, "k5_reason": "numerical"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2883", "hint": "output_format_series_vs_last", "expr": "result[-2]", "k1": false, "k5": false, "reason": "numerical"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2883", "hint": "output_format_series_vs_last", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2883", "hint": "output_format_series_vs_last", "expr": "min(result[-1], 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2883", "hint": "output_format_series_vs_last", "expr": "result[-1] + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1740", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1740", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1740", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1740", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1740", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1740", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1644", "hint": "debt_cost_basis", "value": "after_tax", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1644", "hint": "debt_cost_basis", "expr": "result + debt_value / (equity_value - debt_value) * debt_cost * tax_rate", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_1644", "hint": "debt_cost_basis", "expr": "result + debt_value / (equity_value + debt_value) * equity_cost * tax_rate", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1644", "hint": "debt_cost_basis", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1644", "hint": "debt_cost_basis", "expr": "min(result + (debt_value / (equity_value + debt_value)) * debt_cost * tax_rate, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1644", "hint": "debt_cost_basis", "expr": "result + (debt_value / (equity_value + debt_value)) * debt_cost * tax_rate + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1644", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1644", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1644", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1644", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1644", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1644", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_306", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_306", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_306", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_306", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_306", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_306", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1811", "hint": "deduction_format", "value": "percentage_of_cost", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1811", "hint": "deduction_format", "expr": "result * asset_cost * 100.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1811", "hint": "deduction_format", "expr": "result / asset_cost * 200.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_1811", "hint": "deduction_format", "expr": "result / total_asset_cost * 100.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1811", "hint": "deduction_format", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1811", "hint": "deduction_format", "expr": "min(result / asset_cost * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1811", "hint": "deduction_format", "expr": "result / asset_cost * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1558", "hint": "output_currency_scale", "value": "cents_per_unit", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1558", "hint": "output_currency_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1558", "hint": "output_currency_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1558", "hint": "output_currency_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1558", "hint": "output_currency_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1558", "hint": "output_currency_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1213", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1213", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1213", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1213", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1213", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1213", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1372", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1372", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1372", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1372", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1372", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1372", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_737", "hint": "day_count_convention", "value": "actual_360", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_737", "hint": "day_count_convention", "expr": "result * (360.0 * 365.0)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_737", "hint": "day_count_convention", "expr": "result * (720.0 / 365.0)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_737", "hint": "day_count_convention", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_737", "hint": "day_count_convention", "expr": "min(result * (360.0 / 365.0), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_737", "hint": "day_count_convention", "expr": "result * (360.0 / 365.0) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_737", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_737", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_737", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_737", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_737", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_737", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_477", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_477", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_477", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_477", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_477", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_477", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1450", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1450", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1450", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1450", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1450", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1450", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2766", "hint": "gain_loss_basis", "value": "post_tax", "k1": false, "k5": false, "k5_reason": "ast_guard"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2766", "hint": "gain_loss_basis", "expr": "result * (1 + tax_rate)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2766", "hint": "gain_loss_basis", "expr": "result * (2 - tax_rate)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2766", "hint": "gain_loss_basis", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2766", "hint": "gain_loss_basis", "expr": "min(result * (1 - tax_rate), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2766", "hint": "gain_loss_basis", "expr": "result * (1 - tax_rate) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_990", "hint": "rate_input_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_990", "hint": "rate_input_scale", "expr": "result / 100.0 if index_rate < 1.0 and margin < 1.0 else result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_990", "hint": "rate_input_scale", "expr": "result * 100.0 if index_rate < 2.0 and margin < 1.0 else result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_990", "hint": "rate_input_scale", "expr": "result * 100.0 if years < 1.0 and margin < 1.0 else result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_990", "hint": "rate_input_scale", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_990", "hint": "rate_input_scale", "expr": "min((result * 100.0) if index_rate < 1.0 and margin < 1.0 else result, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_990", "hint": "rate_input_scale", "expr": "(result * 100.0) if index_rate < 1.0 and margin < 1.0 else result + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1130", "hint": "output_scale", "value": "percentage", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1130", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1130", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1130", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1130", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1130", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_722", "hint": "spread_basis", "value": "bid_price_basis", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_722", "hint": "spread_basis", "expr": "result / ask_price / bid_price", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_722", "hint": "spread_basis", "expr": "result * bid_price / bid_price", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_722", "hint": "spread_basis", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_722", "hint": "spread_basis", "expr": "min(result * ask_price / bid_price, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_722", "hint": "spread_basis", "expr": "result * ask_price / bid_price + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_722", "hint": "spread_basis", "value": "midpoint_basis", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_722", "hint": "spread_basis", "expr": "result * (2 / ask_price) / (ask_price + bid_price)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_722", "hint": "spread_basis", "expr": "result * (4 * ask_price) / (ask_price + bid_price)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_722", "hint": "spread_basis", "expr": "result * (2 * bid_price) / (bid_price + bid_price)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_722", "hint": "spread_basis", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_722", "hint": "spread_basis", "expr": "min(result * (2 * ask_price) / (ask_price + bid_price), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_722", "hint": "spread_basis", "expr": "result * (2 * ask_price) / (ask_price + bid_price) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_722", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_722", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_722", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_722", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_722", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_722", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1739", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1739", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1739", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1739", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1739", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1739", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_333", "hint": "volume_reporting_unit", "value": "thousands_of_shares", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_333", "hint": "volume_reporting_unit", "expr": "result / 1000", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_333", "hint": "volume_reporting_unit", "expr": "result * 2000", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_333", "hint": "volume_reporting_unit", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_333", "hint": "volume_reporting_unit", "expr": "min(result * 1000, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_333", "hint": "volume_reporting_unit", "expr": "result * 1000 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2839", "hint": "output_scale_percent", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2839", "hint": "output_scale_percent", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2839", "hint": "output_scale_percent", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2839", "hint": "output_scale_percent", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2839", "hint": "output_scale_percent", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2839", "hint": "output_scale_percent", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2839", "hint": "modifier_interpretation", "value": "percentage_change", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2839", "hint": "modifier_interpretation", "expr": "(result + 1) * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2839", "hint": "modifier_interpretation", "expr": "(result - 2) * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2839", "hint": "modifier_interpretation", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2839", "hint": "modifier_interpretation", "expr": "min((result - 1) * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2839", "hint": "modifier_interpretation", "expr": "(result - 1) * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2164", "hint": "payment_timing", "value": "beginning_of_period", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2164", "hint": "payment_timing", "expr": "result / (1 + annual_interest_rate * 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2164", "hint": "payment_timing", "expr": "result / (2 + annual_interest_rate / 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_2164", "hint": "payment_timing", "expr": "result / (1 + loan_term_years / 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2164", "hint": "payment_timing", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2164", "hint": "payment_timing", "expr": "min(result / (1 + annual_interest_rate / 12), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2164", "hint": "payment_timing", "expr": "result / (1 + annual_interest_rate / 12) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1064", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1064", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1064", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1064", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1064", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1064", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "value": "one_fifty_percent_rate", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "expr": "result * (1.5 * 2.0)", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "expr": "result * (3.0 / 2.0)", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "expr": "result", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "expr": "min(result * (1.5 / 2.0), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "expr": "result * (1.5 / 2.0) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "value": "two_fifty_percent_rate", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "expr": "result * (2.5 * 2.0)", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "expr": "result * (5.0 / 2.0)", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "expr": "min(result * (2.5 / 2.0), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1774", "hint": "declining_balance_rate_factor", "expr": "result * (2.5 / 2.0) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_327", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_327", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_327", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_327", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_327", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_327", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1864", "hint": "exchange_rate_quotation", "value": "usd_per_lc", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1864", "hint": "exchange_rate_quotation", "expr": "1 * result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1864", "hint": "exchange_rate_quotation", "expr": "2 / result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1864", "hint": "exchange_rate_quotation", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1864", "hint": "exchange_rate_quotation", "expr": "min(1 / result, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1864", "hint": "exchange_rate_quotation", "expr": "1 / result + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2829", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2829", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2829", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2829", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2829", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2829", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1744", "hint": "beta_output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1744", "hint": "beta_output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1744", "hint": "beta_output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1744", "hint": "beta_output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1744", "hint": "beta_output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1744", "hint": "beta_output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2310", "hint": "payment_timing", "value": "beginning_of_period", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2310", "hint": "payment_timing", "expr": "result / (1 + annual_interest_rate * 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2310", "hint": "payment_timing", "expr": "result / (2 + annual_interest_rate / 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_2310", "hint": "payment_timing", "expr": "result / (1 + loan_term_years / 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2310", "hint": "payment_timing", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2310", "hint": "payment_timing", "expr": "min(result / (1 + (annual_interest_rate / 12)), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2310", "hint": "payment_timing", "expr": "result / (1 + (annual_interest_rate / 12)) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1067", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1067", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1067", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1067", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1067", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1067", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1745", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1745", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1745", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1745", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1745", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1745", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_3067", "hint": "profit_loss_interpretation", "value": "negative_is_profit", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_3067", "hint": "profit_loss_interpretation", "expr": "result / -1.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_3067", "hint": "profit_loss_interpretation", "expr": "result * -2.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_3067", "hint": "profit_loss_interpretation", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_3067", "hint": "profit_loss_interpretation", "expr": "min(result * -1.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_3067", "hint": "profit_loss_interpretation", "expr": "result * -1.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2290", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2290", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2290", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2290", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2290", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2290", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1091", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1091", "hint": "output_scale", "expr": "result / 100.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1091", "hint": "output_scale", "expr": "result * 200.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1091", "hint": "output_scale", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1091", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1091", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_91", "hint": "change_input_convention", "value": "raw_period_over_period_change", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_91", "hint": "change_input_convention", "expr": "result - 2 * (changes_in_accounts_receivable - changes_in_inventories)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_91", "hint": "change_input_convention", "expr": "result - 4 * (changes_in_accounts_receivable + changes_in_inventories)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_91", "hint": "change_input_convention", "expr": "result - 2 * (amortization + changes_in_inventories)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_91", "hint": "change_input_convention", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_91", "hint": "change_input_convention", "expr": "min(result - 2 * (changes_in_accounts_receivable + changes_in_inventories), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_91", "hint": "change_input_convention", "expr": "result - 2 * (changes_in_accounts_receivable + changes_in_inventories) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1319", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1319", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1319", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1319", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1319", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1319", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_369", "hint": "annuity_payment_timing", "value": "beginning_of_period", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_369", "hint": "annuity_payment_timing", "expr": "result * (1 + annual_interest_rate * 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_369", "hint": "annuity_payment_timing", "expr": "result * (2 + annual_interest_rate / 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_369", "hint": "annuity_payment_timing", "expr": "result * (1 + premium / 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_369", "hint": "annuity_payment_timing", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_369", "hint": "annuity_payment_timing", "expr": "min(result * (1 + annual_interest_rate / 12), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_369", "hint": "annuity_payment_timing", "expr": "result * (1 + annual_interest_rate / 12) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_219", "hint": "quote_direction", "value": "base_per_quote", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_219", "hint": "quote_direction", "expr": "1.0 * result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_219", "hint": "quote_direction", "expr": "2.0 / result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_219", "hint": "quote_direction", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_219", "hint": "quote_direction", "expr": "min(1.0 / result, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_219", "hint": "quote_direction", "expr": "1.0 / result + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_431", "hint": "rate_input_scale", "value": "percentage_input", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_431", "hint": "rate_input_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_431", "hint": "rate_input_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_431", "hint": "rate_input_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_431", "hint": "rate_input_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_431", "hint": "rate_input_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_431", "hint": "time_unit", "value": "months", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_431", "hint": "time_unit", "expr": "(result - principal) ** (1 / 12) - principal", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_431", "hint": "time_unit", "expr": "(result + principal) ** (2 / 12) - principal", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_431", "hint": "time_unit", "expr": "(result + rate) ** (1 / 12) - rate", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_431", "hint": "time_unit", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_431", "hint": "time_unit", "expr": "min((result + principal) ** (1/12) - principal, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_431", "hint": "time_unit", "expr": "(result + principal) ** (1/12) - principal + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1816", "hint": "final_amount_interpretation", "value": "owed_amount_only", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1816", "hint": "final_amount_interpretation", "expr": "result if result >= 1.0 else 0", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1816", "hint": "final_amount_interpretation", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1816", "hint": "final_amount_interpretation", "expr": "min(result if result >= 0 else 0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1816", "hint": "final_amount_interpretation", "expr": "result if result >= 0 else 0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1432", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1432", "hint": "output_scale", "expr": "result / 100.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1432", "hint": "output_scale", "expr": "result * 200.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1432", "hint": "output_scale", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1432", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1432", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_906", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_906", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_906", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_906", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_906", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_906", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1855", "hint": "taxable_income_floor", "value": "floor_at_zero", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1855", "hint": "taxable_income_floor", "expr": "0 if result < 1.0 else result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1855", "hint": "taxable_income_floor", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1855", "hint": "taxable_income_floor", "expr": "min(0 if result < 0 else result, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1855", "hint": "taxable_income_floor", "expr": "0 if result < 0 else result + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2494", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2494", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2494", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2494", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2494", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2494", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2532", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2532", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2532", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2532", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2532", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2532", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_610", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_610", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_610", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_610", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_610", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_610", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_610", "hint": "annualization_basis", "value": "365_days_year", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_610", "hint": "annualization_basis", "expr": "result * (360.0 * 365.0) / (360.0 / period_days)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_610", "hint": "annualization_basis", "expr": "result * (720.0 / 365.0) / (360.0 / period_days)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_610", "hint": "annualization_basis", "expr": "result * (360.0 / 365.0) / (360.0 / spot_rate)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_610", "hint": "annualization_basis", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_610", "hint": "annualization_basis", "expr": "min(result * (360.0 / 365.0) / (360.0 / period_days), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_610", "hint": "annualization_basis", "expr": "result * (360.0 / 365.0) / (360.0 / period_days) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_109", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_109", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_109", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_109", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_109", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_109", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2659", "hint": "profit_loss_basis", "value": "after_tax", "k1": false, "k5": false, "k5_reason": "ast_guard"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2659", "hint": "profit_loss_basis", "expr": "result * (1 + tax_rate)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2659", "hint": "profit_loss_basis", "expr": "result * (2 - tax_rate)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2659", "hint": "profit_loss_basis", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2659", "hint": "profit_loss_basis", "expr": "min(result * (1 - tax_rate), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2659", "hint": "profit_loss_basis", "expr": "result * (1 - tax_rate) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2452", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2452", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2452", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2452", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2452", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2452", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1400", "hint": "pmi_output_scale", "value": "0_1_scale", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1400", "hint": "pmi_output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1400", "hint": "pmi_output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1400", "hint": "pmi_output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1400", "hint": "pmi_output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1400", "hint": "pmi_output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_817", "hint": "output_format_roi", "value": "percentage_return", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_817", "hint": "output_format_roi", "expr": "result * investment", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_817", "hint": "output_format_roi", "expr": "result / time_period", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_817", "hint": "output_format_roi", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_817", "hint": "output_format_roi", "expr": "min(result / investment, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_817", "hint": "output_format_roi", "expr": "result / investment + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_817", "hint": "stock_appreciation_format", "value": "percentage_change", "k1": false, "k5": false, "k5_reason": "ast_guard"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_817", "hint": "stock_appreciation_format", "expr": "(result - borrowed_funds / stock_appreciation_as_percentage_change * time_period) / (1 + stock_appreciation_as_percentage_change) * stock_appreciation_as_percentage_change", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_817", "hint": "stock_appreciation_format", "expr": "(result - borrowed_funds * stock_appreciation_as_percentage_change * time_period) / (2 + stock_appreciation_as_percentage_change) * stock_appreciation_as_percentage_change", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_817", "hint": "stock_appreciation_format", "expr": "(result - investment * stock_appreciation_as_percentage_change * time_period) / (1 + stock_appreciation_as_percentage_change) * stock_appreciation_as_percentage_change", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_817", "hint": "stock_appreciation_format", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_817", "hint": "stock_appreciation_format", "expr": "min((result - (borrowed_funds * stock_appreciation_as_percentage_change * time_period)) / (1 + stock_appreciation_as_percentage_change) * stock_appreciation_as_percentage_change, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_817", "hint": "stock_appreciation_format", "expr": "(result - (borrowed_funds * stock_appreciation_as_percentage_change * time_period)) / (1 + stock_appreciation_as_percentage_change) * stock_appreciation_as_percentage_change + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_817", "hint": "interest_rate_period_basis", "value": "monthly", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_817", "hint": "interest_rate_period_basis", "expr": "result - borrowed_funds * ((1 - interest_rate) ** 12 - (1 + interest_rate)) * time_period", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_817", "hint": "interest_rate_period_basis", "expr": "result - borrowed_funds * ((2 + interest_rate) ** 12 - (1 + interest_rate)) * time_period", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_817", "hint": "interest_rate_period_basis", "expr": "result - stock_appreciation * ((1 + interest_rate) ** 12 - (1 + interest_rate)) * time_period", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_817", "hint": "interest_rate_period_basis", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_817", "hint": "interest_rate_period_basis", "expr": "min(result - borrowed_funds * ( (1 + interest_rate) ** 12 - (1 + interest_rate) ) * time_period, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_817", "hint": "interest_rate_period_basis", "expr": "result - borrowed_funds * ( (1 + interest_rate) ** 12 - (1 + interest_rate) ) * time_period + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2305", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2305", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2305", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2305", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2305", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2305", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2120", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2120", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2120", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2120", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2120", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2120", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_319", "hint": "transaction_perspective", "value": "seller_revenue", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_319", "hint": "transaction_perspective", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_319", "hint": "transaction_perspective", "expr": "min(-result, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_319", "hint": "transaction_perspective", "expr": "-result + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_3", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_3", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_3", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_3", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_3", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_3", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2448", "hint": "output_scale", "value": "decimal_fraction", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2448", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2448", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2448", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2448", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2448", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_571", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_571", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_571", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_571", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_571", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_571", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2809", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2809", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2809", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2809", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2809", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2809", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_247", "hint": "cash_flow_timing", "value": "beginning_of_period", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_247", "hint": "cash_flow_timing", "expr": "result * (1 - discount_rate)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_247", "hint": "cash_flow_timing", "expr": "result * (2 + discount_rate)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_247", "hint": "cash_flow_timing", "expr": "result * (1 + cash_flows)", "k1": false, "k5": false, "reason": "numerical"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_247", "hint": "cash_flow_timing", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_247", "hint": "cash_flow_timing", "expr": "min(result * (1 + discount_rate), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_247", "hint": "cash_flow_timing", "expr": "result * (1 + discount_rate) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1537", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1537", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1537", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1537", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1537", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1537", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2817", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2817", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2817", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2817", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2817", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2817", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_61", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_61", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_61", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_61", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_61", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_61", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2093", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2093", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2093", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2093", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2093", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2093", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_593", "hint": "fee_input_scale", "value": "decimal_percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_593", "hint": "fee_input_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_593", "hint": "fee_input_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_593", "hint": "fee_input_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_593", "hint": "fee_input_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_593", "hint": "fee_input_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_450", "hint": "fx_quote_convention", "value": "currency_b_per_currency_c", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_450", "hint": "fx_quote_convention", "expr": "1.0 * result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_450", "hint": "fx_quote_convention", "expr": "2.0 / result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_450", "hint": "fx_quote_convention", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_450", "hint": "fx_quote_convention", "expr": "min(1.0 / result, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_450", "hint": "fx_quote_convention", "expr": "1.0 / result + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_450", "hint": "output_premium_discount_scale", "value": "premium_discount_percentage", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_450", "hint": "output_premium_discount_scale", "expr": "(result * spot_rate - 1) * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_450", "hint": "output_premium_discount_scale", "expr": "(result / spot_rate - 2) * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_450", "hint": "output_premium_discount_scale", "expr": "(result / interest_rate_country_c - 1) * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_450", "hint": "output_premium_discount_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_450", "hint": "output_premium_discount_scale", "expr": "min(((result / spot_rate) - 1) * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_450", "hint": "output_premium_discount_scale", "expr": "((result / spot_rate) - 1) * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_966", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_966", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_966", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_966", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_966", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_966", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_334", "hint": "typical_price_definition", "value": "midpoint_price", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_334", "hint": "typical_price_definition", "expr": "result / 3 / 2", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_334", "hint": "typical_price_definition", "expr": "result * 6 / 2", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_334", "hint": "typical_price_definition", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_334", "hint": "typical_price_definition", "expr": "min(result * 3 / 2, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_334", "hint": "typical_price_definition", "expr": "result * 3 / 2 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_334", "hint": "typical_price_definition", "value": "closing_price_only", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_334", "hint": "typical_price_definition", "expr": "result / 3", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_334", "hint": "typical_price_definition", "expr": "result * 6", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_334", "hint": "typical_price_definition", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_334", "hint": "typical_price_definition", "expr": "min(result * 3, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_334", "hint": "typical_price_definition", "expr": "result * 3 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2027", "hint": "output_rebate_sign", "value": "negative_cost", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2027", "hint": "output_rebate_sign", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2027", "hint": "output_rebate_sign", "expr": "min(-result, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2027", "hint": "output_rebate_sign", "expr": "-result + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2909", "hint": "income_basis", "value": "pre_tax", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2909", "hint": "income_basis", "expr": "result - taxes", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_2909", "hint": "income_basis", "expr": "result + charge_offs", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2909", "hint": "income_basis", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2909", "hint": "income_basis", "expr": "min(result + taxes, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2909", "hint": "income_basis", "expr": "result + taxes + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2331", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2331", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2331", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2331", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2331", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2331", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_950", "hint": "day_count_convention", "value": "365_day_year", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_950", "hint": "day_count_convention", "expr": "result * (365 * 360)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_950", "hint": "day_count_convention", "expr": "result * (730 / 360)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_950", "hint": "day_count_convention", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_950", "hint": "day_count_convention", "expr": "min(result * (365 / 360), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_950", "hint": "day_count_convention", "expr": "result * (365 / 360) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_950", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_950", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_950", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_950", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_950", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_950", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_950", "hint": "yield_type_clarification", "value": "money_market_yield", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_950", "hint": "yield_type_clarification", "expr": "result * (face_value * purchase_price)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_950", "hint": "yield_type_clarification", "expr": "result * (time_to_maturity / purchase_price)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_950", "hint": "yield_type_clarification", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_950", "hint": "yield_type_clarification", "expr": "min(result * (face_value / purchase_price), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_950", "hint": "yield_type_clarification", "expr": "result * (face_value / purchase_price) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1726", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1726", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1726", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1726", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1726", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1726", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1874", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1874", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1874", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1874", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1874", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1874", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_326", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_326", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_326", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_326", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_326", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_326", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_886", "hint": "output_scale", "value": "decimal_output", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_886", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_886", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_886", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_886", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_886", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2071", "hint": "output_interpretation_index_value_vs_change", "value": "change_in_nvi", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2071", "hint": "output_interpretation_index_value_vs_change", "expr": "result + previous_nvi", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_2071", "hint": "output_interpretation_index_value_vs_change", "expr": "result - previous_volume", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2071", "hint": "output_interpretation_index_value_vs_change", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2071", "hint": "output_interpretation_index_value_vs_change", "expr": "min(result - previous_nvi, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2071", "hint": "output_interpretation_index_value_vs_change", "expr": "result - previous_nvi + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1288", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1288", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1288", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1288", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1288", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1288", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2253", "hint": "volume_scale", "value": "thousands_of_shares", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2253", "hint": "volume_scale", "expr": "result * 1000.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2253", "hint": "volume_scale", "expr": "result / 2000.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2253", "hint": "volume_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2253", "hint": "volume_scale", "expr": "min(result / 1000.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2253", "hint": "volume_scale", "expr": "result / 1000.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1254", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1254", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1254", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1254", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1254", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1254", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_687", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_687", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_687", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_687", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_687", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_687", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1996", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1996", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1996", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1996", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1996", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1996", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1063", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1063", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1063", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1063", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1063", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1063", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_655", "hint": "output_periodicity", "value": "annual", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_655", "hint": "output_periodicity", "expr": "result / 12", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_655", "hint": "output_periodicity", "expr": "result * 24", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_655", "hint": "output_periodicity", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_655", "hint": "output_periodicity", "expr": "min(result * 12, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_655", "hint": "output_periodicity", "expr": "result * 12 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_12", "hint": "payment_timing", "value": "beginning_of_period", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_12", "hint": "payment_timing", "expr": "result * (1 - interest_rate)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_12", "hint": "payment_timing", "expr": "result * (2 + interest_rate)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_12", "hint": "payment_timing", "expr": "result * (1 + periods)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_12", "hint": "payment_timing", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_12", "hint": "payment_timing", "expr": "min(result * (1 + interest_rate), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_12", "hint": "payment_timing", "expr": "result * (1 + interest_rate) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_503", "hint": "duration_output_interpretation", "value": "basis_points", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_503", "hint": "duration_output_interpretation", "expr": "result / 10000.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_503", "hint": "duration_output_interpretation", "expr": "result * 20000.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_503", "hint": "duration_output_interpretation", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_503", "hint": "duration_output_interpretation", "expr": "min(result * 10000.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_503", "hint": "duration_output_interpretation", "expr": "result * 10000.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1280", "hint": "pip_type", "value": "fractional_pip", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1280", "hint": "pip_type", "expr": "result / 0.1", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1280", "hint": "pip_type", "expr": "result * 0.2", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1280", "hint": "pip_type", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1280", "hint": "pip_type", "expr": "min(result * 0.1, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1280", "hint": "pip_type", "expr": "result * 0.1 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2637", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2637", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2637", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2637", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2637", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2637", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_956", "hint": "annual_rate_scale", "value": "decimal_input", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_956", "hint": "annual_rate_scale", "expr": "result / 100", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_956", "hint": "annual_rate_scale", "expr": "result * 200", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_956", "hint": "annual_rate_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_956", "hint": "annual_rate_scale", "expr": "min(result * 100, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_956", "hint": "annual_rate_scale", "expr": "result * 100 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_956", "hint": "payment_timing_convention", "value": "beginning_of_period", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_956", "hint": "payment_timing_convention", "expr": "result * (1 + annual_interest_rate * 100 / 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_956", "hint": "payment_timing_convention", "expr": "result * (2 + annual_interest_rate / 100 / 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_956", "hint": "payment_timing_convention", "expr": "result * (1 + years / 100 / 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_956", "hint": "payment_timing_convention", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_956", "hint": "payment_timing_convention", "expr": "min(result * (1 + annual_interest_rate / 100 / 12), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_956", "hint": "payment_timing_convention", "expr": "result * (1 + annual_interest_rate / 100 / 12) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1509", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1509", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1509", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1509", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1509", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1509", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1441", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1441", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1441", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1441", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1441", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1441", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_137", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_137", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_137", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_137", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_137", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_137", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2738", "hint": "cash_flow_timing", "value": "beginning_of_period", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2738", "hint": "cash_flow_timing", "expr": "result * (1 - discount_rate)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2738", "hint": "cash_flow_timing", "expr": "result * (2 + discount_rate)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_2738", "hint": "cash_flow_timing", "expr": "result * (1 + asset_cash_flows)", "k1": false, "k5": false, "reason": "numerical"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2738", "hint": "cash_flow_timing", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2738", "hint": "cash_flow_timing", "expr": "min(result * (1 + discount_rate), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2738", "hint": "cash_flow_timing", "expr": "result * (1 + discount_rate) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_31", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_31", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_31", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_31", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_31", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_31", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2259", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2259", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2259", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2259", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2259", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2259", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_716", "hint": "profit_basis", "value": "gross_gain", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_716", "hint": "profit_basis", "expr": "result - option_cost", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_716", "hint": "profit_basis", "expr": "result + strike_price", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_716", "hint": "profit_basis", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_716", "hint": "profit_basis", "expr": "min(result + option_cost, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_716", "hint": "profit_basis", "expr": "result + option_cost + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_447", "hint": "rate_input_scale", "value": "percentage", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_447", "hint": "rate_input_scale", "expr": "result * 100.0", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_447", "hint": "rate_input_scale", "expr": "result / 200.0", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_447", "hint": "rate_input_scale", "expr": "result", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_447", "hint": "rate_input_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_447", "hint": "rate_input_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_190", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_190", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_190", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_190", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_190", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_190", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1152", "hint": "vesting_increment_scale", "value": "percentage_input", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1152", "hint": "vesting_increment_scale", "expr": "result / 100", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1152", "hint": "vesting_increment_scale", "expr": "result * 200", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1152", "hint": "vesting_increment_scale", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1152", "hint": "vesting_increment_scale", "expr": "min(result * 100, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1152", "hint": "vesting_increment_scale", "expr": "result * 100 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1152", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1152", "hint": "output_scale", "expr": "result * 100.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1152", "hint": "output_scale", "expr": "result / 200.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1152", "hint": "output_scale", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1152", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1152", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_611", "hint": "output_rate_scale", "value": "percentage", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_611", "hint": "output_rate_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_611", "hint": "output_rate_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_611", "hint": "output_rate_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_611", "hint": "output_rate_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_611", "hint": "output_rate_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_611", "hint": "currency_quote_convention", "value": "indirect_quote", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_611", "hint": "currency_quote_convention", "expr": "1.0 * result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_611", "hint": "currency_quote_convention", "expr": "2.0 / result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_611", "hint": "currency_quote_convention", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_611", "hint": "currency_quote_convention", "expr": "min(1.0 / result, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_611", "hint": "currency_quote_convention", "expr": "1.0 / result + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1796", "hint": "mean_difference_direction", "value": "mean1_minus_mean2", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1796", "hint": "mean_difference_direction", "expr": "result", "k1": true, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1796", "hint": "mean_difference_direction", "expr": "min(-result, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1796", "hint": "mean_difference_direction", "expr": "-result + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1244", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1244", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1244", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1244", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1244", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1244", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2334", "hint": "output_scale_percent", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2334", "hint": "output_scale_percent", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2334", "hint": "output_scale_percent", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2334", "hint": "output_scale_percent", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2334", "hint": "output_scale_percent", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2334", "hint": "output_scale_percent", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_514", "hint": "kurtosis_type", "value": "raw_kurtosis", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_514", "hint": "kurtosis_type", "expr": "result - 3", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_514", "hint": "kurtosis_type", "expr": "result + 6", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_514", "hint": "kurtosis_type", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_514", "hint": "kurtosis_type", "expr": "min(result + 3, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_514", "hint": "kurtosis_type", "expr": "result + 3 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2316", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2316", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2316", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2316", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2316", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2316", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1395", "hint": "output_unit_scale", "value": "per_share_profit", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1395", "hint": "output_unit_scale", "expr": "result * quantity", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_1395", "hint": "output_unit_scale", "expr": "result / premium", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1395", "hint": "output_unit_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1395", "hint": "output_unit_scale", "expr": "min(result / quantity, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1395", "hint": "output_unit_scale", "expr": "result / quantity + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_705", "hint": "output_scale", "value": "decimal", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_705", "hint": "output_scale", "expr": "result * 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_705", "hint": "output_scale", "expr": "result / 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_705", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_705", "hint": "output_scale", "expr": "min(result / 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_705", "hint": "output_scale", "expr": "result / 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1217", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1217", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1217", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1217", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1217", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1217", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_2028", "hint": "output_basis_type", "value": "percentage_of_total_premium", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_2028", "hint": "output_basis_type", "expr": "result * total_premium * 100.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_2028", "hint": "output_basis_type", "expr": "result / total_premium * 200.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_2028", "hint": "output_basis_type", "expr": "result / time_elapsed * 100.0", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_2028", "hint": "output_basis_type", "expr": "result", "k1": true, "k5": true, "reason": "PASSED"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_2028", "hint": "output_basis_type", "expr": "min(result / total_premium * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_2028", "hint": "output_basis_type", "expr": "result / total_premium * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_117", "hint": "net_premium_direction", "value": "net_debit", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_117", "hint": "net_premium_direction", "expr": "result - 2 / net_premium", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_117", "hint": "net_premium_direction", "expr": "result - 4 * net_premium", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_117", "hint": "net_premium_direction", "expr": "result - 2 * call_strike", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_117", "hint": "net_premium_direction", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_117", "hint": "net_premium_direction", "expr": "min(result - (2 * net_premium), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_117", "hint": "net_premium_direction", "expr": "result - (2 * net_premium) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_994", "hint": "payment_timing", "value": "beginning_of_period", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_994", "hint": "payment_timing", "expr": "result / (1 + fully_indexed_rate * 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_994", "hint": "payment_timing", "expr": "result / (2 + fully_indexed_rate / 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "var_swap", "fic": "fic_article_994", "hint": "payment_timing", "expr": "result / (1 + loan_term_months / 12)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_994", "hint": "payment_timing", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_994", "hint": "payment_timing", "expr": "min(result / (1 + (fully_indexed_rate / 12)), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_994", "hint": "payment_timing", "expr": "result / (1 + (fully_indexed_rate / 12)) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1730", "hint": "output_scale", "value": "percent", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1730", "hint": "output_scale", "expr": "result / 100.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1730", "hint": "output_scale", "expr": "result * 200.0", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1730", "hint": "output_scale", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1730", "hint": "output_scale", "expr": "min(result * 100.0, 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1730", "hint": "output_scale", "expr": "result * 100.0 + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "valid", "fic": "fic_article_1666", "hint": "days_in_year_convention", "value": "360_days", "k1": true, "k5": true, "k5_reason": "PASSED"}
+{"kind": "mutant", "class": "op_swap", "fic": "fic_article_1666", "hint": "days_in_year_convention", "expr": "result * (365.0 * 360.0)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "coeff_perturb", "fic": "fic_article_1666", "hint": "days_in_year_convention", "expr": "result * (730.0 / 360.0)", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "identity", "fic": "fic_article_1666", "hint": "days_in_year_convention", "expr": "result", "k1": false, "k5": false, "reason": "invariant"}
+{"kind": "mutant", "class": "call_inject", "fic": "fic_article_1666", "hint": "days_in_year_convention", "expr": "min(result * (365.0 / 360.0), 10**9)", "k1": false, "k5": false, "reason": "ast_guard"}
+{"kind": "mutant", "class": "oversize", "fic": "fic_article_1666", "hint": "days_in_year_convention", "expr": "result * (365.0 / 360.0) + 0*result", "k1": false, "k5": false, "reason": "ast_guard"}

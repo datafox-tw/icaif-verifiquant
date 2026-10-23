@@ -1,0 +1,122 @@
+{
+  "n_traps": 80,
+  "n_base_clusters": 52,
+  "overall": {
+    "vq_k1": {
+      "source": [
+        "results/governance_confirmatory/vq_k1_traps.jsonl"
+      ],
+      "fnar": 0.1125,
+      "fnar_per_run": [
+        0.1125
+      ],
+      "diagnostic_accuracy": 0.75,
+      "action_accuracy": 0.7375
+    },
+    "rpal_plain": {
+      "fnar": 0.4875
+    },
+    "rpal_prompted_mean": {
+      "fnar": 0.275,
+      "fnar_per_run": [
+        0.2625,
+        0.3,
+        0.2625
+      ],
+      "diagnostic_accuracy": 0.6542,
+      "action_accuracy": 0.5583
+    }
+  },
+  "per_operator_fnar": {
+    "vq_k1": {
+      "F": 0.1,
+      "E": 0.1,
+      "I": 0.2,
+      "N": 0.05
+    },
+    "rpal_plain": {
+      "F": 0.1,
+      "E": 0.9,
+      "I": 0.95,
+      "N": 0.0
+    },
+    "rpal_prompted_mean": {
+      "F": 0.0,
+      "E": 0.3,
+      "I": 0.8,
+      "N": 0.0
+    }
+  },
+  "i_hard_soft_fnar": {
+    "vq_k1": {
+      "I_HARD": {
+        "n": 6,
+        "fnar": 0.1667
+      },
+      "I_SOFT": {
+        "n": 14,
+        "fnar": 0.2143
+      }
+    },
+    "rpal_prompted_mean": {
+      "I_HARD": {
+        "n": 6,
+        "fnar": 0.5
+      },
+      "I_SOFT": {
+        "n": 14,
+        "fnar": 0.9286
+      }
+    }
+  },
+  "per_operator_diag_action": {
+    "vq_k1": {
+      "F": {
+        "diagnostic_accuracy": 0.9,
+        "action_accuracy": 0.85
+      },
+      "E": {
+        "diagnostic_accuracy": 0.75,
+        "action_accuracy": 0.75
+      },
+      "I": {
+        "diagnostic_accuracy": 0.6,
+        "action_accuracy": 0.6
+      },
+      "N": {
+        "diagnostic_accuracy": 0.75,
+        "action_accuracy": 0.75
+      }
+    },
+    "rpal_prompted_mean": {
+      "F": {
+        "diagnostic_accuracy": 1.0,
+        "action_accuracy": 0.75
+      },
+      "E": {
+        "diagnostic_accuracy": 0.6333,
+        "action_accuracy": 0.5167
+      },
+      "I": {
+        "diagnostic_accuracy": 0.1,
+        "action_accuracy": 0.1
+      },
+      "N": {
+        "diagnostic_accuracy": 0.8833,
+        "action_accuracy": 0.8667
+      }
+    }
+  },
+  "prompted_minus_vq_fnar_gap": {
+    "point": 0.1625,
+    "ci95_base_clustered": [
+      0.0583,
+      0.2636
+    ]
+  },
+  "h1": {
+    "gap_ge_10pts": true,
+    "ci_lower_gt_0": true,
+    "verdict": "GO"
+  }
+}

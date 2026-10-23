@@ -1,0 +1,141 @@
+{
+  "distribution": "clean 250Q + 80 F/E/I/N traps (no valid numeric answer)",
+  "trap_fnar_validated": {
+    "vq_k1": 0.1125,
+    "rpal_plain": 0.4875,
+    "rpal_prompted_mean": 0.275
+  },
+  "clean_counts": {
+    "vq_k1": {
+      "n": 250,
+      "correct": 203,
+      "silent_wrong": 7,
+      "abstain": 40
+    },
+    "rpal_plain": {
+      "n": 250,
+      "correct": 242,
+      "silent_wrong": 6,
+      "abstain": 2
+    },
+    "rpal_prompted_run1": {
+      "n": 50,
+      "correct": 48,
+      "silent_wrong": 0,
+      "abstain": 2
+    }
+  },
+  "variant1_full_clean_plus_traps": {
+    "vq_k1": {
+      "n_clean": 250,
+      "n_trap": 80,
+      "N": 330,
+      "coverage": 0.6636363636363637,
+      "selective_accuracy": 0.9269406392694064,
+      "selective_risk": 0.0730593607305936,
+      "swr": 0.048484848484848485,
+      "clean": {
+        "n": 250,
+        "correct": 203,
+        "silent_wrong": 7,
+        "abstain": 40
+      },
+      "trap_false_accept": 9
+    },
+    "rpal_plain": {
+      "n_clean": 250,
+      "n_trap": 80,
+      "N": 330,
+      "coverage": 0.8696969696969697,
+      "selective_accuracy": 0.8432055749128919,
+      "selective_risk": 0.156794425087108,
+      "swr": 0.13636363636363635,
+      "clean": {
+        "n": 250,
+        "correct": 242,
+        "silent_wrong": 6,
+        "abstain": 2
+      },
+      "trap_false_accept": 39
+    },
+    "rpal_prompted": {
+      "coverage": 0.5384615384615384,
+      "selective_accuracy": 0.6811594202898551,
+      "selective_risk": 0.3188405797101449,
+      "swr": 0.1717948717948718,
+      "n_clean": 50,
+      "n_trap": 80,
+      "N": 130,
+      "note": "3-run mean"
+    }
+  },
+  "variant2_common_subset": {
+    "n_common_clean": 50,
+    "vq_k1": {
+      "n_clean": 50,
+      "n_trap": 80,
+      "N": 130,
+      "coverage": 0.3923076923076923,
+      "selective_accuracy": 0.8235294117647058,
+      "selective_risk": 0.17647058823529413,
+      "swr": 0.06923076923076923,
+      "clean": {
+        "n": 50,
+        "correct": 42,
+        "silent_wrong": 0,
+        "abstain": 8
+      },
+      "trap_false_accept": 9
+    },
+    "rpal_plain": {
+      "n_clean": 50,
+      "n_trap": 80,
+      "N": 130,
+      "coverage": 0.6846153846153846,
+      "selective_accuracy": 0.550561797752809,
+      "selective_risk": 0.449438202247191,
+      "swr": 0.3076923076923077,
+      "clean": {
+        "n": 50,
+        "correct": 49,
+        "silent_wrong": 1,
+        "abstain": 0
+      },
+      "trap_false_accept": 39
+    },
+    "rpal_prompted": {
+      "coverage": 0.5384615384615384,
+      "selective_accuracy": 0.6811594202898551,
+      "selective_risk": 0.3188405797101449,
+      "swr": 0.1717948717948718,
+      "n_clean": 50,
+      "n_trap": 80,
+      "N": 130,
+      "note": "3-run mean"
+    }
+  },
+  "variant3_safety_vs_utility": {
+    "vq_k1": {
+      "clean_coverage": 0.84,
+      "clean_selective_accuracy": 0.9666666666666667,
+      "clean_accuracy": 0.812,
+      "trap_fnar": 0.1125,
+      "n_clean": 250
+    },
+    "rpal_plain": {
+      "clean_coverage": 0.992,
+      "clean_selective_accuracy": 0.9758064516129032,
+      "clean_accuracy": 0.968,
+      "trap_fnar": 0.4875,
+      "n_clean": 250
+    },
+    "rpal_prompted": {
+      "clean_coverage": 0.9293333333333333,
+      "clean_selective_accuracy": 0.99,
+      "clean_accuracy": 0.92,
+      "trap_fnar": 0.275,
+      "n_clean": 250,
+      "note": "clean = 3-run mean on the same 250Q set as plain R-PAL and VQ; traps = 3-run mean"
+    }
+  }
+}

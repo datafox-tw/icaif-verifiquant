@@ -1,0 +1,16 @@
+{
+  "tag": "pal_gemini_25_flash",
+  "model": "gemini-2.5-flash",
+  "n": 250,
+  "correct": 226,
+  "silent_wrong": 20,
+  "abstain": 4,
+  "near_miss": 0,
+  "code_fail": 0,
+  "denied": 4,
+  "accuracy": 0.904,
+  "swr": 0.08,
+  "swr_unit_normalized": 0.08,
+  "elapsed_s": 1799.2,
+  "ran_at": "2026-07-21T09:46:24"
+}

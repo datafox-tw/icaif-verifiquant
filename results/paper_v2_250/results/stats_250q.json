@@ -1,0 +1,102 @@
+{
+  "paired_cases": 250,
+  "mcnemar": [
+    {
+      "label": "VQ K=3 vs CoT+oracle",
+      "b": 41,
+      "c": 12,
+      "p": 8.171334999262925e-05
+    },
+    {
+      "label": "VQ K=3 vs CoT single-shot",
+      "b": 52,
+      "c": 12,
+      "p": 4.5666107004454105e-07
+    },
+    {
+      "label": "VQ K=1 (autonomous) vs CoT+oracle",
+      "b": 32,
+      "c": 34,
+      "p": 0.9021585000966994
+    },
+    {
+      "label": "VQ K=1 (autonomous) vs CoT single-shot",
+      "b": 40,
+      "c": 31,
+      "p": 0.34247099841986794
+    },
+    {
+      "label": "VQ K=3 vs CoT+oracle (SW)",
+      "b": 6,
+      "c": 35,
+      "p": 4.873598300036974e-06
+    },
+    {
+      "label": "VQ K=1 vs CoT single-shot (SW)",
+      "b": 4,
+      "c": 42,
+      "p": 5.100190492157708e-09
+    }
+  ],
+  "bootstrap_ci": {
+    "vq_k1": {
+      "acc": [
+        0.812,
+        0.76,
+        0.86
+      ],
+      "swr": [
+        0.028,
+        0.008,
+        0.052
+      ]
+    },
+    "vq_k3": {
+      "acc": [
+        0.936,
+        0.904,
+        0.964
+      ],
+      "swr": [
+        0.032,
+        0.012,
+        0.056
+      ]
+    },
+    "cot": {
+      "acc": [
+        0.776,
+        0.724,
+        0.824
+      ],
+      "swr": [
+        0.18,
+        0.136,
+        0.228
+      ]
+    },
+    "coto": {
+      "acc": [
+        0.82,
+        0.772,
+        0.868
+      ],
+      "swr": [
+        0.148,
+        0.104,
+        0.192
+      ]
+    }
+  },
+  "cost": {
+    "vq_avg_rounds": 1.196,
+    "vq_est_llm_calls_per_case_k1": 3,
+    "vq_est_llm_calls_per_case_k3": 3.78,
+    "cot_single_shot_flash_elapsed_s": 1581.5,
+    "cot_single_shot_flash_s_per_case": 6.3,
+    "cot_basic_oracle_flash_elapsed_s": 6943.7,
+    "cot_basic_oracle_flash_s_per_case": 27.8,
+    "vq_flash_elapsed_s": 4321.1,
+    "vq_flash_s_per_case": 17.3
+  }
+}

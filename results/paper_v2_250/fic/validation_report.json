@@ -1,0 +1,30 @@
+{
+  "ok": true,
+  "error": null,
+  "validation_stats": {
+    "core_count": 250,
+    "retrieval_count": 250,
+    "repair_count": 1960,
+    "diagnostic_rule_count": 1522
+  },
+  "output": {
+    "core": "results/paper_v2_250/fic/core.jsonl",
+    "retrieval": "results/paper_v2_250/fic/retrieval.jsonl",
+    "repair": "results/paper_v2_250/fic/repair.jsonl"
+  },
+  "counts": {
+    "core": 250,
+    "retrieval": 250,
+    "repair": 1960,
+    "skipped_duplicates": 0,
+    "skipped_kernel_duplicates": 0
+  },
+  "kernel_dedup": {
+    "normalization_version": "ast_v1_docstring_strip",
+    "duplicate_hits": []
+  },
+  "execution_smoke": {
+    "failed_count": 0,
+    "failed_cards": []
+  }
+}

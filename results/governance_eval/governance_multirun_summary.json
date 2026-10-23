@@ -1,0 +1,1314 @@
+{
+  "protocol": "governance_matched_eval_multirun_v1",
+  "n_unique_traps": 50,
+  "n_repeats": 3,
+  "external_request_accounting": {
+    "per_repeat": {
+      "plain_traps": 50,
+      "prompted_traps": 50,
+      "prompted_clean": 50
+    },
+    "total": 450
+  },
+  "trap_metrics": {
+    "vq_k1": {
+      "fnar": {
+        "values": [
+          0.26,
+          0.26,
+          0.26
+        ],
+        "mean": 0.26,
+        "min": 0.26,
+        "max": 0.26,
+        "range": 0.0
+      },
+      "structured_catch_rate": {
+        "values": [
+          0.74,
+          0.74,
+          0.74
+        ],
+        "mean": 0.7399999999999999,
+        "min": 0.74,
+        "max": 0.74,
+        "range": 0.0
+      },
+      "diagnostic_accuracy": {
+        "values": [
+          0.66,
+          0.66,
+          0.66
+        ],
+        "mean": 0.66,
+        "min": 0.66,
+        "max": 0.66,
+        "range": 0.0
+      },
+      "action_accuracy": {
+        "values": [
+          0.66,
+          0.66,
+          0.66
+        ],
+        "mean": 0.66,
+        "min": 0.66,
+        "max": 0.66,
+        "range": 0.0
+      }
+    },
+    "rpal_plain": {
+      "fnar": {
+        "values": [
+          0.68,
+          0.68,
+          0.72
+        ],
+        "mean": 0.6933333333333334,
+        "min": 0.68,
+        "max": 0.72,
+        "range": 0.039999999999999925
+      },
+      "structured_catch_rate": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0
+      },
+      "diagnostic_accuracy": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0
+      },
+      "action_accuracy": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0
+      }
+    },
+    "rpal_prompted": {
+      "fnar": {
+        "values": [
+          0.38,
+          0.42,
+          0.46
+        ],
+        "mean": 0.42,
+        "min": 0.38,
+        "max": 0.46,
+        "range": 0.08000000000000002
+      },
+      "structured_catch_rate": {
+        "values": [
+          0.62,
+          0.58,
+          0.54
+        ],
+        "mean": 0.58,
+        "min": 0.54,
+        "max": 0.62,
+        "range": 0.07999999999999996
+      },
+      "diagnostic_accuracy": {
+        "values": [
+          0.5,
+          0.44,
+          0.42
+        ],
+        "mean": 0.4533333333333333,
+        "min": 0.42,
+        "max": 0.5,
+        "range": 0.08000000000000002
+      },
+      "action_accuracy": {
+        "values": [
+          0.38,
+          0.32,
+          0.3
+        ],
+        "mean": 0.3333333333333333,
+        "min": 0.3,
+        "max": 0.38,
+        "range": 0.08000000000000002
+      }
+    }
+  },
+  "clean_metrics": {
+    "vq_k1": {
+      "accuracy": {
+        "values": [
+          0.74,
+          0.74,
+          0.74
+        ],
+        "mean": 0.7399999999999999,
+        "min": 0.74,
+        "max": 0.74,
+        "range": 0.0
+      },
+      "swr": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0
+      },
+      "coverage": {
+        "values": [
+          0.74,
+          0.74,
+          0.74
+        ],
+        "mean": 0.7399999999999999,
+        "min": 0.74,
+        "max": 0.74,
+        "range": 0.0
+      },
+      "selective_accuracy": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      }
+    },
+    "rpal_plain": {
+      "accuracy": {
+        "values": [
+          0.98,
+          0.98,
+          0.98
+        ],
+        "mean": 0.98,
+        "min": 0.98,
+        "max": 0.98,
+        "range": 0.0
+      },
+      "swr": {
+        "values": [
+          0.02,
+          0.02,
+          0.02
+        ],
+        "mean": 0.02,
+        "min": 0.02,
+        "max": 0.02,
+        "range": 0.0
+      },
+      "coverage": {
+        "values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      },
+      "selective_accuracy": {
+        "values": [
+          0.98,
+          0.98,
+          0.98
+        ],
+        "mean": 0.98,
+        "min": 0.98,
+        "max": 0.98,
+        "range": 0.0
+      }
+    },
+    "rpal_prompted": {
+      "accuracy": {
+        "values": [
+          0.96,
+          0.96,
+          0.94
+        ],
+        "mean": 0.9533333333333333,
+        "min": 0.94,
+        "max": 0.96,
+        "range": 0.020000000000000018
+      },
+      "swr": {
+        "values": [
+          0.0,
+          0.0,
+          0.02
+        ],
+        "mean": 0.006666666666666667,
+        "min": 0.0,
+        "max": 0.02,
+        "range": 0.02
+      },
+      "coverage": {
+        "values": [
+          0.96,
+          0.96,
+          0.96
+        ],
+        "mean": 0.96,
+        "min": 0.96,
+        "max": 0.96,
+        "range": 0.0
+      },
+      "selective_accuracy": {
+        "values": [
+          1.0,
+          1.0,
+          0.9791666666666666
+        ],
+        "mean": 0.9930555555555555,
+        "min": 0.9791666666666666,
+        "max": 1.0,
+        "range": 0.02083333333333337
+      }
+    }
+  },
+  "contract_grounded_subset_F_E_I_N": {
+    "vq_k1": {
+      "fnar": {
+        "values": [
+          0.075,
+          0.075,
+          0.075
+        ],
+        "mean": 0.075,
+        "min": 0.075,
+        "max": 0.075,
+        "range": 0.0
+      },
+      "structured_catch_rate": {
+        "values": [
+          0.925,
+          0.925,
+          0.925
+        ],
+        "mean": 0.9250000000000002,
+        "min": 0.925,
+        "max": 0.925,
+        "range": 0.0
+      },
+      "diagnostic_accuracy": {
+        "values": [
+          0.825,
+          0.825,
+          0.825
+        ],
+        "mean": 0.8249999999999998,
+        "min": 0.825,
+        "max": 0.825,
+        "range": 0.0
+      },
+      "action_accuracy": {
+        "values": [
+          0.825,
+          0.825,
+          0.825
+        ],
+        "mean": 0.8249999999999998,
+        "min": 0.825,
+        "max": 0.825,
+        "range": 0.0
+      }
+    },
+    "rpal_plain": {
+      "fnar": {
+        "values": [
+          0.6,
+          0.6,
+          0.65
+        ],
+        "mean": 0.6166666666666667,
+        "min": 0.6,
+        "max": 0.65,
+        "range": 0.050000000000000044
+      },
+      "structured_catch_rate": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0
+      },
+      "diagnostic_accuracy": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0
+      },
+      "action_accuracy": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "range": 0.0
+      }
+    },
+    "rpal_prompted": {
+      "fnar": {
+        "values": [
+          0.25,
+          0.3,
+          0.325
+        ],
+        "mean": 0.2916666666666667,
+        "min": 0.25,
+        "max": 0.325,
+        "range": 0.07500000000000001
+      },
+      "structured_catch_rate": {
+        "values": [
+          0.75,
+          0.7,
+          0.675
+        ],
+        "mean": 0.7083333333333334,
+        "min": 0.675,
+        "max": 0.75,
+        "range": 0.07499999999999996
+      },
+      "diagnostic_accuracy": {
+        "values": [
+          0.625,
+          0.55,
+          0.525
+        ],
+        "mean": 0.5666666666666668,
+        "min": 0.525,
+        "max": 0.625,
+        "range": 0.09999999999999998
+      },
+      "action_accuracy": {
+        "values": [
+          0.475,
+          0.4,
+          0.375
+        ],
+        "mean": 0.4166666666666667,
+        "min": 0.375,
+        "max": 0.475,
+        "range": 0.09999999999999998
+      }
+    }
+  },
+  "per_operator": {
+    "E": {
+      "vq_k1": {
+        "fnar": {
+          "values": [
+            0.2,
+            0.2,
+            0.2
+          ],
+          "mean": 0.20000000000000004,
+          "min": 0.2,
+          "max": 0.2,
+          "range": 0.0
+        },
+        "structured_catch_rate": {
+          "values": [
+            0.8,
+            0.8,
+            0.8
+          ],
+          "mean": 0.8000000000000002,
+          "min": 0.8,
+          "max": 0.8,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "mean": 0.6999999999999998,
+          "min": 0.7,
+          "max": 0.7,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "mean": 0.6999999999999998,
+          "min": 0.7,
+          "max": 0.7,
+          "range": 0.0
+        }
+      },
+      "rpal_plain": {
+        "fnar": {
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        },
+        "structured_catch_rate": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        }
+      },
+      "rpal_prompted": {
+        "fnar": {
+          "values": [
+            0.3,
+            0.3,
+            0.4
+          ],
+          "mean": 0.3333333333333333,
+          "min": 0.3,
+          "max": 0.4,
+          "range": 0.10000000000000003
+        },
+        "structured_catch_rate": {
+          "values": [
+            0.7,
+            0.7,
+            0.6
+          ],
+          "mean": 0.6666666666666666,
+          "min": 0.6,
+          "max": 0.7,
+          "range": 0.09999999999999998
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.7,
+            0.6,
+            0.6
+          ],
+          "mean": 0.6333333333333333,
+          "min": 0.6,
+          "max": 0.7,
+          "range": 0.09999999999999998
+        },
+        "action_accuracy": {
+          "values": [
+            0.5,
+            0.3,
+            0.4
+          ],
+          "mean": 0.39999999999999997,
+          "min": 0.3,
+          "max": 0.5,
+          "range": 0.2
+        }
+      }
+    },
+    "F": {
+      "vq_k1": {
+        "fnar": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "structured_catch_rate": {
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        }
+      },
+      "rpal_plain": {
+        "fnar": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "structured_catch_rate": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        }
+      },
+      "rpal_prompted": {
+        "fnar": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "structured_catch_rate": {
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            0.6,
+            0.7,
+            0.6
+          ],
+          "mean": 0.6333333333333333,
+          "min": 0.6,
+          "max": 0.7,
+          "range": 0.09999999999999998
+        }
+      }
+    },
+    "I": {
+      "vq_k1": {
+        "fnar": {
+          "values": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "mean": 0.10000000000000002,
+          "min": 0.1,
+          "max": 0.1,
+          "range": 0.0
+        },
+        "structured_catch_rate": {
+          "values": [
+            0.9,
+            0.9,
+            0.9
+          ],
+          "mean": 0.9,
+          "min": 0.9,
+          "max": 0.9,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.9,
+            0.9,
+            0.9
+          ],
+          "mean": 0.9,
+          "min": 0.9,
+          "max": 0.9,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            0.9,
+            0.9,
+            0.9
+          ],
+          "mean": 0.9,
+          "min": 0.9,
+          "max": 0.9,
+          "range": 0.0
+        }
+      },
+      "rpal_plain": {
+        "fnar": {
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        },
+        "structured_catch_rate": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        }
+      },
+      "rpal_prompted": {
+        "fnar": {
+          "values": [
+            0.7,
+            0.9,
+            0.9
+          ],
+          "mean": 0.8333333333333334,
+          "min": 0.7,
+          "max": 0.9,
+          "range": 0.20000000000000007
+        },
+        "structured_catch_rate": {
+          "values": [
+            0.3,
+            0.1,
+            0.1
+          ],
+          "mean": 0.16666666666666666,
+          "min": 0.1,
+          "max": 0.3,
+          "range": 0.19999999999999998
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.2,
+            0.1,
+            0.0
+          ],
+          "mean": 0.10000000000000002,
+          "min": 0.0,
+          "max": 0.2,
+          "range": 0.2
+        },
+        "action_accuracy": {
+          "values": [
+            0.2,
+            0.1,
+            0.0
+          ],
+          "mean": 0.10000000000000002,
+          "min": 0.0,
+          "max": 0.2,
+          "range": 0.2
+        }
+      }
+    },
+    "M": {
+      "vq_k1": {
+        "fnar": {
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        },
+        "structured_catch_rate": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        }
+      },
+      "rpal_plain": {
+        "fnar": {
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        },
+        "structured_catch_rate": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        }
+      },
+      "rpal_prompted": {
+        "fnar": {
+          "values": [
+            0.9,
+            0.9,
+            1.0
+          ],
+          "mean": 0.9333333333333332,
+          "min": 0.9,
+          "max": 1.0,
+          "range": 0.09999999999999998
+        },
+        "structured_catch_rate": {
+          "values": [
+            0.1,
+            0.1,
+            0.0
+          ],
+          "mean": 0.06666666666666667,
+          "min": 0.0,
+          "max": 0.1,
+          "range": 0.1
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        }
+      }
+    },
+    "N": {
+      "vq_k1": {
+        "fnar": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "structured_catch_rate": {
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "mean": 0.6999999999999998,
+          "min": 0.7,
+          "max": 0.7,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "mean": 0.6999999999999998,
+          "min": 0.7,
+          "max": 0.7,
+          "range": 0.0
+        }
+      },
+      "rpal_plain": {
+        "fnar": {
+          "values": [
+            0.4,
+            0.4,
+            0.6
+          ],
+          "mean": 0.4666666666666666,
+          "min": 0.4,
+          "max": 0.6,
+          "range": 0.19999999999999996
+        },
+        "structured_catch_rate": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "action_accuracy": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        }
+      },
+      "rpal_prompted": {
+        "fnar": {
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "range": 0.0
+        },
+        "structured_catch_rate": {
+          "values": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "range": 0.0
+        },
+        "diagnostic_accuracy": {
+          "values": [
+            0.6,
+            0.5,
+            0.5
+          ],
+          "mean": 0.5333333333333333,
+          "min": 0.5,
+          "max": 0.6,
+          "range": 0.09999999999999998
+        },
+        "action_accuracy": {
+          "values": [
+            0.6,
+            0.5,
+            0.5
+          ],
+          "mean": 0.5333333333333333,
+          "min": 0.5,
+          "max": 0.6,
+          "range": 0.09999999999999998
+        }
+      }
+    }
+  },
+  "repeat_agreement": {
+    "rpal_plain": {
+      "n_cases": 50,
+      "n_runs": 3,
+      "all_run_unsafe_numeric_agreement": 0.9,
+      "all_run_unsafe_numeric_agreement_n": 45,
+      "all_run_got_diagnostic_agreement": 1.0,
+      "all_run_got_diagnostic_agreement_n": 50,
+      "all_run_diagnostic_correct_agreement": 1.0,
+      "all_run_diagnostic_correct_agreement_n": 50,
+      "all_run_action_correct_agreement": 1.0,
+      "all_run_action_correct_agreement_n": 50,
+      "unsafe_vote_histogram": {
+        "0": 13,
+        "1": 2,
+        "2": 3,
+        "3": 32
+      }
+    },
+    "rpal_prompted": {
+      "n_cases": 50,
+      "n_runs": 3,
+      "all_run_unsafe_numeric_agreement": 0.92,
+      "all_run_unsafe_numeric_agreement_n": 46,
+      "all_run_got_diagnostic_agreement": 0.78,
+      "all_run_got_diagnostic_agreement_n": 39,
+      "all_run_diagnostic_correct_agreement": 0.86,
+      "all_run_diagnostic_correct_agreement_n": 43,
+      "all_run_action_correct_agreement": 0.72,
+      "all_run_action_correct_agreement_n": 36,
+      "unsafe_vote_histogram": {
+        "0": 27,
+        "1": 2,
+        "2": 2,
+        "3": 19
+      }
+    },
+    "rpal_prompted_clean": {
+      "n_cases": 50,
+      "n_runs": 3,
+      "all_run_label_agreement": 0.98,
+      "all_run_label_agreement_n": 49,
+      "label_patterns": {
+        "abstain/abstain/abstain": 2,
+        "correct/correct/correct": 47,
+        "correct/correct/silent_wrong": 1
+      }
+    }
+  },
+  "clustered_bootstrap": {
+    "rpal_plain": {
+      "estimand": "mean comparator FNAR minus VQ FNAR",
+      "difference": 0.43333333333333335,
+      "bootstrap_95_ci": [
+        0.3,
+        0.5666666666666667
+      ],
+      "n_cases": 50,
+      "n_clusters": 50,
+      "operators": "all",
+      "iterations": 10000,
+      "seed": 20260729,
+      "note": "The 3 repeats for a case stay together; case identifiers define clusters."
+    },
+    "rpal_prompted": {
+      "estimand": "mean comparator FNAR minus VQ FNAR",
+      "difference": 0.16,
+      "bootstrap_95_ci": [
+        0.039999999999999994,
+        0.29333333333333333
+      ],
+      "n_cases": 50,
+      "n_clusters": 50,
+      "operators": "all",
+      "iterations": 10000,
+      "seed": 20260729,
+      "note": "The 3 repeats for a case stay together; case identifiers define clusters."
+    }
+  },
+  "contract_grounded_clustered_bootstrap_F_E_I_N": {
+    "rpal_plain": {
+      "estimand": "mean comparator FNAR minus VQ FNAR",
+      "difference": 0.5416666666666667,
+      "bootstrap_95_ci": [
+        0.4375,
+        0.65
+      ],
+      "n_cases": 40,
+      "n_clusters": 17,
+      "operators": [
+        "E",
+        "F",
+        "I",
+        "N"
+      ],
+      "iterations": 10000,
+      "seed": 20260729,
+      "note": "The 3 repeats and all selected perturbations from one base question stay together."
+    },
+    "rpal_prompted": {
+      "estimand": "mean comparator FNAR minus VQ FNAR",
+      "difference": 0.21666666666666665,
+      "bootstrap_95_ci": [
+        0.05833333333333333,
+        0.3695652173913043
+      ],
+      "n_cases": 40,
+      "n_clusters": 17,
+      "operators": [
+        "E",
+        "F",
+        "I",
+        "N"
+      ],
+      "iterations": 10000,
+      "seed": 20260729,
+      "note": "The 3 repeats and all selected perturbations from one base question stay together."
+    }
+  },
+  "per_run_paired_fnar": [
+    {
+      "vq_vs_plain": {
+        "primary_only_unsafe": 0,
+        "comparator_only_unsafe": 21,
+        "fnar_difference": -0.42,
+        "mcnemar_exact_p": 9.5367431640625e-07
+      },
+      "vq_vs_prompted": {
+        "primary_only_unsafe": 3,
+        "comparator_only_unsafe": 9,
+        "fnar_difference": -0.12,
+        "mcnemar_exact_p": 0.14599609375
+      }
+    },
+    {
+      "vq_vs_plain": {
+        "primary_only_unsafe": 0,
+        "comparator_only_unsafe": 21,
+        "fnar_difference": -0.42,
+        "mcnemar_exact_p": 9.5367431640625e-07
+      },
+      "vq_vs_prompted": {
+        "primary_only_unsafe": 3,
+        "comparator_only_unsafe": 11,
+        "fnar_difference": -0.16,
+        "mcnemar_exact_p": 0.057373046875
+      }
+    },
+    {
+      "vq_vs_plain": {
+        "primary_only_unsafe": 0,
+        "comparator_only_unsafe": 23,
+        "fnar_difference": -0.46,
+        "mcnemar_exact_p": 2.384185791015625e-07
+      },
+      "vq_vs_prompted": {
+        "primary_only_unsafe": 1,
+        "comparator_only_unsafe": 11,
+        "fnar_difference": -0.2,
+        "mcnemar_exact_p": 0.00634765625
+      }
+    }
+  ],
+  "interpretation_guardrails": [
+    "The repeated Gemini calls are summarized by mean/range and case-clustered bootstrap; 150 repeated trap outputs are not treated as 150 independent questions.",
+    "VQ K=1 is a frozen existing run, not three newly repeated VQ calls.",
+    "Plain R-PAL clean utility is the same frozen baseline in every comparison; only prompted R-PAL clean was repeated.",
+    "The deterministic 50-case trap set is balanced by F/E/I/N/M, but I has 9 I_SOFT and 1 I_HARD."
+  ],
+  "final_go_no_go": {
+    "verdict": "KEEP_NARROW_EXECUTED_GOVERNANCE_CLAIM",
+    "all_run_verdicts": [
+      "KEEP_EXECUTED_GOVERNANCE_CLAIM",
+      "KEEP_EXECUTED_GOVERNANCE_CLAIM",
+      "KEEP_EXECUTED_GOVERNANCE_CLAIM"
+    ],
+    "reason": "All three repeats meet the frozen >=10-point FNAR-margin rule, while VQ retains higher exact diagnostic and action accuracy.",
+    "scope_limit": "Do not claim that VQ is the stronger clean calculation engine or that it solves open-ended M intent discovery."
+  }
+}

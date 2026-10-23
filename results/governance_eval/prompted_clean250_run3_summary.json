@@ -1,0 +1,16 @@
+{
+  "protocol": "governance_matched_rpal_v1",
+  "run_name": "prompted_clean250_run3",
+  "mode": "prompted",
+  "n": 250,
+  "complete": true,
+  "raw_outcomes": {
+    "numeric": 230,
+    "assessment_parse_fail": 2,
+    "governance_intercept": 16,
+    "exec_fail": 1,
+    "denylist": 1
+  },
+  "elapsed_s": 2023.1,
+  "note": "Not a scored result; use scripts/analyze_governance_eval.py"
+}

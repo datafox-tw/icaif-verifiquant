@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper."
+title: "VerifiQuant: Governance-by-Execution for Financial LLM Workflows"
+authors:
+  - family-names: Ko
+    given-names: Yu-Chi
+    orcid: "https://orcid.org/0009-0005-7193-7970"
+  - family-names: Yeh
+    given-names: Mi-Yen
+    orcid: "https://orcid.org/0000-0001-7707-4487"
+  - family-names: Lin
+    given-names: Shou-De
+    orcid: "https://orcid.org/0000-0001-9970-1250"
+license: MIT
+repository-code: "https://github.com/datafox-tw/icaif-verifiquant"
+url: "https://www.verifiquant.com"
+preferred-citation:
+  type: conference-paper
+  title: "VerifiQuant: Governance-by-Execution for Financial LLM Workflows"
+  authors:
+    - family-names: Ko
+      given-names: Yu-Chi
+    - family-names: Yeh
+      given-names: Mi-Yen
+    - family-names: Lin
+      given-names: Shou-De
+  collection-title: "Proceedings of the 7th ACM International Conference on AI in Finance (ICAIF '26)"
+  publisher:
+    name: ACM
+  conference:
+    name: "ICAIF '26"
+    city: Milan
+    country: IT
+  year: 2026
+  doi: "10.1145/3858063.3858688"

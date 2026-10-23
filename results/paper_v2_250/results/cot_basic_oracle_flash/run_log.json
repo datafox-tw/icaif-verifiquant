@@ -1,0 +1,29 @@
+{
+  "baseline": "cot_basic_oracle_flash",
+  "ran_at": "2026-07-12T13:05:36.525238",
+  "success": true,
+  "elapsed_seconds": 6943.7,
+  "command": [
+    "python3",
+    "preprocessing/run_cot_self_improve_pipeline.py",
+    "--input",
+    "results/paper_v2_250/questions_250.jsonl",
+    "--output",
+    "results/paper_v2_250/results/cot_basic_oracle_flash/output.jsonl",
+    "--summary-output",
+    "results/paper_v2_250/results/cot_basic_oracle_flash/summary.json",
+    "--max-turns",
+    "3",
+    "--cot-model",
+    "gemini-2.5-flash",
+    "--oracle-model",
+    "gemini-2.5-flash"
+  ],
+  "params": {
+    "type": "cot",
+    "cot_model": "gemini-2.5-flash",
+    "oracle_model": "gemini-2.5-flash",
+    "max_turns": 3,
+    "description": "CoT + blind oracle Flash, K=3"
+  }
+}

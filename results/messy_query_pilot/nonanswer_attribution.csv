@@ -1,0 +1,42 @@
+id,label,vq_exit,rpal_plus_exit,asked,verdict,applicable_card,note
+mq-01,C,M,number,growth of a tax-benefit balance,present,fic_article_687,selected card 2659 is unrelated
+mq-03,R,F,F,present value of five cash flows,present,fic_article_247,selected card is applicable
+mq-06,C,number,M,growth of a liability balance,present,fic_article_687,selected annualized-return card 2331 is a near neighbor
+mq-07,R,N,F,difference of two rollforward lines,absent,,elementary difference
+mq-10,R,N,F,aggregate intrinsic value of outstanding options,absent,,near neighbor: intrinsic-value cards 1898 and 2824 price one option and take no option count
+mq-12,O,N,N,a judgment or recommendation,not_a_computation,,
+mq-13,R,N,F,sum of three year-end balances,absent,,elementary sum
+mq-14,C,N,N,'margin' from leased versus owned costs,absent,,ratio of two totals; Profit Margin card is net margin
+mq-15,O,N,N,a judgment or recommendation,not_a_computation,,
+mq-16,R,N,N,quick ratio,absent,,no quick-ratio card
+mq-17,R,number,F,one-year holding-period return with coupon,present,fic_article_477,selected card is applicable
+mq-21,O,N,N,a judgment or recommendation,not_a_computation,,
+mq-24,R,N,F,allowance as a share of gross receivables,absent,,part / whole share
+mq-25,R,F,F,percentage drop from high to low price,present,fic_article_687,selected Q/Q card 2532 is a near neighbor
+mq-28,C,N,I_HARD,10y key rate duration from +1bp bumps,absent,,Key Rate Duration card 503 hard-codes a 1% shift and needs both bumps; same verdict as mq-26
+mq-29,R,N,F,"change in EBITDA margin, in points",absent,,margin then difference; Profit Margin card is net margin
+mq-35,R,N,F,ending minus beginning balance,absent,,elementary difference
+mq-36,C,number,number,level annuity payment,present,fic_article_12,selected card is applicable
+mq-37,R,N,N,enterprise value,absent,,no enterprise-value card
+mq-39,C,M,M,growth of a tax-benefit figure,present,fic_article_687,selected card 313 is unrelated
+mq-41,R,F,F,year-over-year growth of a balance,present,fic_article_687,selected holding-period card 1063 is a near neighbor
+mq-42,O,N,N,a judgment or recommendation,not_a_computation,,
+mq-43,R,F,F,liabilities as a share of liabilities plus equity,absent,,debt-to-capitalization card 2120 is a different ratio; same verdict as mq-70
+mq-44,R,N,N,GDP by the expenditure approach,absent,,"GDP card 1167 computes a growth rate, not the level"
+mq-45,O,N,N,a judgment or recommendation,not_a_computation,,
+mq-47,O,N,N,a judgment or recommendation,not_a_computation,,
+mq-48,O,N,N,a judgment or recommendation,not_a_computation,,
+mq-50,O,N,N,a judgment or recommendation,not_a_computation,,
+mq-51,O,N,N,a judgment or recommendation,not_a_computation,,
+mq-52,R,F,F,real return by the exact Fisher relation,present,fic_article_2290,after-tax real return with a zero tax rate
+mq-54,R,M,F,money-market yield on a 360-day basis,present,fic_article_950,selected commercial-paper card 123 is a near neighbor
+mq-55,R,N,F,total withdrawals under the 4% rule,absent,,no safe-withdrawal card; Rule 72(t) is a different payout
+mq-57,R,N,N,segment net revenue from an annual report,absent,,"a lookup, not a formula"
+mq-58,C,F,N,change in a rate-sensitivity figure,present,fic_article_687,one reading of an ambiguous ask; selected EVE card 2738 is unrelated
+mq-63,O,N,number,a judgment or recommendation,not_a_computation,,
+mq-65,C,N,N,Europe's share of the store count,absent,,part / whole share
+mq-66,R,N,F,year with the largest provision,absent,,elementary maximum
+mq-68,R,N,F,growth in restructuring costs,present,fic_article_687,percent change once the earlier amount is supplied
+mq-71,C,N,number,Intel's return relative to the index,absent,,ratio of two cumulative values
+mq-76,O,N,number,a judgment or recommendation,not_a_computation,,
+mq-80,C,M,number,return on a note with monthly compounding,present,fic_article_431,selected YTM card 30 is a near neighbor

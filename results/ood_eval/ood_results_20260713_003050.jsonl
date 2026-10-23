@@ -1,0 +1,5 @@
+{"split": "OOD", "family": "2953", "title": "Net Unrealized Appreciation (NUA)", "gold": 22000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1613", "title": "Rule of 78", "gold": 462, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1441", "title": "Rate of Change (ROC)", "gold": 10.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "ID", "family": "687", "title": "Base Effect", "gold": 25.0, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_687", "output_value": 25.0}
+{"split": "ID", "family": "1811", "title": "What Is Tangible Personal Property and How Is It Taxed?", "gold": 40000, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_1811", "output_value": 40000.0}

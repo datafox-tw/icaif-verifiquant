@@ -1,0 +1,40 @@
+{
+  "tag": "sc5_gemini_25_flash",
+  "model": "gemini-2.5-flash",
+  "k": 5,
+  "n": 250,
+  "risk_coverage_points": [
+    {
+      "threshold": 0.0,
+      "coverage": 0.888,
+      "selective_acc": 0.9099099099099099,
+      "swr": 0.08
+    },
+    {
+      "threshold": 0.4,
+      "coverage": 0.884,
+      "selective_acc": 0.9095022624434389,
+      "swr": 0.08
+    },
+    {
+      "threshold": 0.6,
+      "coverage": 0.868,
+      "selective_acc": 0.9216589861751152,
+      "swr": 0.068
+    },
+    {
+      "threshold": 0.8,
+      "coverage": 0.844,
+      "selective_acc": 0.9241706161137441,
+      "swr": 0.064
+    },
+    {
+      "threshold": 1.0,
+      "coverage": 0.84,
+      "selective_acc": 0.9238095238095239,
+      "swr": 0.064
+    }
+  ],
+  "elapsed_s": 9520.2,
+  "ran_at": "2026-07-20T22:58:35"
+}

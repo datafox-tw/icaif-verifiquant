@@ -1,0 +1,250 @@
+{"split": "OOD", "family": "2253", "title": "Accumulation/Distribution Indicator (A/D)", "gold": 1500000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1605", "title": "Royalty", "gold": 37500, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2794", "title": "Equity Method", "gold": 335000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "306", "title": "Vasicek Interest Rate Model", "gold": 0.00081, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2749", "title": "Elastic", "gold": -2.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "440", "title": "Interest Rate", "gold": 2167, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1162", "title": "Gross Dividends", "gold": 5640, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "603", "title": "Form 6781", "gold": 24000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1288", "title": "Poisson Distribution", "gold": 5.16, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2281", "title": "Adjusted Closing Price", "gold": 114.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2735", "title": "Economic Order Quantity (EOQ)", "gold": 2236, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "369", "title": "Income Annuity", "gold": 1211.96, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_955", "output_value": 1211.96}
+{"split": "OOD", "family": "1450", "title": "Real Economic Growth Rate", "gold": 4.17, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_1167", "output_value": 4.17}
+{"split": "OOD", "family": "1520", "title": "Residual Income", "gold": 572.61, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "3078", "title": "Ordinary Loss", "gold": 27000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1336", "title": "Price-Weighted Index", "gold": 118.57, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2659", "title": "Strangle", "gold": -2, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2738", "title": "Economic Value of Equity (EVE)", "gold": 183781, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1730", "title": "Discount Rate", "gold": 8.45, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_137", "output_value": 8.447177119769854}
+{"split": "OOD", "family": "2303", "title": "Alternative Minimum Tax (AMT)", "gold": 26000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "3", "title": "Year to Date (YTD)", "gold": 22.37, "verdict": "abstain", "status": "refusal", "diagnostic_type": "M", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "477", "title": "Investing", "gold": 27.0, "verdict": "silent_wrong", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_2331", "output_value": 0.27}
+{"split": "OOD", "family": "705", "title": "Bear Market", "gold": 20.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "561", "title": "Financing", "gold": 6.9, "verdict": "abstain", "status": "needs_clarification", "diagnostic_type": "I_HARD", "chosen_fic": "fic_article_1644", "output_value": null}
+{"split": "OOD", "family": "365", "title": "Incentive Stock Options (ISOs)", "gold": true, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "711", "title": "Bell Curve", "gold": 60.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2843", "title": "Expiration Date (Derivatives)", "gold": 0.7038, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2448", "title": "Weighted", "gold": 8.85, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1504", "title": "Repayment", "gold": 10377, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1097", "title": "Hurdle Rate", "gold": 21947, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "247", "title": "Valuation", "gold": 276303, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2677", "title": "Swap", "gold": -17500, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1796", "title": "T-Test", "gold": 3.5, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1740", "title": "Discrete Distribution", "gold": 21.5, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2305", "title": "Altman Z-Score", "gold": 2.08, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2793", "title": "Equity-Linked Note (ELN)", "gold": 121000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2452", "title": "Weighted Average Cost of Capital (WACC)", "gold": 9.94, "verdict": "abstain", "status": "needs_clarification", "diagnostic_type": "I_HARD", "chosen_fic": "fic_article_1644", "output_value": null}
+{"split": "OOD", "family": "687", "title": "Base Effect", "gold": 25.0, "verdict": "abstain", "status": "needs_clarification", "diagnostic_type": "I_HARD", "chosen_fic": "fic_article_1167", "output_value": null}
+{"split": "OOD", "family": "1815", "title": "Tax Benefit", "gold": 22800, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1855", "title": "Taxable Income", "gold": 130500, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "701", "title": "Basket of Goods", "gold": 1.73, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "313", "title": "Vertical Equity", "gold": 11500, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2566", "title": "Series I Bond", "gold": 3.2, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1050", "title": "Hindenburg Omen", "gold": true, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "92", "title": "Cash Flow from Operating Activities (CFO)", "gold": 165000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "611", "title": "Forward Premium", "gold": 1.2089, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1904", "title": "Time Value of Money (TVM)", "gold": 12202, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1068", "title": "Home-Equity Loan", "gold": 559.29, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_955", "output_value": 559.29}
+{"split": "OOD", "family": "1633", "title": "Death Taxes", "gold": 850000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2994", "title": "Normal Retirement Age (NRA)", "gold": 2668, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2851", "title": "Nanny Tax", "gold": 4245, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2105", "title": "Least Squares Criterion", "gold": 1.9, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1067", "title": "Home-Equity Loan", "gold": 30.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "51", "title": "Capital Expenditure", "gold": 1050000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "190", "title": "Cost of Capital", "gold": 6.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "18", "title": "Yield Basis", "gold": 6.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1396", "title": "Protective Put", "gold": -1500, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2316", "title": "Annual Percentage Rate (APR)", "gold": 15.21, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "450", "title": "Interest Rate Parity", "gold": 1.2592, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "633", "title": "Frequency Distribution", "gold": 6, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2132", "title": "Lifetime Cost", "gold": 547220, "verdict": "silent_wrong", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_955", "output_value": 1520.06}
+{"split": "OOD", "family": "1032", "title": "Heston Model", "gold": 13.72, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2637", "title": "Stochastic Oscillator", "gold": 85.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1213", "title": "Growth Industry", "gold": 25.85, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_137", "output_value": 25.84989506418267}
+{"split": "OOD", "family": "1898", "title": "Time Decay", "gold": 10, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "961", "title": "Moving Average (MA)", "gold": 151.4, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1996", "title": "Unadjusted Basis", "gold": 40.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "520", "title": "Fama and French Three Factor Model", "gold": 13.1, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "853", "title": "Market Breadth", "gold": 480, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1905", "title": "Time Value of Money (TVM)", "gold": 102211, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "116", "title": "Collar", "gold": 197, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "716", "title": "Bermuda Option", "gold": 300, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "213", "title": "Covariance", "gold": 0.001, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2273", "title": "Add-On Interest", "gold": 2250.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2456", "title": "Weighted Average Life (WAL)", "gold": 3.5, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2311", "title": "What Is an Amortized Bond? How They Work, and Example", "gold": 625.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1984", "title": "Two and Twenty", "gold": 3000000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "817", "title": "Margin Account", "gold": 28000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1922", "title": "Total Shareholder Return (TSR)", "gold": 29.17, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1864", "title": "Temporal Method", "gold": 1805195, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2205", "title": "Loss Reserve", "gold": 902409, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "177", "title": "Correlation Coefficient", "gold": 1.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2093", "title": "Labor Productivity", "gold": 5.29, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2259", "title": "Acquisition Premium", "gold": 20.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "322", "title": "Vintage", "gold": 2387.08, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_955", "output_value": 2387.08}
+{"split": "OOD", "family": "3060", "title": "Option Pricing Theory", "gold": 5.94, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "138", "title": "Compound Interest", "gold": 4333.06, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "886", "title": "Markup", "gold": 25.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "925", "title": "Modified Dietz Method", "gold": 9.75, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "990", "title": "3/27 Adjustable-Rate Mortgage (ARM)", "gold": 1483.29, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1347", "title": "Principal, Interest, Taxes, Insurance (PITI)", "gold": 1920, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1072", "title": "Home Mortgage Interest Deduction", "gold": 504.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "3041", "title": "Operating Leverage", "gold": 2.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1432", "title": "Zero-Volatility Spread (Z-spread)", "gold": 4.92, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "333", "title": "Volume Price Trend Indicator (VPT)", "gold": 143.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "641", "title": "Fully Amortizing Payment", "gold": 4597, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1638", "title": "Debt Consolidation", "gold": 3479, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2569", "title": "Share Repurchase", "gold": 5.26, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1831", "title": "Tax-Free Savings Account (TFSA)", "gold": 360.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "319", "title": "Viager", "gold": 145000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1885", "title": "Throughput", "gold": 21.5, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2551", "title": "Salvage Value", "gold": 20000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "281", "title": "Vanilla Option", "gold": 300, "verdict": "abstain", "status": "error", "diagnostic_type": "F", "chosen_fic": "fic_article_3067", "output_value": null}
+{"split": "OOD", "family": "334", "title": "Volume Weighted Average Price (VWAP)", "gold": 150.03, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "764", "title": "Break-Even Price", "gold": 158.0, "verdict": "abstain", "status": "error", "diagnostic_type": "F", "chosen_fic": "fic_article_3067", "output_value": null}
+{"split": "OOD", "family": "1666", "title": "Defensive Interval Ratio", "gold": 127, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1152", "title": "Graded Vesting", "gold": 80.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "447", "title": "Interest Rate Floor", "gold": 15000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1372", "title": "Profit Margin", "gold": 20.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1280", "title": "Pip", "gold": 10.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "956", "title": "Mortgage Rate", "gold": 1520.06, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_955", "output_value": 1520.06}
+{"split": "OOD", "family": "2883", "title": "Negative Volume Index (NVI)", "gold": 1070.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "872", "title": "Market Risk", "gold": 1.38, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "737", "title": "Bond Equivalent Yield (BEY)", "gold": 8.45, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "91", "title": "Cash Flow from Operating Activities (CFO)", "gold": 138000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2829", "title": "Expectations Theory", "gold": 6.02, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2071", "title": "Up Volume", "gold": 510.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "117", "title": "Collar", "gold": 8, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "994", "title": "5-6 Hybrid Adjustable-Rate Mortgage (5-6 Hybrid ARM)", "gold": 2309.85, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_955", "output_value": 2309.85}
+{"split": "OOD", "family": "2342", "title": "Appreciation", "gold": 8.45, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_1063", "output_value": 8.447177119769854}
+{"split": "OOD", "family": "906", "title": "Median", "gold": 6.1, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2250", "title": "Accumulated Depreciation", "gold": 36000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "219", "title": "Covered Interest Rate Parity", "gold": 1.1614, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "12", "title": "Years Certain Annuity", "gold": 1208, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "83", "title": "Cash Conversion Cycle (CCC)", "gold": 57.79, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1774", "title": "Double Declining Balance Depreciation Method (DDB)", "gold": 17280, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "301", "title": "Variance Equation", "gold": 0.08, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "898", "title": "McClellan Oscillator", "gold": -0.8, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1824", "title": "Tax-Deductible Interest", "gold": 30000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "582", "title": "Fixed-Rate Payment", "gold": 215609, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2750", "title": "Elastic", "gold": 1.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2502", "title": "Writer", "gold": 6250, "verdict": "abstain", "status": "error", "diagnostic_type": "F", "chosen_fic": "fic_article_3067", "output_value": null}
+{"split": "OOD", "family": "2807", "title": "European Option", "gold": 6000, "verdict": "abstain", "status": "error", "diagnostic_type": "F", "chosen_fic": "fic_article_3067", "output_value": null}
+{"split": "OOD", "family": "123", "title": "Commercial Paper", "gold": 6.09, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "593", "title": "Foregone Earnings", "gold": 1400, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1726", "title": "Discount", "gold": 15.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2027", "title": "Unearned Interest", "gold": 630, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1610", "title": "Rule 72(t)", "gold": 27521, "verdict": "silent_wrong", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_955", "output_value": 2276.48}
+{"split": "OOD", "family": "60", "title": "Capital Loss Carryover", "gold": 13000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2455", "title": "Weighted Average Credit Rating", "gold": 3.8, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1613", "title": "Rule of 78", "gold": 462, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2824", "title": "Exercise Price: Overview, Put and Calls, In and Out of The Money", "gold": 15, "verdict": "abstain", "status": "error", "diagnostic_type": "F", "chosen_fic": "fic_article_3067", "output_value": null}
+{"split": "OOD", "family": "655", "title": "Furniture, Fixtures, and Equipment (FF&E)", "gold": 950, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2286", "title": "Adjusted Present Value (APV)", "gold": 818184, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1834", "title": "Tax Liability", "gold": 11688, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1509", "title": "Repurchase Agreement (Repo)", "gold": 6.4286, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1407", "title": "Put", "gold": 200, "verdict": "abstain", "status": "error", "diagnostic_type": "F", "chosen_fic": "fic_article_3067", "output_value": null}
+{"split": "OOD", "family": "2440", "title": "Wealth Tax", "gold": 16200, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "922", "title": "Modern Portfolio Theory (MPT)", "gold": 0.1264, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2334", "title": "Annuity", "gold": 82349, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "825", "title": "Margin Debt", "gold": 26.67, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "610", "title": "Forward Premium", "gold": 5.31, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1217", "title": "Growth Rates", "gold": 19.14, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_137", "output_value": 19.13578981670916}
+{"split": "OOD", "family": "1739", "title": "Discouraged Worker", "gold": 9.8, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "30", "title": "Yield to Maturity (YTM)", "gold": 6.69, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1860", "title": "Technical Indicator", "gold": 76.19, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1816", "title": "Tax Benefit", "gold": 8500, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "571", "title": "Fixed Asset Turnover Ratio", "gold": 2.27, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "453", "title": "Interest Rate Sensitivity", "gold": 4.56, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "330", "title": "Volume Analysis", "gold": 2100, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "999", "title": "80-10-10 Mortgage", "gold": 2218, "verdict": "silent_wrong", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_955", "output_value": 1796.18}
+{"split": "OOD", "family": "2817", "title": "Excess Return", "gold": 0.6, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_2302", "output_value": 0.6000000000000005}
+{"split": "OOD", "family": "1959", "title": "Trend Analysis", "gold": 1.2, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2845", "title": "Exponential Moving Average (EMA)", "gold": 161.72, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2839", "title": "What Are Experience Ratings in Insurance", "gold": 0.95, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1811", "title": "What Is Tangible Personal Property and How Is It Taxed?", "gold": 40000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1064", "title": "Holding Period Return (Yield)", "gold": 10.23, "verdict": "abstain", "status": "error", "diagnostic_type": "F", "chosen_fic": "fic_article_1063", "output_value": null}
+{"split": "OOD", "family": "109", "title": "Churn Rate", "gold": 7.5, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2516", "title": "Qualification Ratio", "gold": 1800, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2330", "title": "Annualized Total Return", "gold": 8.3, "verdict": "abstain", "status": "error", "diagnostic_type": "F", "chosen_fic": "fic_article_137", "output_value": null}
+{"split": "OOD", "family": "1874", "title": "Texas Ratio", "gold": 100.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1254", "title": "Payout Ratio", "gold": 76.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "3061", "title": "Option Pricing Theory", "gold": 7.97, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1375", "title": "Profitability Ratios", "gold": 33.33, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2451", "title": "Weighted Average", "gold": 114000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1668", "title": "Deferred Interest", "gold": 10124, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "730", "title": "Blended Rate", "gold": 4.56, "verdict": "abstain", "status": "error", "diagnostic_type": "F", "chosen_fic": "fic_article_1644", "output_value": null}
+{"split": "OOD", "family": "2028", "title": "Unearned Premium", "gold": 700, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2120", "title": "Leverage Ratio", "gold": 38.46, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "431", "title": "Interest", "gold": 1268, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "514", "title": "Kurtosis", "gold": -1.07, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2809", "title": "Event Study", "gold": 0.5, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2099", "title": "Last In, First Out (LIFO)", "gold": 7975.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "326", "title": "Volatility Ratio", "gold": 1.33, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_327", "output_value": 1.3333333333333333}
+{"split": "OOD", "family": "2909", "title": "Net Income After Taxes (NIAT)", "gold": 230000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "722", "title": "Bid-Ask Spread", "gold": 1.02, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2183", "title": "Long Straddle", "gold": 10, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1744", "title": "Dispersion", "gold": 1.26, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "626", "title": "Free Cash Flow to the Firm (FCFF)", "gold": 217500, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1537", "title": "Return on Assets (ROA)", "gold": 10.88, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2182", "title": "Long Put: Definition, Example, Vs. Shorting Stock", "gold": 0, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_3067", "output_value": 0.0}
+{"split": "OOD", "family": "2164", "title": "Loan", "gold": 579.98, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_955", "output_value": 579.98}
+{"split": "OOD", "family": "72", "title": "Capitalize", "gold": 30000, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "678", "title": "Bank Bill Swap Rate (BBSW)", "gold": 3.35, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "503", "title": "Key Rate Duration", "gold": 1.5789, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1738", "title": "Discounts For Lack Of Marketability (DLOM): Role in Valuation", "gold": 25.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1130", "title": "Geometric Mean", "gold": 5.3, "verdict": "abstain", "status": "error", "diagnostic_type": "F", "chosen_fic": "fic_article_137", "output_value": null}
+{"split": "OOD", "family": "500", "title": "Kelly Criterion", "gold": 25.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "84", "title": "Cash Conversion Cycle (CCC)", "gold": 31.63, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "891", "title": "Matching Orders", "gold": 100, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "793", "title": "Butterfly Spread", "gold": 3.5, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1558", "title": "Revenue Generating Unit (RGU)", "gold": 76.19, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "950", "title": "Money Market Yield", "gold": 6.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1975", "title": "True Strength Index (TSI)", "gold": 100.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1441", "title": "Rate of Change (ROC)", "gold": 10.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2786", "title": "Equated Monthly Installment (EMI)", "gold": 375, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2870", "title": "Negative Convexity", "gold": 0.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2245", "title": "Accretive", "gold": 24.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1400", "title": "Purchasing Managers' Index (PMI)", "gold": 57.5, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "104", "title": "Certificate of Deposit (CD)", "gold": 2241, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "966", "title": "Multi-Factor Model", "gold": 11.9, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2310", "title": "What Is an Amortization Schedule? How to Calculate With Formula", "gold": 1572, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_955", "output_value": 1571.66}
+{"split": "OOD", "family": "2494", "title": "Working Ratio", "gold": 88.46, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2766", "title": "Employee Stock Purchase Plan (ESPP)", "gold": 1762, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1244", "title": "Participation Rate", "gold": 75.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "31", "title": "Yield to Worst (YTW)", "gold": 8.53, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "3100", "title": "Out-of-Pocket Limit", "gold": 2960, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2532", "title": "Quarter over Quarter (Q/Q)", "gold": 25.0, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1733", "title": "Discounted Payback Periods", "gold": 5, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2106", "title": "Least Squares Method", "gold": 3.7, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2457", "title": "Weighted Average Loan Age (WALA)", "gold": 36.6, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1319", "title": "Price/Earnings-to-Growth (PEG) Ratio", "gold": 14.29, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2567", "title": "Series EE Bond", "gold": 16436.19, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "2290", "title": "After-Tax Real Rate of Return", "gold": 3.8, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "OOD", "family": "1395", "title": "Protective Put", "gold": 700, "verdict": "abstain", "status": "refusal", "diagnostic_type": "N", "chosen_fic": null, "output_value": null}
+{"split": "ID", "family": "61", "title": "Capital Market Line (CML)", "gold": 6.0, "verdict": "silent_wrong", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_61", "output_value": 0.06000000000000001}
+{"split": "ID", "family": "233", "title": "Currency Carry Trade", "gold": 2250, "verdict": "silent_wrong", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_233", "output_value": -20047499.999999996}
+{"split": "ID", "family": "2208", "title": "Luhn Algorithm", "gold": false, "verdict": "silent_wrong", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_2208", "output_value": 0.0}
+{"split": "ID", "family": "3067", "title": "Options Contract", "gold": 875, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_3067", "output_value": 875.0}
+{"split": "ID", "family": "501", "title": "Keltner Channel", "gold": 143.66, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_501", "output_value": 143.66}
+{"split": "ID", "family": "1091", "title": "Human Development Index (HDI)", "gold": 0.674, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_1091", "output_value": 0.6743460597392682}
+{"split": "ID", "family": "510", "title": "Kijun-Sen (Base Line)", "gold": 164.0, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_510", "output_value": 164.0}
+{"split": "ID", "family": "207", "title": "Cost-Plus Contract", "gold": 1150000, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_207", "output_value": 1150000.0}
+{"split": "ID", "family": "2198", "title": "Lorenz Curve", "gold": 0.4, "verdict": "abstain", "status": "alert", "diagnostic_type": "E", "chosen_fic": "fic_article_2198", "output_value": null}
+{"split": "ID", "family": "2419", "title": "Johannesburg Interbank Average Rate (JIBAR)", "gold": 6.44, "verdict": "silent_wrong", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_2419", "output_value": 0.064375}
+{"split": "ID", "family": "1243", "title": "Participating Preferred Stock", "gold": 1300000, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_1243", "output_value": 1300000.0}
+{"split": "ID", "family": "1167", "title": "Gross Domestic Product (GDP)", "gold": 4.6, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_1167", "output_value": 4.6}
+{"split": "ID", "family": "2331", "title": "Annualized Total Return", "gold": 25.84, "verdict": "silent_wrong", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_2331", "output_value": 0.2583550971734798}
+{"split": "ID", "family": "137", "title": "Compound Annual Growth Rate (CAGR)", "gold": 9.86, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_137", "output_value": 9.856054330611785}
+{"split": "ID", "family": "955", "title": "Mortgage", "gold": 1620.9, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_955", "output_value": 1620.9}
+{"split": "ID", "family": "2302", "title": "Alpha", "gold": 0.4, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_2302", "output_value": 0.40000000000000036}
+{"split": "ID", "family": "1987", "title": "Two-Tailed Tests", "gold": 2.95, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_1987", "output_value": 2.95}
+{"split": "ID", "family": "2145", "title": "Linearly Weighted Moving Average (LWMA)", "gold": 108.5, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_2145", "output_value": 108.5}
+{"split": "ID", "family": "1745", "title": "Dispersion", "gold": 0.4, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_2302", "output_value": 0.40000000000000036}
+{"split": "ID", "family": "1541", "title": "Return on Average Equity (ROAE)", "gold": 14.29, "verdict": "silent_wrong", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_1541", "output_value": 0.14285714285714285}
+{"split": "ID", "family": "2953", "title": "Net Unrealized Appreciation (NUA)", "gold": 22000, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_2953", "output_value": 22000.0}
+{"split": "ID", "family": "2287", "title": "Administrative Expenses", "gold": 3600, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_2287", "output_value": 3600.0}
+{"split": "ID", "family": "1644", "title": "Debt Issue", "gold": 6.33, "verdict": "abstain", "status": "needs_clarification", "diagnostic_type": "I_HARD", "chosen_fic": "fic_article_1644", "output_value": null}
+{"split": "ID", "family": "1063", "title": "Holding Period Return (Yield)", "gold": 11.58, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_1063", "output_value": 11.579118109029407}
+{"split": "ID", "family": "327", "title": "Volatility Ratio", "gold": 2.13, "verdict": "correct", "status": "success", "diagnostic_type": "None", "chosen_fic": "fic_article_327", "output_value": 2.1333333333333333}

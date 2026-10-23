@@ -1,0 +1,26 @@
+{"trap_id": "I-test-1422", "operator": "I", "expected_diagnostic": "I_HARD", "removed": "call", "reply": "It is a call option."}
+{"trap_id": "I-test-1668", "operator": "I", "expected_diagnostic": "I_HARD", "removed": "put", "reply": "It is a put option."}
+{"trap_id": "I-test-1879", "operator": "I", "expected_diagnostic": "I_HARD", "removed": "put", "reply": "It is a put option."}
+{"trap_id": "I-test-1952", "operator": "I", "expected_diagnostic": "I_HARD", "removed": "call", "reply": "It is a call option."}
+{"trap_id": "I-test-1980", "operator": "I", "expected_diagnostic": "I_HARD", "removed": "FIFO", "reply": "Use the FIFO method."}
+{"trap_id": "I-test-2163", "operator": "I", "expected_diagnostic": "I_HARD", "removed": "call", "reply": "It is a call option."}
+{"trap_id": "F-test-1023", "operator": "F", "expected_diagnostic": "F", "removed": "tax_liability", "reply": "The tax liability is $12,000."}
+{"trap_id": "F-test-1028", "operator": "F", "expected_diagnostic": "F", "removed": "beginning_fixed_assets", "reply": "The beginning fixed assets is $1,200,000."}
+{"trap_id": "F-test-1036", "operator": "F", "expected_diagnostic": "F", "removed": "current_assets", "reply": "The current assets is 800,000."}
+{"trap_id": "F-test-1086", "operator": "F", "expected_diagnostic": "F", "removed": "par_value", "reply": "The par value is $1,000."}
+{"trap_id": "F-test-1092", "operator": "F", "expected_diagnostic": "F", "removed": "monetary_assets", "reply": "The monetary assets is 1,200,000."}
+{"trap_id": "F-test-1035", "operator": "F", "expected_diagnostic": "F", "removed": "start_units", "reply": "The start units is 15,000."}
+{"trap_id": "F-test-1263", "operator": "F", "expected_diagnostic": "F", "removed": "quantity", "reply": "The quantity is 100."}
+{"trap_id": "F-test-1271", "operator": "F", "expected_diagnostic": "F", "removed": "number_of_units", "reply": "The number of units is 15,000."}
+{"trap_id": "F-test-1559", "operator": "F", "expected_diagnostic": "F", "removed": "quantity", "reply": "The quantity is 100."}
+{"trap_id": "F-test-1591", "operator": "F", "expected_diagnostic": "F", "removed": "unit_quantity", "reply": "The unit quantity is 10,000."}
+{"trap_id": "F-test-1122", "operator": "F", "expected_diagnostic": "F", "removed": "shares_outstanding", "reply": "The shares outstanding is 10,000,000."}
+{"trap_id": "F-test-1561", "operator": "F", "expected_diagnostic": "F", "removed": "base_tax_rate", "reply": "The base tax rate is 40%."}
+{"trap_id": "F-test-1020", "operator": "F", "expected_diagnostic": "F", "removed": "premium_paid", "reply": "The premium paid is $8."}
+{"trap_id": "F-test-1022", "operator": "F", "expected_diagnostic": "F", "removed": "itemized_deductions", "reply": "The itemized deductions is $28,000."}
+{"trap_id": "F-test-1039", "operator": "F", "expected_diagnostic": "F", "removed": "total_premium", "reply": "The total premium is $1,200."}
+{"trap_id": "F-test-1043", "operator": "F", "expected_diagnostic": "F", "removed": "back_end_limit", "reply": "The back end limit is 40%."}
+{"trap_id": "F-test-1082", "operator": "F", "expected_diagnostic": "F", "removed": "current_real_gdp", "reply": "The current real gdp is 1.25 trillion."}
+{"trap_id": "F-test-1064", "operator": "F", "expected_diagnostic": "F", "removed": "ask_price", "reply": "The ask price is $49.00."}
+{"trap_id": "F-test-1067", "operator": "F", "expected_diagnostic": "F", "removed": "original_price", "reply": "The original price is 200 dollars."}
+{"trap_id": "F-test-1080", "operator": "F", "expected_diagnostic": "F", "removed": "price_current", "reply": "The price current is $165."}

@@ -1,0 +1,202 @@
+{
+  "primary": "retrieval_pal_top4_audited_unified_vq_scorer",
+  "system_metrics": {
+    "retrieval_pal_top4_audited_unified_vq_scorer": {
+      "n": 250,
+      "correct": 242,
+      "silent_wrong": 6,
+      "abstain": 2,
+      "accuracy": 0.968,
+      "swr": 0.024,
+      "coverage": 0.992,
+      "selective_accuracy": 0.9758064516129032,
+      "accuracy_wilson_95": [
+        0.9381375971659135,
+        0.9836976345063503
+      ],
+      "swr_wilson_95": [
+        0.01104477730613677,
+        0.051362123813526464
+      ]
+    },
+    "vq_k3": {
+      "n": 250,
+      "correct": 234,
+      "silent_wrong": 8,
+      "abstain": 8,
+      "accuracy": 0.936,
+      "swr": 0.032,
+      "coverage": 0.968,
+      "selective_accuracy": 0.9669421487603306,
+      "accuracy_wilson_95": [
+        0.8985785081170682,
+        0.9602252547229041
+      ],
+      "swr_wilson_95": [
+        0.01630236549364963,
+        0.06186240283408649
+      ]
+    },
+    "vq_k1": {
+      "n": 250,
+      "correct": 203,
+      "silent_wrong": 7,
+      "abstain": 40,
+      "accuracy": 0.812,
+      "swr": 0.028,
+      "coverage": 0.84,
+      "selective_accuracy": 0.9666666666666667,
+      "accuracy_wilson_95": [
+        0.75898263046598,
+        0.8555741906488626
+      ],
+      "swr_wilson_95": [
+        0.013628058600839217,
+        0.05665777612286046
+      ]
+    },
+    "plain_pal_legacy_reported": {
+      "n": 250,
+      "correct": 226,
+      "silent_wrong": 20,
+      "abstain": 4,
+      "accuracy": 0.904,
+      "swr": 0.08,
+      "coverage": 0.984,
+      "selective_accuracy": 0.9186991869918699,
+      "accuracy_wilson_95": [
+        0.8611341747864028,
+        0.934638119221278
+      ],
+      "swr_wilson_95": [
+        0.052382328372331775,
+        0.12032964320384165
+      ]
+    },
+    "plain_pal_unified_vq_scorer": {
+      "n": 250,
+      "correct": 228,
+      "silent_wrong": 18,
+      "abstain": 4,
+      "accuracy": 0.912,
+      "swr": 0.072,
+      "coverage": 0.984,
+      "selective_accuracy": 0.926829268292683,
+      "accuracy_wilson_95": [
+        0.8703615171695354,
+        0.9411686440462184
+      ],
+      "swr_wilson_95": [
+        0.04602556925826497,
+        0.11092853510983557
+      ]
+    }
+  },
+  "paired_vs_primary": {
+    "vq_k3": {
+      "correct": {
+        "both": 227,
+        "primary_only": 15,
+        "comparator_only": 7,
+        "neither": 1,
+        "rate_difference": 0.032,
+        "paired_bootstrap_difference_95": [
+          -0.004,
+          0.068
+        ],
+        "mcnemar_exact_p": 0.13380050659179688
+      },
+      "silent_wrong": {
+        "both": 0,
+        "primary_only": 6,
+        "comparator_only": 8,
+        "neither": 236,
+        "rate_difference": -0.008,
+        "paired_bootstrap_difference_95": [
+          -0.036,
+          0.02
+        ],
+        "mcnemar_exact_p": 0.79052734375
+      }
+    },
+    "vq_k1": {
+      "correct": {
+        "both": 199,
+        "primary_only": 43,
+        "comparator_only": 4,
+        "neither": 4,
+        "rate_difference": 0.156,
+        "paired_bootstrap_difference_95": [
+          0.108,
+          0.208
+        ],
+        "mcnemar_exact_p": 2.781192165457469e-09
+      },
+      "silent_wrong": {
+        "both": 1,
+        "primary_only": 5,
+        "comparator_only": 6,
+        "neither": 238,
+        "rate_difference": -0.004,
+        "paired_bootstrap_difference_95": [
+          -0.028,
+          0.02
+        ],
+        "mcnemar_exact_p": 1.0
+      }
+    },
+    "plain_pal_legacy_reported": {
+      "correct": {
+        "both": 224,
+        "primary_only": 18,
+        "comparator_only": 2,
+        "neither": 6,
+        "rate_difference": 0.064,
+        "paired_bootstrap_difference_95": [
+          0.032,
+          0.1
+        ],
+        "mcnemar_exact_p": 0.0004024505615234375
+      },
+      "silent_wrong": {
+        "both": 5,
+        "primary_only": 1,
+        "comparator_only": 15,
+        "neither": 229,
+        "rate_difference": -0.056,
+        "paired_bootstrap_difference_95": [
+          -0.088,
+          -0.028
+        ],
+        "mcnemar_exact_p": 0.000518798828125
+      }
+    },
+    "plain_pal_unified_vq_scorer": {
+      "correct": {
+        "both": 225,
+        "primary_only": 17,
+        "comparator_only": 3,
+        "neither": 5,
+        "rate_difference": 0.056,
+        "paired_bootstrap_difference_95": [
+          0.024,
+          0.092
+        ],
+        "mcnemar_exact_p": 0.0025768280029296875
+      },
+      "silent_wrong": {
+        "both": 5,
+        "primary_only": 1,
+        "comparator_only": 13,
+        "neither": 231,
+        "rate_difference": -0.048,
+        "paired_bootstrap_difference_95": [
+          -0.076,
+          -0.02
+        ],
+        "mcnemar_exact_p": 0.0018310546875
+      }
+    }
+  },
+  "interpretation_guardrail": "The unified scorer uses VQ's task-aware rounding, tolerances, scale handling, and boolean-aware parsing. Plain PAL's four legacy denylist abstentions cannot be replay-audited because that runner did not persist generated code."
+}

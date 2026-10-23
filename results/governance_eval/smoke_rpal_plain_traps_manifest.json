@@ -1,0 +1,30 @@
+{
+  "protocol": "governance_matched_rpal_v1",
+  "mode": "plain",
+  "created_at": "2026-07-29T16:34:47",
+  "git_commit": "a9520dd7cfac543d90afb129d018dc7f92f54cab",
+  "model": "gemini-2.5-flash",
+  "top_k": 4,
+  "dataset": {
+    "path": "results/paper_v1/trap/trap_set.jsonl",
+    "sha256": "6b0e4f8fdb183db4269f6102dee4d7142e24cd98bb2af88a8603260fd06b22b4"
+  },
+  "card_db": {
+    "path": "results/paper_v1/fic/cards_v3.db",
+    "sha256": "d3d89b8ca352601f9b859c978400069330d814fc04eb0e9d59be334882a99b3f"
+  },
+  "function_library": {
+    "path": "FinanceReasoning/data/functions/functions-article-all.json",
+    "sha256": "1c1d11ef6173208da0014b6bbb71cc8e2aa2683da9ba1ada4bf9e593fb4c7293",
+    "size": 3133
+  },
+  "retrieval_query": "question + newline + context",
+  "prompt_template": "You are a financial reasoning assistant that solves problems by writing Python.\n\nYou are given top-ranked reference functions retrieved from a financial function library.\nThe candidates are retrieval results, not guaranteed to be relevant or correct for the question.\nSelect the useful candidate, if any, and adapt its logic to the exact question and context.\n\nWrite a single self-contained Python function solve() that computes the numeric answer.\nRules:\n- Only the Python standard library `math` may be imported; no other imports.\n- No input(), no file or network access.\n- solve() must return a single number (int or float).\n- Match the output unit and scale requested by the question.\n- If no candidate applies or the problem cannot be solved from the given information,\n  return the string \"CANNOT SOLVE\".\n- Do not merely call a reference function: solve() must be self-contained.\n- Return ONLY the code, in one ```python block.\n\nQuestion:\n{question}\n\nContext:\n{context}\n\nRetrieved reference functions (ranked):\n{references}\n",
+  "scoring": "raw artifacts only; offline scorer required",
+  "forbidden_prompt_inputs": [
+    "ground_truth",
+    "python_solution",
+    "operator",
+    "expected_diagnostic"
+  ]
+}
